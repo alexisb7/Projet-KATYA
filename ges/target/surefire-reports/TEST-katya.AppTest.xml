@@ -1,65 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="katya.AppTest" time="0.006" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="katya.AppTest" time="0.028" tests="1" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="gopherProxySet" value="false"/>
-    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
-    <property name="java.specification.version" value="11"/>
-    <property name="sun.cpu.isalist" value=""/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/test-classes:/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/classes:/Users/alexbrt/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/alexbrt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/alexbrt/.m2/repository/com/h2database/h2/2.1.212/h2-2.1.212.jar:"/>
-    <property name="java.vm.vendor" value="AdoptOpenJDK"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges\target\test-classes;C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges\target\classes;C:\Users\trist\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\trist\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\trist\.m2\repository\com\h2database\h2\2.1.212\h2-2.1.212.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
-    <property name="user.timezone" value=""/>
-    <property name="java.vm.specification.version" value="11"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
     <property name="user.country" value="FR"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter11706299561840231064.jar /Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire 2022-06-02T16-37-46_142-jvmRun1 surefire14538957777054468292tmp surefire_07401911644897847279tmp"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/test-classes:/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/classes:/Users/alexbrt/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/alexbrt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/alexbrt/.m2/repository/com/h2database/h2/2.1.212/h2-2.1.212.jar:"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_281\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\trist\AppData\Local\Temp\surefire5965146239409682903\surefirebooter7832957420221660331.jar C:\Users\trist\AppData\Local\Temp\surefire5965146239409682903 2022-06-02T16-58-48_396-jvmRun1 surefire5833790447201119373tmp surefire_02025898179439310680tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges\target\test-classes;C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges\target\classes;C:\Users\trist\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\trist\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\trist\.m2\repository\com\h2database\h2\2.1.212\h2-2.1.212.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/Users/alexbrt"/>
+    <property name="user.home" value="C:\Users\trist"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2019-07-16"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_281\jre"/>
+    <property name="basedir" value="C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges"/>
+    <property name="file.separator" value="\"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter11706299561840231064.jar"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\trist\AppData\Local\Temp\surefire5965146239409682903\surefirebooter7832957420221660331.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_281\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_281\jre\classes"/>
+    <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.runtime.version" value="11.0.4+11"/>
-    <property name="user.name" value="alexbrt"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="10.16"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="AdoptOpenJDK"/>
-    <property name="localRepository" value="/Users/alexbrt/.m2/repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-build/issues"/>
-    <property name="java.io.tmpdir" value="/var/folders/2j/50z90p4n2kq3bbns7w3jtjr80000gn/T/"/>
-    <property name="java.version" value="11.0.4"/>
-    <property name="user.dir" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges"/>
-    <property name="os.arch" value="x86_64"/>
+    <property name="java.runtime.version" value="1.8.0_281-b09"/>
+    <property name="user.name" value="trist"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_281\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\trist\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\trist\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_281"/>
+    <property name="user.dir" value="C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges"/>
+    <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
-    <property name="sun.os.patch.level" value="unknown"/>
-    <property name="java.library.path" value="/Users/alexbrt/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="java.vendor" value="AdoptOpenJDK"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_281\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.8.4\bin;C:\Program Files\Java\jdk1.8.0_281\bin;C:\Program Files\nodejs\;C:\Users\trist\AppData\Local\Microsoft\WindowsApps;C:\apache-maven-3.8.4\bin;C:\Users\trist\AppData\Roaming\npm;C:\Users\trist\AppData\Local\Programs\Microsoft VS Code\bin;."/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.vm.version" value="11.0.4+11"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="java.class.version" value="55.0"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.281-b09"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_281\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="katya.AppTest" time="0"/>
+  <testcase name="shouldAnswerWithTrue" classname="katya.AppTest" time="0.002"/>
 </testsuite>
