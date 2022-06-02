@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="katya.AppTest" time="0.006" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="katya.AppTest" time="0.094" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="FR"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter11706299561840231064.jar /Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire 2022-06-02T16-37-46_142-jvmRun1 surefire14538957777054468292tmp surefire_07401911644897847279tmp"/>
+    <property name="sun.java.command" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter15992483991539088496.jar /Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire 2022-06-02T16-56-09_971-jvmRun1 surefire16413458069892103198tmp surefire_011362739487298178318tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/test-classes:/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/classes:/Users/alexbrt/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/alexbrt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/alexbrt/.m2/repository/com/h2database/h2/2.1.212/h2-2.1.212.jar:"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter11706299561840231064.jar"/>
+    <property name="surefire.real.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter15992483991539088496.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.4+11"/>
@@ -61,5 +61,5 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="katya.AppTest" time="0"/>
+  <testcase name="shouldAnswerWithTrue" classname="katya.AppTest" time="0.001"/>
 </testsuite>
