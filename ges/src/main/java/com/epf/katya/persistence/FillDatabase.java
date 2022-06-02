@@ -28,14 +28,12 @@ public class FillDatabase {
         PreparedStatement createPreparedStatement = null;
 
         List<String> createTablesQueries = new ArrayList<>();
-<<<<<<< HEAD
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Equipement(id_equipement INT primary key, nom_equipement VARCHAR(25), zone_de_stockage VARCHAR(50), etat VARCHAR(50), disponibilite_equipement INT, date_aquisition DATETIME, description VARCHAR(50))");
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Utilisateur(id_utilisateur INT primary key, email VARCHAR(30), mdp VARCHAR(25), nom_utilisateur VARCHAR(25), role VARCHAR(25), date_entree DATETIME)");
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Salle(numero VARCHAR(10) primary key, etage INT, capacite INT, utilite VARCHAR(25), disponibilite_salle INT, date_acquisition_salle DATETIME)");
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Reservation_equipement(id_reservation_equipement INT primary key, id_utilisateur INT, foreign key(id_utilisateur) REFERENCES Utilisateur(id_utilisateur), date_debut DATETIME, date_fin DATETIME, id_utilisateur_validation INT, foreign key(id_utilisateur_validation) REFERENCES Utilisateur(id_utilisateur))");
-=======
->>>>>>> fa40edbc16fbabdcb920f1cd1a5b86175644677c
-        
+        createTablesQueries.add("CREATE TABLE IF NOT EXISTS Reservation_salle(id_reservation_salle INT primary key, id_utilisateur INT, foreign key(id_utilisateur) REFERENCES Utilisateur(id_utilisateur), date_debut DATETIME, date_fin DATETIME, id_utilisateur_valisation INT, foreign key(id_utilisateur_validation) REFERENCES Utilisateur(id_utilisateur))");
+
         try {
             connection.setAutoCommit(false);
 
@@ -45,14 +43,8 @@ public class FillDatabase {
 	            createPreparedStatement.close();
             }
 
-<<<<<<< HEAD
             // Remplissage de la base
             Statement stmt = connection.createStatement();
-=======
-            // Remplissage de la base avec des Vehicules et des Clients
-            
-                    
->>>>>>> fa40edbc16fbabdcb920f1cd1a5b86175644677c
             connection.commit();
             System.out.println("Success!");
         } catch (SQLException e) {
