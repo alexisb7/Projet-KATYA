@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="katya.AppTest" time="0.028" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="katya.AppTest" time="0.094" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> fa40edbc16fbabdcb920f1cd1a5b86175644677c
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -16,10 +20,18 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="os.name" value="Windows 10"/>
     <property name="user.country" value="FR"/>
+<<<<<<< HEAD
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_281\jre\bin"/>
     <property name="sun.java.command" value="C:\Users\trist\AppData\Local\Temp\surefire5965146239409682903\surefirebooter7832957420221660331.jar C:\Users\trist\AppData\Local\Temp\surefire5965146239409682903 2022-06-02T16-58-48_396-jvmRun1 surefire5833790447201119373tmp surefire_02025898179439310680tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges\target\test-classes;C:\Users\trist\OneDrive\Documents\EPF\4A\Projet semestre\proket-katya\Projet-KATYA\ges\target\classes;C:\Users\trist\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\trist\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\trist\.m2\repository\com\h2database\h2\2.1.212\h2-2.1.212.jar;"/>
+=======
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter15992483991539088496.jar /Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire 2022-06-02T16-56-09_971-jvmRun1 surefire16413458069892103198tmp surefire_011362739487298178318tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/test-classes:/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/classes:/Users/alexbrt/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/alexbrt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/alexbrt/.m2/repository/com/h2database/h2/2.1.212/h2-2.1.212.jar:"/>
+>>>>>>> fa40edbc16fbabdcb920f1cd1a5b86175644677c
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\trist"/>
     <property name="user.language" value="fr"/>
@@ -29,11 +41,16 @@
     <property name="file.separator" value="\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<<<<<<< HEAD
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="surefire.real.class.path" value="C:\Users\trist\AppData\Local\Temp\surefire5965146239409682903\surefirebooter7832957420221660331.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_281\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_281\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_281\jre\classes"/>
     <property name="user.script" value=""/>
+=======
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/target/surefire/surefirebooter15992483991539088496.jar"/>
+>>>>>>> fa40edbc16fbabdcb920f1cd1a5b86175644677c
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_281-b09"/>
     <property name="user.name" value="trist"/>
@@ -60,5 +77,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldAnswerWithTrue" classname="katya.AppTest" time="0.002"/>
+=======
+  <testcase name="shouldAnswerWithTrue" classname="katya.AppTest" time="0.001"/>
+>>>>>>> fa40edbc16fbabdcb920f1cd1a5b86175644677c
 </testsuite>
