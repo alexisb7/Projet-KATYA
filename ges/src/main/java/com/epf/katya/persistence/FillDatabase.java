@@ -3,13 +3,13 @@ package com.epf.katya.persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
+//import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.h2.tools.DeleteDbFiles;
 
-import com.epf.katya.persistence.ConnectionManager;
+//import com.epf.katya.persistence.ConnectionManager;
 
 public class FillDatabase {
 
@@ -33,6 +33,7 @@ public class FillDatabase {
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Salle(numero VARCHAR(10) primary key, etage INT, capacite INT, utilite VARCHAR(25), disponibilite_salle INT, date_acquisition_salle DATETIME)");
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Reservation_equipement(id_reservation_equipement INT primary key, id_equipement INT, foreign key(id_equipement) REFERENCES Equipement(id_equipement), id_utilisateur INT, foreign key(id_utilisateur) REFERENCES Utilisateur(id_utilisateur), etat_validation INT, date_debut DATETIME, date_fin DATETIME, id_utilisateur_validation INT, foreign key(id_utilisateur_validation) REFERENCES Utilisateur(id_utilisateur))");
         createTablesQueries.add("CREATE TABLE IF NOT EXISTS Reservation_salle(id_reservation_salle INT primary key, numero_salle INT, foreign key(numero_salle) REFERENCES Salle(numero), id_utilisateur INT, foreign key(id_utilisateur) REFERENCES Utilisateur(id_utilisateur), etat_validation INT, date_debut DATETIME, date_fin DATETIME, id_utilisateur_validation INT, foreign key(id_utilisateur_validation) REFERENCES Utilisateur(id_utilisateur))");
+        createTablesQueries.add("CREATE TABLE IF NOT EXISTS Document(id_document INT primary key, lien VARCHAR(50))");
 
         try {
             connection.setAutoCommit(false);
@@ -44,7 +45,7 @@ public class FillDatabase {
             }
 
             // Remplissage de la base
-            Statement stmt = connection.createStatement();
+            //Statement stmt = connection.createStatement();
             connection.commit();
             System.out.println("Success!");
         } catch (SQLException e) {
