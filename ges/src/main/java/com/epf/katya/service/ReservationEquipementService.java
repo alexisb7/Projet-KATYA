@@ -1,16 +1,19 @@
 package com.epf.katya.service;
 
-//import com.epf.katya.dao.ReservationEquipementDao;
+import org.springframework.stereotype.Service;
 
+import com.epf.katya.dao.ReservationEquipementDao;
+
+@Service
 public class ReservationEquipementService {
-    /*
+    
     private ReservationEquipementDao reservationEquipementDao;
     
     private ReservationEquipementService(ReservationEquipementDao ReservationEquipementDao) {
         this.reservationEquipementDao = reservationEquipementDao;
     }
-    */
-
+   
+/* 
     public static ReservationEquipementService instance;
 
     public static ReservationEquipementService getInstance() {
@@ -18,5 +21,5 @@ public class ReservationEquipementService {
             instance = new ReservationEquipementService();
         }
         return instance;
-    }
+    } */
 }
