@@ -7,13 +7,13 @@ import com.epf.katya.dao.ReservationEquipementDao;
 @Service
 public class ReservationEquipementService {
     
-    private ReservationEquipementDao reservationEquipementDao;
+    /* private ReservationEquipementDao reservationEquipementDao;
     
-    private ReservationEquipementService(ReservationEquipementDao ReservationEquipementDao) {
+    private ReservationEquipementService(ReservationEquipementDao reservationEquipementDao) {
         this.reservationEquipementDao = reservationEquipementDao;
-    }
+    } */
    
-/* 
+
     public static ReservationEquipementService instance;
 
     public static ReservationEquipementService getInstance() {
@@ -21,5 +21,5 @@ public class ReservationEquipementService {
             instance = new ReservationEquipementService();
         }
         return instance;
-    } */
+    }
 }
