@@ -26,7 +26,7 @@ public class Main {
 
         Utilisateur utilisateur = new Utilisateur();
         utilisateur.setId_utilisateur(1);
-        utilisateur.setEmail("toto@gmail.com");
+        utilisateur.setEmail("nouveau@gmail.com");
         utilisateur.setMdp("123456");
         utilisateur.setRole("MIN");
         utilisateur.setNom_utilisateur("toto");
@@ -35,15 +35,16 @@ public class Main {
         try {
             //utilisateurService.create(utilisateur);
             //utilisateurService.delete(1);
+            utilisateurService.update(utilisateur);
             System.out.println(utilisateurService.findAll()); 
-            System.out.println(utilisateurService.findById(1));        
+            //System.out.println(utilisateurService.findById(1));   
+            System.out.println(utilisateurService.count());     
         } catch (ServiceException e) {
             e.printStackTrace();
         }catch (DaoException e) {
             e.printStackTrace();
         }
 
-        System.out.println("Success");
-        
+        System.out.println("Success");     
     }
 }

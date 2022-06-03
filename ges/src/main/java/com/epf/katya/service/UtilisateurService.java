@@ -26,11 +26,19 @@ public class UtilisateurService {
         return this.utilisateurDao.delete(id_utilisateur);
     }
 
+    public int update(Utilisateur utilisateur) throws DaoException {
+        return this.utilisateurDao.update(utilisateur);
+    }
+
     public List<Utilisateur> findAll() throws ServiceException, DaoException {
         return this.utilisateurDao.findAll();
     }
 
     public Utilisateur findById(int id_utilisateur) throws DaoException {
         return this.utilisateurDao.findById(id_utilisateur);
+    }
+
+    public int count(){
+        return this.utilisateurDao.count();
     }
 }

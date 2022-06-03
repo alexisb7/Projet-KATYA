@@ -25,6 +25,7 @@ public class UtilisateurDao {
     private static final String UPDATE_UTILISATEUR_QUERY = "UPDATE utilisateur SET email=?, mdp=?, nom_utilisateur=?, role=?, date_entree=? WHERE id_utilisateur=?;";
     private static final String FIND_UTILISATEUR_QUERY = "SELECT * FROM Utilisateur;";
     private static final String FIND_UTILISATEUR_BY_ID_QUERY = "SELECT * FROM Utilisateur WHERE id_utilisateur=?;";
+    private static final String COUNT_UTILISATEUR_QUERY ="SELECT COUNT(id_utilisateur) FROM Utilisateur;";
 
     public int create(Utilisateur utilisateur){
         try {
@@ -52,6 +53,26 @@ public class UtilisateurDao {
             PreparedStatement pstat = con.prepareStatement(DELETE_UTILISATEUR_QUERY);
             pstat.setInt(1, id_utilisateur);
             pstat.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int update(Utilisateur utilisateur) throws DaoException {
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(UPDATE_UTILISATEUR_QUERY);
+
+            pstat.setInt(6, utilisateur.getId_utilisateur());
+            pstat.setString(1, utilisateur.getEmail());
+            pstat.setString(2, utilisateur.getMdp());
+            pstat.setString(3, utilisateur.getNom_utilisateur());
+            pstat.setString(4, utilisateur.getRole());
+            pstat.setDate(5, Date.valueOf(utilisateur.getDate_entree()));
+            pstat.executeUpdate();
+
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -106,4 +127,19 @@ public class UtilisateurDao {
         return null;  
     }
 
+    public int count(){
+		int nb_users=0;
+		try {	
+			Connection con = ConnectionManager.getConnection();
+			PreparedStatement pstat = con.prepareStatement(COUNT_UTILISATEUR_QUERY);
+			ResultSet rs = pstat.executeQuery();
+			rs.next();
+			nb_users=rs.getInt(1);
+			con.close();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return nb_users;
+	}
 }
