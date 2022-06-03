@@ -7,28 +7,28 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.epf.katya.configuration.AppConfiguration;
-<<<<<<< HEAD
+
 import com.epf.katya.dao.DocumentDao;
 import com.epf.katya.dao.EquipementDao;
+import com.epf.katya.dao.ReservationEquipementDao;
 import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Document;
 import com.epf.katya.model.Equipement;
+import com.epf.katya.model.ReservationEquipement;
 import com.epf.katya.service.DocumentService;
 import com.epf.katya.service.EquipementService;
 import com.epf.katya.service.ReservationEquipementService;
-=======
 import com.epf.katya.dao.UtilisateurDao;
 import com.epf.katya.exception.DaoException;
 import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Utilisateur;
 // import com.epf.katya.service.ReservationEquipementService;
->>>>>>> main
+
 import com.epf.katya.service.UtilisateurService;
 
 public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
-<<<<<<< HEAD
         
         /* DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
@@ -54,24 +54,23 @@ public class Main {
             e.printStackTrace();
         } */
         
-=======
         //UtilisateurService utilisateurService = context.getBean(UtilisateurService.class);
         //ReservationEquipementService reservationEquipementService = context.getBean(ReservationEquipementService.class);
 
-        UtilisateurDao utilisateurDao = new UtilisateurDao();
+        /* UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
 
-        // Utilisateur utilisateur = new Utilisateur();
-        // utilisateur.setId_utilisateur(1);
-        // utilisateur.setEmail("nouveau@gmail.com");
-        // utilisateur.setMdp("123456");
-        // utilisateur.setRole("MIN");
-        // utilisateur.setNom_utilisateur("toto");
-        // utilisateur.setDate_entree(LocalDate.now());
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setId_utilisateur(2);
+        utilisateur.setEmail("nouveau1@gmail.com");
+        utilisateur.setMdp("123457");
+        utilisateur.setRole("MIN1");
+        utilisateur.setNom_utilisateur("tata");
+        utilisateur.setDate_entree(LocalDate.now());
 
         try {
-            //utilisateurService.create(utilisateur);
+            utilisateurService.create(utilisateur);
             //utilisateurService.delete(1);
             //utilisateurService.update(utilisateur);
             System.out.println(utilisateurService.findAll()); 
@@ -84,6 +83,18 @@ public class Main {
         }
 
         System.out.println("Success");     
->>>>>>> main
+     */
+
+    ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
+    ReservationEquipementService reservationEquipementService = new ReservationEquipementService(reservationEquipementDao);
+
+    ReservationEquipement reservationEquipement = new ReservationEquipement(1, 1, 2, 1, LocalDate.now(), LocalDate.now(), 1);
+    try {
+        reservationEquipementService.create(reservationEquipement);
+        System.out.println(reservationEquipementService.findAll());
+    } catch (ServiceException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
     }
 }

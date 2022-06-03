@@ -28,7 +28,7 @@ public class ReservationEquipementService {
         return instance;
     } */
 
-    public int create(ReservationEquipement reservationEquipement) throws SecurityException {
+    public int create(ReservationEquipement reservationEquipement) throws ServiceException {
         try {
             this.reservationEquipementDao.create(reservationEquipement);
         } catch (DaoException e) {
