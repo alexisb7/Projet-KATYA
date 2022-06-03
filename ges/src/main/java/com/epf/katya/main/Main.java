@@ -24,21 +24,21 @@ public class Main {
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
 
-        Utilisateur utilisateur = new Utilisateur();
-        utilisateur.setId_utilisateur(1);
-        utilisateur.setEmail("nouveau@gmail.com");
-        utilisateur.setMdp("123456");
-        utilisateur.setRole("MIN");
-        utilisateur.setNom_utilisateur("toto");
-        utilisateur.setDate_entree(LocalDate.now());
+        // Utilisateur utilisateur = new Utilisateur();
+        // utilisateur.setId_utilisateur(1);
+        // utilisateur.setEmail("nouveau@gmail.com");
+        // utilisateur.setMdp("123456");
+        // utilisateur.setRole("MIN");
+        // utilisateur.setNom_utilisateur("toto");
+        // utilisateur.setDate_entree(LocalDate.now());
 
         try {
             //utilisateurService.create(utilisateur);
             //utilisateurService.delete(1);
-            utilisateurService.update(utilisateur);
+            //utilisateurService.update(utilisateur);
             System.out.println(utilisateurService.findAll()); 
             //System.out.println(utilisateurService.findById(1));   
-            System.out.println(utilisateurService.count());     
+            //System.out.println(utilisateurService.count());     
         } catch (ServiceException e) {
             e.printStackTrace();
         }catch (DaoException e) {
