@@ -9,7 +9,7 @@ public class ReservationEquipementService {
     
     private ReservationEquipementDao reservationEquipementDao;
     
-    private ReservationEquipementService(ReservationEquipementDao ReservationEquipementDao) {
+    private ReservationEquipementService(ReservationEquipementDao reservationEquipementDao) {
         this.reservationEquipementDao = reservationEquipementDao;
     }
    
