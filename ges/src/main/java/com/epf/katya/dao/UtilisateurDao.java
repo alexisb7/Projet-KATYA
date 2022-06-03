@@ -5,9 +5,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UtilisateurDao {
 
-    //private static UtilisateurDao instance = null;
+    // private static UtilisateurDao instance = null;
     
-    private UtilisateurDao() {}
+    // private UtilisateurDao() {}
     
     // public static UtilisateurDao getInstance() {
     //     if(instance == null) {
@@ -15,4 +15,6 @@ public class UtilisateurDao {
     //     }
     //     return instance;
     // }
+
+    
 }
