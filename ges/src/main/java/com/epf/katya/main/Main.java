@@ -61,7 +61,7 @@ public class Main {
         //ReservationEquipementService reservationEquipementService = context.getBean(ReservationEquipementService.class);
         
         
-        /* 
+        /*
         UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
@@ -74,19 +74,15 @@ public class Main {
         utilisateur.setNom_utilisateur("tata");
         utilisateur.setDate_entree(LocalDate.now());
         
-        try {
-            //utilisateurService.create(utilisateur);
-            //utilisateurService.delete(1);
-            utilisateurService.update(utilisateur);
-            System.out.println(utilisateurService.findAll()); 
-            //System.out.println(utilisateurService.findById(1));   
-            //System.out.println(utilisateurService.count());     
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }catch (DaoException e) {
-            e.printStackTrace();
-        }
+        
+        //utilisateurService.create(utilisateur);
+        //utilisateurService.delete(1);
+        utilisateurService.update(utilisateur);
+        System.out.println(utilisateurService.findAll()); 
+        System.out.println(utilisateurService.findById(1));   
+        System.out.println(utilisateurService.count());     
         */
+        
 
         /*SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
