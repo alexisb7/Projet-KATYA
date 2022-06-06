@@ -48,14 +48,14 @@ public class Main {
         /* EquipementDao equipementDao = new EquipementDao();
         EquipementService equipementService = new EquipementService(equipementDao);
 
-        Equipement equipement = new Equipement(2, "nom2", "zone_stockage2", "etat2", 1, LocalDate.now(), "description2", 1);
+        Equipement equipement = new Equipement(2, "nom2", "PROUUT", "etat2", 1, LocalDate.now(), "description2", 1);
         try {
-            equipementService.create(equipement);
+            equipementService.delete(equipement);
             System.out.println(equipementService.findAll());
         } catch (ServiceException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } */
+        }  */
         
         //UtilisateurService utilisateurService = context.getBean(UtilisateurService.class);
         //ReservationEquipementService reservationEquipementService = context.getBean(ReservationEquipementService.class);
@@ -106,19 +106,19 @@ public class Main {
         System.out.println("Success");     
         */
         
-        /* 
-        ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
+        
+        /* ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
         ReservationEquipementService reservationEquipementService = new ReservationEquipementService(reservationEquipementDao);
 
-        ReservationEquipement reservationEquipement = new ReservationEquipement(1, 1, 2, 1, LocalDate.now(), LocalDate.now(), 1);
+        ReservationEquipement reservationEquipement = new ReservationEquipement(1, 1, 2, 1, LocalDate.now(), LocalDate.now(), 0);
         try {
-            reservationEquipementService.create(reservationEquipement);
+            reservationEquipementService.delete(reservationEquipement);
             System.out.println(reservationEquipementService.findAll());
         } catch (ServiceException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-        */
+        } */
+        
     }
     
 }
