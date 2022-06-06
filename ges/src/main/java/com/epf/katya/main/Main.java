@@ -33,18 +33,18 @@ public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
-        /* DocumentDao documentDao = new DocumentDao();
+       /*  DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
-        Document document = new Document(2, "lien2");
+        Document document = new Document(2, "lien8");
         try {
-            documentService.create(document);
+            documentService.delete(document);
             System.out.println(documentService.findAll());
         } catch (ServiceException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
-        }  */
-        
+        }  
+     */
         /* EquipementDao equipementDao = new EquipementDao();
         EquipementService equipementService = new EquipementService(equipementDao);
 
