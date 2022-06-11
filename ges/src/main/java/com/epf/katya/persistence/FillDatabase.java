@@ -3,7 +3,7 @@ package com.epf.katya.persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-//import java.sql.Statement;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +45,10 @@ public class FillDatabase {
             }
 
             // Remplissage de la base
-            //Statement stmt = connection.createStatement();
+            Statement stmt = connection.createStatement();
+            stmt.execute("INSERT INTO Equipement(id_equipement, nom_equipement, zone_de_stockage, etat, disponibilite_equipement, date_aquisition, description ) VALUES(00, 'Mac01', 'salle A205', 'Opérationnel', 1, 2022-01-01 00:00:00, 'Couleur Argent')");
+
+
             connection.commit();
             System.out.println("Success!");
         } catch (SQLException e) {
