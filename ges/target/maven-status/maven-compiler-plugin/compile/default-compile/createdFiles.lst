@@ -1,4 +1,0 @@
-com\epf\katya\persistence\ConnectionManager.class
-com\epf\katya\persistence\FillDatabase.class
-com\epf\katya\ui\servlets\HomeServlt.class
-com\epf\katya\utils\IOUtils.class
