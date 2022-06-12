@@ -12,9 +12,8 @@
 
         <div class="content-wrapper backwhite">
 
-            <h1>Ici l'affichage de la base de donnees</h1>
+            <h1>CONTACTS</h1>
 
-            
 
         </div>
 
