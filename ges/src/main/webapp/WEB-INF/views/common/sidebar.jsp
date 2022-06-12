@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/equipement">
+                <a href="${pageContext.request.contextPath}/equipements">
                     <i class="fa fa-laptop white"></i> <span style="color:white">Equipements</span>
                 </a>
             </li>
@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/salles">
+                <a href="${pageContext.request.contextPath}/reservations">
                     <i class="fa fa-pencil white"></i> <span style="color:white">Liste reservations</span>
                 </a>
             </li>
