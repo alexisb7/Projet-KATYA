@@ -11,17 +11,8 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import java.io.IOException;
 
-<<<<<<< HEAD
-@WebServlet("/salle")
-public class SalleServlet extends HttpServlet {
-//    public void init() throws ServletException {
-//        super.init();
-//        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
-//    }
-=======
->>>>>>> 06b0dde5c39ae75b81f2bbe14e8761d61db69ccb
 
-@WebServlet("/equipement")
+@WebServlet("/salle")
 public class SalleServlet extends HttpServlet {
 
    public void init() throws ServletException {
