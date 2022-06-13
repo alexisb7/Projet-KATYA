@@ -45,8 +45,8 @@ public class FillDatabase {
             }
 
             // Remplissage de la base
-            Statement stmt = connection.createStatement();
-            stmt.execute("INSERT INTO Equipement(id_equipement, nom_equipement, zone_de_stockage, etat, disponibilite_equipement, date_aquisition, description ) VALUES(00, 'Mac01', 'salle A205', 'Opérationnel', 1, 2022-01-01 00:00:00, 'Couleur Argent')");
+            //Statement stmt = connection.createStatement();
+            //stmt.execute("INSERT INTO Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description ) VALUES(00, 'Mac01', 'salle A205', 'Opérationnel', 1, 2022-01-01 00:00:00, 'Couleur Argent')");
 
 
             connection.commit();
