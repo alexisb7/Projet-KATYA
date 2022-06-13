@@ -38,7 +38,7 @@
                             <th>Etage</th>
                             <th>Capacite</th>
                             <th>Utilite</th>
-                            <th>Disponibilite</th>
+                            <th>Disponible</th>
                             <th>Date de creation</th>
                         </tr>
                         <c:forEach items="${listeSalle}" var="salle">
@@ -47,11 +47,18 @@
                                 <td>${salle.etage}</td>
                                 <td>${salle.capacite}</td>
                                 <td>${salle.utilite}</td>
-                                <td>${salle.disponibilite_salle}</td>
+                                <c:if test="${salle.disponibilite_salle==1}">
+									<td>Oui</td>
+								</c:if>
+                                <c:if test="${salle.disponibilite_salle==0}">
+									<td>Non</td>
+								</c:if>
                                 <td>${salle.date_acquisition_salle}</td>
                                 <td>
-                                    <form class="form-horizontal" method="post"
-                                        action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
+                                    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
+                                        </a> <a class="btn btn-success" href="${pageContext.request.contextPath}/salle_update?numero=${salle.numero}">
+                                            <i class="fa fa-edit">Edit</i>
+                                        </a>
                                         <button type="submit" class="btn btn-danger" href="#">
                                             <i class="fa fa-trash">Supprimer</i>
                                         </button>

@@ -100,9 +100,9 @@ public class Main {
         //salleService.delete(salle);
         //salleService.update(salle);
         
-        System.out.println(salleService.findAll());
-        System.out.println(salleService.research("A"));
-        //System.out.println(salleService.findByNumero("P212"));
+        //System.out.println(salleService.findAll());
+        //System.out.println(salleService.research("A"));
+        System.out.println(salleService.findByNumero("A106"));
         System.out.println("Success");     
         
         
