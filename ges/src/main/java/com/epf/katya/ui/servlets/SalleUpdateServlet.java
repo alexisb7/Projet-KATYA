@@ -41,10 +41,11 @@ public class SalleUpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
         Salle salle = salleService.findByNumero(numero);
+        salle.setNumero(request.getParameter("id"));
         salle.setEtage(Integer.parseInt(request.getParameter("etage")));
         salle.setCapacite(Integer.parseInt(request.getParameter("capacite")));
         salle.setUtilite(request.getParameter("utilite"));
-        salleService.update(salle);
+        salleService.update(salle, numero);
 
         response.sendRedirect("/ges/salle");
     }

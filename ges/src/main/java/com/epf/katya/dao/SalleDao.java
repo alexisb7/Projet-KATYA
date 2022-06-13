@@ -20,7 +20,7 @@ public class SalleDao {
 
     private static final String CREATE_SALLE_QUERY = "INSERT INTO Salle(numero, etage, capacite, utilite, disponibilite_salle, date_acquisition_salle) VALUES(?, ?, ?, ?, ?, ?);";
     private static final String DELETE_SALLE_QUERY = "DELETE FROM Salle WHERE numero=?;";
-    private static final String UPDATE_SALLE_QUERY = "UPDATE Salle SET etage=?, capacite=?, utilite=?, disponibilite_salle=?, date_acquisition_salle=? WHERE numero=?;";
+    private static final String UPDATE_SALLE_QUERY = "UPDATE Salle SET numero=?, etage=?, capacite=?, utilite=?, disponibilite_salle=?, date_acquisition_salle=? WHERE numero=?;";
     private static final String FIND_SALLE_QUERY = "SELECT * FROM Salle;";
     private static final String FIND_SALLE_BY_NUMERO_QUERY = "SELECT * FROM Salle WHERE numero=?;";
     private static final String COUNT_SALLE_QUERY = "SELECT COUNT(numero) FROM Salle;";
@@ -47,17 +47,18 @@ public class SalleDao {
         return 0;
     }
 
-    public int update(Salle salle) throws DaoException {
+    public int update(Salle salle, String numero) throws DaoException {
         try {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(UPDATE_SALLE_QUERY);
 
-            pstat.setString(6, salle.getNumero());
-            pstat.setInt(1, salle.getEtage());
-            pstat.setInt(2, salle.getCapacite());
-            pstat.setString(3, salle.getUtilite());
-            pstat.setInt(4, salle.getDisponibilite_salle());
-            pstat.setDate(5, Date.valueOf(salle.getDate_acquisition_salle()));
+            pstat.setString(1, salle.getNumero());
+            pstat.setInt(2, salle.getEtage());
+            pstat.setInt(3, salle.getCapacite());
+            pstat.setString(4, salle.getUtilite());
+            pstat.setInt(5, salle.getDisponibilite_salle());
+            pstat.setDate(6, Date.valueOf(salle.getDate_acquisition_salle()));
+            pstat.setString(7, numero);
 
             pstat.executeUpdate();
             con.close();

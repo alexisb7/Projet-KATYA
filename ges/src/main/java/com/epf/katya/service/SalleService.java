@@ -31,9 +31,9 @@ public class SalleService {
         return 0;
     }
 
-    public int update(Salle salle) {
+    public int update(Salle salle, String numero) {
         try {
-            return this.salleDao.update(salle);
+            return this.salleDao.update(salle, numero);
         } catch (DaoException e) {
             e.printStackTrace();
         }

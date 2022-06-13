@@ -19,6 +19,13 @@
                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_update">
                      <div class="box-body">
                         <div class="form-group">
+                            <label for="etage" class="col-sm-2 control-label">Numero</label>
+                            
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="id" name="id" value="${salle.numero}" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="etage" class="col-sm-2 control-label">Etage</label>
 
                             <div class="col-sm-10">
