@@ -1,0 +1,55 @@
+.red {
+    color: red;
+}
+
+.black{
+    color: black
+}
+
+.white{
+    color: white;
+}
+
+/* Background with the same gradient as the main epf website */
+.backred {
+    background: linear-gradient(to right, purple, red);
+}
+
+.backreddown{
+    background: linear-gradient(to bottom, purple, red);
+}
+
+.backwhite{
+    background-color: white;
+}
+
+
+
+/* Footer display */
+.footerText{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#parent {
+    width: 100%;
+    height: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.child {
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+}
+
+.footerLink{
+    color: white;
+}
+
+/* Footer background */
+.backgrey {
+    background: linear-gradient(to right, rgb(126, 126, 126), rgb(31, 30, 30));
+}
