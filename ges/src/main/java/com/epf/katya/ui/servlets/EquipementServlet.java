@@ -18,7 +18,7 @@ public class EquipementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipements.jsp");
+        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
 
         r.forward(request, response);
 

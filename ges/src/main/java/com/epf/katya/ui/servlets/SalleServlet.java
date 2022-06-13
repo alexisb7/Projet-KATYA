@@ -18,7 +18,7 @@ public class SalleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/salles.jsp");
+        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/salle.jsp");
 
         r.forward(request, response);
 

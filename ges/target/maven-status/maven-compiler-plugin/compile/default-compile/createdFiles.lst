@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 com\epf\katya\main\Main.class
 com\epf\katya\dao\ReservationSalleDao.class
 com\epf\katya\utils\IOUtils.class
@@ -24,5 +23,3 @@ com\epf\katya\persistence\ConnectionManager.class
 com\epf\katya\exception\ServiceException.class
 com\epf\katya\model\Utilisateur.class
 com\epf\katya\service\SalleService.class
-=======
->>>>>>> 660bd0bc054384a631240fc37ebb7ff404eeae18
