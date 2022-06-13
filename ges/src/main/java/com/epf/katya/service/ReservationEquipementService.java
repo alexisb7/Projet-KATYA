@@ -19,20 +19,28 @@ public class ReservationEquipementService {
     } 
    
 
-    /* public static ReservationEquipementService instance;
-
-    public static ReservationEquipementService getInstance() {
-        if (instance == null) {
-            instance = new ReservationEquipementService();
-        }
-        return instance;
-    } */
-
     public int create(ReservationEquipement reservationEquipement) throws ServiceException {
         try {
             this.reservationEquipementDao.create(reservationEquipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int update(ReservationEquipement reservationEquipement) throws ServiceException {
+        try {
+            this.reservationEquipementDao.update(reservationEquipement);
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int delete(ReservationEquipement reservationEquipement) throws ServiceException {
+        try {
+            this.reservationEquipementDao.delete(reservationEquipement);
+        } catch (DaoException e) {
             e.printStackTrace();
         }
         return 0;
@@ -42,9 +50,28 @@ public class ReservationEquipementService {
         try {
             return this.reservationEquipementDao.findAll();
         } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ReservationEquipement findById(int id_reservation_equipement) throws ServiceException {
+        try {
+            return this.reservationEquipementDao.findById(id_reservation_equipement);
+        } catch (DaoException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int count() throws ServiceException {
+        try {
+            return this.reservationEquipementDao.count();
+        } catch (DaoException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

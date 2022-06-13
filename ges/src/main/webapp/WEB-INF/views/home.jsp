@@ -14,7 +14,11 @@
 
             <h1>Ici l'affichage de la base de donnees</h1>
 
+<<<<<<< HEAD
             <img src="/ges/src/main/webapp/resources/stockage/logoEPF.png" alt="logoEPF">
+=======
+            
+>>>>>>> main
 
         </div>
 

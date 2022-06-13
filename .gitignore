@@ -1,3 +1,8 @@
 .DS_Store
 .vscode
-ges/.settings
+.settings
+.idea
+.classpath
+.project
+ges/.gitignore
+ges/ges.iml

@@ -93,7 +93,7 @@ public class Equipement {
         return "Equipement [date_acquisition=" + date_acquisition + ", description=" + description
                 + ", disponibilite_equipement=" + disponibilite_equipement + ", etat=" + etat + ", id_document="
                 + id_document + ", id_equipement=" + id_equipement + ", nom_equipement=" + nom_equipement
-                + ", zone_de_stockage=" + zone_stockage + "]";
+                + ", zone_stockage=" + zone_stockage + "]";
     }
 
     

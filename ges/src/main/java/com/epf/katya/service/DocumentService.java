@@ -38,6 +38,16 @@ public class DocumentService {
       return 0;
     }
 
+    public int delete(Document document) throws ServiceException{
+      try {
+        this.documentDao.delete(document);
+      } catch (DaoException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+      return 0;
+    }
+
     public List<Document> findAll() throws ServiceException {
       try {
         return this.documentDao.findAll();
@@ -46,5 +56,35 @@ public class DocumentService {
         e.printStackTrace();
       }
       return null;
+    }
+
+    public int update(Document document) throws ServiceException{
+      try {
+        this.documentDao.update(document);
+      } catch (DaoException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+      return 0;
+    }
+
+    public Document findById(int id_document) throws ServiceException{
+      try {
+        return this.documentDao.findById(id_document);
+      } catch (DaoException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+      return null;
+    }
+
+    public int count() throws ServiceException {
+      try {
+        return this.documentDao.count();
+      } catch (DaoException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+      return 0;
     }
 }
