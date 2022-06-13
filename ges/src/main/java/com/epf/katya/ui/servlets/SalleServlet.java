@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/salles")
-public class SallesServlet extends HttpServlet {
+@WebServlet("/salle")
+public class SalleServlet extends HttpServlet {
 //    public void init() throws ServletException {
 //        super.init();
 //        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
@@ -18,7 +18,7 @@ public class SallesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/salles.jsp");
+        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/salle.jsp");
 
         r.forward(request, response);
 
