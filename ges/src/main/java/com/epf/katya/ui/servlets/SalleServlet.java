@@ -12,7 +12,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import java.io.IOException;
 
 
-@WebServlet("/equipement")
+@WebServlet("/salle")
 public class SalleServlet extends HttpServlet {
 
    public void init() throws ServletException {
