@@ -19,20 +19,10 @@ public class ReservationEquipementService {
     } 
    
 
-    /* public static ReservationEquipementService instance;
-
-    public static ReservationEquipementService getInstance() {
-        if (instance == null) {
-            instance = new ReservationEquipementService();
-        }
-        return instance;
-    } */
-
     public int create(ReservationEquipement reservationEquipement) throws ServiceException {
         try {
             this.reservationEquipementDao.create(reservationEquipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -42,7 +32,6 @@ public class ReservationEquipementService {
         try {
             this.reservationEquipementDao.update(reservationEquipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -52,7 +41,6 @@ public class ReservationEquipementService {
         try {
             this.reservationEquipementDao.delete(reservationEquipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -62,7 +50,6 @@ public class ReservationEquipementService {
         try {
             return this.reservationEquipementDao.findAll();
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
