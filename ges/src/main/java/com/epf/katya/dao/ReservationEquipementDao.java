@@ -18,16 +18,8 @@ import com.epf.katya.persistence.ConnectionManager;
 @Repository
 public class ReservationEquipementDao {
     
-    //private static ReservationEquipementDao instance = null;
-    
     public ReservationEquipementDao() {}
 
-    /* public static ReservationEquipementDao getInstance() {
-        if(instance == null){
-            instance = new ReservationEquipementDao();
-        }
-        return instance;
-    } */
 
     private final static String CREATE_RESERVATION_EQUIPEMENT_QUERY = "INSERT INTO Reservation_equipement(id_reservation_equipement, id_utilisateur, id_utilisateur_validation, id_equipement, date_debut, date_fin, etat_validation) VALUES (?, ?, ?, ?, ?, ?, ?);";
     private final static String FIND_RESERVATIONS_EQUIPEMENT_QUERY = "SELECT * FROM Reservation_equipement;";
@@ -50,7 +42,6 @@ public class ReservationEquipementDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -70,10 +61,8 @@ public class ReservationEquipementDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        
         return 0;
     }
 
@@ -85,7 +74,6 @@ public class ReservationEquipementDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -111,10 +99,8 @@ public class ReservationEquipementDao {
             while(rs.next());
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-    
         return liste_reservation_equipement;
     }
 
@@ -135,7 +121,6 @@ public class ReservationEquipementDao {
             con.close();
             return reservationEquipement;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
@@ -151,7 +136,6 @@ public class ReservationEquipementDao {
             nb_reservation_equipement = rs.getInt(1);
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return nb_reservation_equipement;
