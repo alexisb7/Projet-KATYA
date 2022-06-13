@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+<<<<<<< HEAD
 @WebServlet("/salle")
+=======
+@WebServlet("/salles")
+>>>>>>> 59357f7f2bca09e448d27eefaaf72f1600719efb
 public class SalleServlet extends HttpServlet {
 //    public void init() throws ServletException {
 //        super.init();
