@@ -1,5 +1,6 @@
 package com.epf.katya.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -59,6 +60,22 @@ public class SalleService {
 
     public int count() {
         return this.salleDao.count();
+    }
+
+    public List<Salle> research(String research) { 
+		try {
+            ArrayList <Salle>liste_recherche = new ArrayList<>();
+            List <Salle>liste_salle = this.salleDao.findAll();
+            for (Salle salle : liste_salle) {
+                if(salle.getNumero().contains((research))) {
+                    liste_recherche.add(salle);
+                }
+            }
+            return liste_recherche;
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
 
