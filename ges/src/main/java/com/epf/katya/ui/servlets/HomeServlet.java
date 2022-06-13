@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/home")
-public class HomeServlt extends HttpServlet {
+public class HomeServlet extends HttpServlet {
 //    public void init() throws ServletException {
 //        super.init();
 //        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
