@@ -16,9 +16,25 @@ public class UtilisateurService {
     public UtilisateurService(UtilisateurDao utilisateurDao) {
         this.utilisateurDao = utilisateurDao;
     }
+
+    public int controlConnection(String id_utilisateur, String mdp_utilisateur){
+        try {
+            return this.utilisateurDao.controlConnection(id_utilisateur, mdp_utilisateur);
+        } catch (DaoException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
+    }
    
     public int create(Utilisateur utilisateur) {
-        return this.utilisateurDao.create(utilisateur); 
+        try {
+           return this.utilisateurDao.create(utilisateur);
+        } catch (DaoException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
+        return 0;
     }
 
     public int delete(int id_utilisateur) {
@@ -48,7 +64,7 @@ public class UtilisateurService {
         return null;
     }
 
-    public Utilisateur findById(int id_utilisateur) {
+    public Utilisateur findById(String id_utilisateur) {
         try {
             return this.utilisateurDao.findById(id_utilisateur);
         } catch (DaoException e) {
