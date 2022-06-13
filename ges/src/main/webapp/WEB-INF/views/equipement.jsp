@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  <!-- Added /jsp before jstl -->
 
 <!DOCTYPE html>
 <html>
@@ -13,6 +13,18 @@
         <div class="content-wrapper backwhite">
 
             <h1>Equipements</h1>
+
+            <div class="backwhite">
+
+                <c:forEach items="${listEquipement}" var="equipement">
+
+                        <p>${equipement.id_equipement}</p>
+
+                        <p>Ylo</p>
+
+                </c:forEach>
+            </div>
+            
 
             
 
