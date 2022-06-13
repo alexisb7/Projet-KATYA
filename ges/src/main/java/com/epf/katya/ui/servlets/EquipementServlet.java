@@ -14,6 +14,7 @@ import com.epf.katya.service.EquipementService;
 
 import java.io.IOException;
 
+
 @WebServlet("/equipement")
 public class EquipementServlet extends HttpServlet {
 
@@ -24,6 +25,7 @@ public class EquipementServlet extends HttpServlet {
        super.init();
        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
