@@ -18,6 +18,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/skins/_all-skins.min.css">
 
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style_andy.css">
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/stylecss.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
