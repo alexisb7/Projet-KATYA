@@ -84,11 +84,11 @@ public class Main {
         */
         
 
-        SalleDao salleDao = new SalleDao();
+        /* SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
 
         Salle salle = new Salle();
-        salle.setNumero("P212");
+        salle.setNumero("P208");
         salle.setEtage(2);
         salle.setCapacite(25);
         salle.setUtilite("salle de reunion");
@@ -96,13 +96,13 @@ public class Main {
         salle.setDate_acquisition_salle(LocalDate.now());
 
 
-        salleService.create(salle);
+        //salleService.create(salle);
         //salleService.delete(salle);
-        //salleService.update(salle);
+        salleService.update(salle, "A106");
         
         System.out.println(salleService.findAll());
-        System.out.println(salleService.count());
-        System.out.println(salleService.findByNumero("P212"));
+        //System.out.println(salleService.research("A"));
+        //System.out.println(salleService.findByNumero("A106"));
         System.out.println("Success");     
         
         
@@ -118,7 +118,15 @@ public class Main {
             // TODO Auto-generated catch block
             e.printStackTrace();
         } */
-        
+        UtilisateurDao utilisateurDao = new UtilisateurDao();
+        UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
+
+        Utilisateur utilisateur = new Utilisateur("trist", "polo@epf.fr", "password","beriot","Admin",LocalDate.now());
+        //utilisateurService.create(utilisateur);
+        //System.out.println(utilisateurService.controlConnection("uvk", "password"));
+        //utilisateurService.update(utilisateur);
+        System.out.println(utilisateurService.findAll());
+        //System.out.println(utilisateurService.findById("trist"));
     }
     
 }
