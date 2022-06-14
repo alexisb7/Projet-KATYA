@@ -37,7 +37,8 @@
             background-color: #f2f2f2;
         }
         th {
-            background-color: #ddd;
+            background-color: rgb(181, 57, 103);
+            color: white;
         }
         th,td {
             padding: 5px;
@@ -66,7 +67,7 @@
         /*Style disabled*/
         .tablemanager th.disableSort {
 
-        } 
+        }
         #for_numrows {
             padding: 10px;
             float: left;
@@ -78,6 +79,14 @@
         #pagesControllers {
             display: block;
             text-align: center;
+        }
+        .controltd{
+            width: 10%;
+        }
+        .stylecontrol{
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: -10px
         }
     </style>
     <body>
@@ -116,7 +125,7 @@
                             <td class="prova">${resa.date_debut}</td>
                             <td class="prova">${resa.date_fin}</td>
                             <td class="prova">${resa.id_utilisateur_validation}</td>
-                            <td class="prova">
+                            <td class="prova controltd">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation/update_salle?id=${resa.id_reservation_salle}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">

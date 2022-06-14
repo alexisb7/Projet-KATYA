@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Style -->
     </head>
+
     <style type="text/css">
         body {
             font-family: "Roboto Condensed", Helvetica, sans-serif;
@@ -35,7 +36,8 @@
             background-color: #f2f2f2;
         }
         th {
-            background-color: #ddd;
+            background-color: rgb(181, 57, 103);
+            color: white;
         }
         th,td {
             padding: 5px;
@@ -64,7 +66,7 @@
         /*Style disabled*/
         .tablemanager th.disableSort {
 
-        } 
+        }
         #for_numrows {
             padding: 10px;
             float: left;
@@ -76,6 +78,14 @@
         #pagesControllers {
             display: block;
             text-align: center;
+        }
+        .controltd{
+            width: 10%;
+        }
+        .stylecontrol{
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: -10px
         }
     </style>
     <body>
@@ -105,7 +115,7 @@
                             <td class="prova">${user.nom_utilisateur}</td>
                             <td class="prova">${user.role}</td>
                             <td class="prova">${user.date_entree}</td>
-                            <td class="prova">
+                            <td class="prova controltd">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur?id=${user.id_utilisateur}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/utilisateur/update?id=${user.id_utilisateur}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">

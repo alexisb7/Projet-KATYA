@@ -37,7 +37,8 @@
             background-color: #f2f2f2;
         }
         th {
-            background-color: #ddd;
+            background-color: rgb(181, 57, 103);
+            color: white;
         }
         th,td {
             padding: 5px;
@@ -79,6 +80,14 @@
             display: block;
             text-align: center;
         }
+        .controltd{
+            width: 10%;
+        }
+        .stylecontrol{
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: -10px
+        }
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
@@ -116,7 +125,7 @@
                             <td class="prova">${resa.date_debut}</td>
                             <td class="prova">${resa.date_fin}</td>
                             <td class="prova">${resa.etat_validation}</td>
-                            <td class="prova">
+                            <td class="prova controltd">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_equip=${resa.id_reservation_equipement}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation/update_equipement?id=${resa.id_reservation_equipement}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
