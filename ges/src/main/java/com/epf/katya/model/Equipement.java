@@ -24,6 +24,12 @@ public class Equipement {
         this.id_document = id_document;
     }
 
+
+    public Equipement(int idEquipement, String parameter, String string, String parameter2, int parseInt2, LocalDate parse,
+            String parameter3) {
+    }
+    // Pour la Servlet EquipementCreateServlet
+
     public int getId_equipement() {
         return id_equipement;
     }

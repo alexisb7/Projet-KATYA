@@ -14,13 +14,17 @@
 
             <h1>Equipements</h1>
 
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/equipement/equipementCreate">Ajouter un equipement</a>
+
+
             <div class="backwhite">
+
+                ${listEquipement}
 
                 <c:forEach items="${listEquipement}" var="equipement">
 
                         <p>${equipement.id_equipement}</p>
-
-                        <p>Ylo</p>
+                        <p>${equipement.nom_equipement}</p>
 
                 </c:forEach>
             </div>
