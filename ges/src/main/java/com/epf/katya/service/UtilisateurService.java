@@ -37,7 +37,7 @@ public class UtilisateurService {
         return 0;
     }
 
-    public int delete(int id_utilisateur) {
+    public int delete(String id_utilisateur) {
         try {
             return this.utilisateurDao.delete(id_utilisateur);
         } catch (DaoException e) {
@@ -46,9 +46,9 @@ public class UtilisateurService {
         return 0;
     }
 
-    public int update(Utilisateur utilisateur) {
+    public int update(Utilisateur utilisateur, String id) {
         try {
-            return this.utilisateurDao.update(utilisateur);
+            return this.utilisateurDao.update(utilisateur, id);
         } catch (DaoException e) {
             e.printStackTrace();
         }
