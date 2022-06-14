@@ -32,12 +32,12 @@ public class ReservationSalleDao {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(CREATE_RESERVATION_SALLE_QUERY);
             pstat.setInt(1, reservationSalle.getId_reservation_salle());
-            pstat.setInt(2, reservationSalle.getNumero_salle());
-            pstat.setInt(3, reservationSalle.getId_utilisateur());
+            pstat.setString(2, reservationSalle.getNumero_salle());
+            pstat.setString(3, reservationSalle.getId_utilisateur());
             pstat.setInt(4, reservationSalle.getEtat_validation());
             pstat.setDate(5, Date.valueOf(reservationSalle.getDate_debut()));
             pstat.setDate(6, Date.valueOf(reservationSalle.getDate_fin()));
-            pstat.setInt(7, reservationSalle.getId_utilisateur_validation());
+            pstat.setString(7, reservationSalle.getId_utilisateur_validation());
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -51,12 +51,12 @@ public class ReservationSalleDao {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(UPDATE_RESERVATION_SALLE_QUERY);
             pstat.setInt(7, reservationSalle.getId_reservation_salle());
-            pstat.setInt(1, reservationSalle.getNumero_salle());
-            pstat.setInt(2, reservationSalle.getId_utilisateur());
+            pstat.setString(1, reservationSalle.getNumero_salle());
+            pstat.setString(2, reservationSalle.getId_utilisateur());
             pstat.setInt(3, reservationSalle.getEtat_validation());
             pstat.setDate(4, Date.valueOf(reservationSalle.getDate_debut()));
             pstat.setDate(5, Date.valueOf(reservationSalle.getDate_fin()));
-            pstat.setInt(6, reservationSalle.getId_utilisateur_validation());
+            pstat.setString(6, reservationSalle.getId_utilisateur_validation());
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -87,12 +87,12 @@ public class ReservationSalleDao {
             rs.next();
             do {
                 int id_reservation_salle = rs.getInt("id_reservation_salle");
-                int numero_salle = rs.getInt("numero_salle");
-                int id_utilisateur = rs.getInt("id_utilisateur");
+                String numero_salle = rs.getString("numero_salle");
+                String id_utilisateur = rs.getString("id_utilisateur");
                 int etat_validation = rs.getInt("etat_validation");
                 LocalDate date_debut = rs.getDate("date_debut").toLocalDate();
                 LocalDate date_fin = rs.getDate("date_fin").toLocalDate();
-                int id_utilisateur_validation = rs.getInt("id_utilisateur_validation");
+                String id_utilisateur_validation = rs.getString("id_utilisateur_validation");
                 ReservationSalle reservationSalle = new ReservationSalle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date_debut, date_fin, id_utilisateur_validation);
                 liste_reservation_salle.add(reservationSalle);
             }while(rs.next());
@@ -110,12 +110,12 @@ public class ReservationSalleDao {
             pstat.setInt(1, id_reservation_salle);
             ResultSet rs = pstat.executeQuery();
             rs.next();
-            int numero_salle = rs.getInt("numero_salle");
-            int id_utilisateur = rs.getInt("id_utilisateur");
+            String numero_salle = rs.getString("numero_salle");
+            String id_utilisateur = rs.getString("id_utilisateur");
             int etat_validation = rs.getInt("etat_validation");
             LocalDate date_debut = rs.getDate("date_debut").toLocalDate();
             LocalDate date_fin = rs.getDate("date_fin").toLocalDate();
-            int id_utilisateur_validation = rs.getInt("id_utilisateur_validation");
+            String id_utilisateur_validation = rs.getString("id_utilisateur_validation");
             ReservationSalle reservationSalle = new ReservationSalle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date_debut, date_fin, id_utilisateur_validation);
             con.close();
             return reservationSalle;
