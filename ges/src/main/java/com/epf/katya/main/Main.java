@@ -61,25 +61,25 @@ public class Main {
         //ReservationEquipementService reservationEquipementService = context.getBean(ReservationEquipementService.class);
         
         
-        /*
+        /* 
         UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
         
         Utilisateur utilisateur = new Utilisateur();
-        utilisateur.setId_utilisateur(2);
+        utilisateur.setId_utilisateur("tristan");
         utilisateur.setEmail("titititi@gmail.com");
-        utilisateur.setMdp("123457");
+        utilisateur.setMdp("password");
         utilisateur.setRole("MIN1");
         utilisateur.setNom_utilisateur("tata");
         utilisateur.setDate_entree(LocalDate.now());
         
         
-        //utilisateurService.create(utilisateur);
+        utilisateurService.create(utilisateur);
         //utilisateurService.delete(1);
-        utilisateurService.update(utilisateur);
+        //utilisateurService.update(utilisateur);
         System.out.println(utilisateurService.findAll()); 
-        System.out.println(utilisateurService.findById(1));   
+        //System.out.println(utilisateurService.findById(1));   
         System.out.println(utilisateurService.count());     
         */
         
@@ -118,14 +118,14 @@ public class Main {
             // TODO Auto-generated catch block
             e.printStackTrace();
         } */
-        UtilisateurDao utilisateurDao = new UtilisateurDao();
+        /*UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
         //Utilisateur utilisateur = new Utilisateur("trist", "polo@epf.fr", "password","beriot","Admin",LocalDate.now());
         //utilisateurService.create(utilisateur);
         System.out.println(utilisateurService.controlConnection("uvk", "password"));
         //System.out.println(utilisateurService.findAll());
-        //System.out.println(utilisateurService.findById("trist"));
+        //System.out.println(utilisateurService.findById("trist"));*/
     }
     
 }
