@@ -22,23 +22,46 @@ public class UtilisateurDao {
 
     private static final String CREATE_UTILISATEUR_QUERY = "INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES(?, ?, ?, ?, ?, ?);";
     private static final String DELETE_UTILISATEUR_QUERY = "DELETE FROM Utilisateur WHERE id_utilisateur=?;";
-    private static final String UPDATE_UTILISATEUR_QUERY = "UPDATE utilisateur SET email=?, mdp=?, nom_utilisateur=?, role=?, date_entree=? WHERE id_utilisateur=?;";
+    private static final String UPDATE_UTILISATEUR_QUERY = "UPDATE Utilisateur SET id_utilisateur=?, email=?, mdp=?, nom_utilisateur=?, role=?, date_entree=? WHERE id_utilisateur=?;";
     private static final String FIND_UTILISATEUR_QUERY = "SELECT * FROM Utilisateur;";
     private static final String FIND_UTILISATEUR_BY_ID_QUERY = "SELECT * FROM Utilisateur WHERE id_utilisateur=?;";
     private static final String COUNT_UTILISATEUR_QUERY ="SELECT COUNT(id_utilisateur) FROM Utilisateur;";
 
-    public int create(Utilisateur utilisateur){
+
+    public int controlConnection(String id_utilisateur, String mdp_utilisateur) throws DaoException{
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(FIND_UTILISATEUR_BY_ID_QUERY);
+            pstat.setString(1, id_utilisateur);
+            ResultSet rs = pstat.executeQuery();
+            if(rs.next()){
+                String mdp = rs.getString("mdp");
+                if(mdp.equals(mdp_utilisateur)){
+                    return 1;
+                }
+                else {
+                    return 2;
+                }
+            }
+            else {
+                return 3;
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    public int create(Utilisateur utilisateur) throws DaoException{
         try {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(CREATE_UTILISATEUR_QUERY);
-
-            pstat.setInt(1, utilisateur.getId_utilisateur());
+            pstat.setString(1, utilisateur.getId_utilisateur());
             pstat.setString(2, utilisateur.getEmail());
             pstat.setString(3, utilisateur.getMdp());
             pstat.setString(4, utilisateur.getNom_utilisateur());
             pstat.setString(5, utilisateur.getRole());
             pstat.setDate(6, Date.valueOf(utilisateur.getDate_entree()));
-
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -47,11 +70,11 @@ public class UtilisateurDao {
         return 0;
     }
 
-    public int delete(int id_utilisateur) throws DaoException {
+    public int delete(String id_utilisateur) throws DaoException {
         try {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(DELETE_UTILISATEUR_QUERY);
-            pstat.setInt(1, id_utilisateur);
+            pstat.setString(1, id_utilisateur);
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -60,17 +83,17 @@ public class UtilisateurDao {
         return 0;
     }
 
-    public int update(Utilisateur utilisateur) throws DaoException {
+    public int update(Utilisateur utilisateur, String id) throws DaoException {
         try {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(UPDATE_UTILISATEUR_QUERY);
-
-            pstat.setInt(6, utilisateur.getId_utilisateur());
-            pstat.setString(1, utilisateur.getEmail());
-            pstat.setString(2, utilisateur.getMdp());
-            pstat.setString(3, utilisateur.getNom_utilisateur());
-            pstat.setString(4, utilisateur.getRole());
-            pstat.setDate(5, Date.valueOf(utilisateur.getDate_entree()));
+            pstat.setString(1, utilisateur.getId_utilisateur());
+            pstat.setString(2, utilisateur.getEmail());
+            pstat.setString(3, utilisateur.getMdp());
+            pstat.setString(4, utilisateur.getNom_utilisateur());
+            pstat.setString(5, utilisateur.getRole());
+            pstat.setDate(6, Date.valueOf(utilisateur.getDate_entree()));
+            pstat.setString(7, id);
             pstat.executeUpdate();
 
             con.close();
@@ -88,7 +111,7 @@ public class UtilisateurDao {
             ResultSet rs = pstat.executeQuery();
             rs.next();
             do {
-                int id_utilisateur = rs.getInt("id_utilisateur");
+                String id_utilisateur = rs.getString("id_utilisateur");
                 String email = rs.getString("email");
                 String mdp = rs.getString("mdp");
                 String nom_utilisateur = rs.getString("nom_utilisateur");
@@ -104,11 +127,11 @@ public class UtilisateurDao {
         return liste_utilisateur;  
     }
 
-    public Utilisateur findById(int id_utilisateur) throws DaoException {
+    public Utilisateur findById(String id_utilisateur) throws DaoException {
         try  {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(FIND_UTILISATEUR_BY_ID_QUERY);
-            pstat.setInt(1, id_utilisateur);
+            pstat.setString(1, id_utilisateur);
             ResultSet rs = pstat.executeQuery();
             rs.next();
             

@@ -3,7 +3,7 @@ package com.epf.katya.model;
 import java.time.LocalDate;
 
 public class Utilisateur {
-    private int id_utilisateur;
+    private String id_utilisateur;
     private String email;
     private String mdp;
     private String nom_utilisateur;
@@ -12,7 +12,7 @@ public class Utilisateur {
 
     public Utilisateur(){};
 
-    public Utilisateur(int id_utilisateur, String email, String mdp, String nom_utilisateur, String role, LocalDate date_entree) {
+    public Utilisateur(String id_utilisateur, String email, String mdp, String nom_utilisateur, String role, LocalDate date_entree) {
         this.id_utilisateur = id_utilisateur;
         this.email = email;
         this.mdp = mdp;
@@ -27,7 +27,7 @@ public class Utilisateur {
                 + ", mdp=" + mdp + ", nom_utilisateur=" + nom_utilisateur + ", role=" + role + "]";
     }
 
-    public void setId_utilisateur(int id_utilisateur) {
+    public void setId_utilisateur(String id_utilisateur) {
         this.id_utilisateur = id_utilisateur;   
     }
 
@@ -51,7 +51,7 @@ public class Utilisateur {
         this.date_entree = date_entree;
     }
 
-    public int getId_utilisateur() {
+    public String getId_utilisateur() {
         return id_utilisateur;
     }
 
