@@ -110,22 +110,47 @@
                     <c:forEach items="${listResaEquipement}" var="resa">
                         <tr>
                             <td class="prova">${resa.id_reservation_equipement}</td>
-                            <td class="prova">${resa.id_utilisateur}</td>
-                            <td class="prova">${resa.id_utilisateur_validation}</td>
-                            <td class="prova">${resa.id_equipement}</td>
+                            <td class ="prova">
+                                <c:forEach items = "${listUser}" var="user">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
+										${user.nom_utilisateur}
+									</c:if>
+								</c:forEach>
+                            </td>
+                            <td class ="prova">
+                                <c:forEach items = "${listUser}" var="user">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur_validation}">
+										${user.nom_utilisateur}
+									</c:if>
+								</c:forEach>
+                            </td>
+                            <td class ="prova">
+                                <c:forEach items = "${listEquipement}" var="equipement">
+									<c:if test="${equipement.id_equipement==resa.id_equipement}">
+										${equipement.nom_equipement}
+									</c:if>
+								</c:forEach>
+                            </td>
                             <td class="prova">${resa.date_debut}</td>
                             <td class="prova">${resa.date_fin}</td>
-                            <td class="prova">${resa.etat_validation}</td>
+                            <td class="prova">
+                                <c:if test="${resa.etat_validation==1}">
+									Valide
+								</c:if>
+                                <c:if test="${resa.etat_validation==0}">
+									Non Valide
+								</c:if>
+                            </td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_equip=${resa.id_reservation_equipement}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation/update_equipement?id=${resa.id_reservation_equipement}"
-                                                style="background-color: transparent;border-color: transparent;margin-right: -10px">
-                                                    <i  style="color: orange" class="fa fa-edit"></i>
-                                                </a>
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_equipement_update?id=${resa.id_reservation_equipement}"
+                                        style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                        <i  style="color: orange" class="fa fa-edit"></i>
+                                    </a>
                                     <button type="submit" class="btn btn-primary" title="Supprimer"
                                         style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                         <i  style="color: red" class="fa fa-trash"></i>
-                                        </button>
+                                    </button>
                                 </form>
                             </td>
                         </tr>

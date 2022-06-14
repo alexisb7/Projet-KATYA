@@ -17,7 +17,7 @@
         <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
 
         <div class="content-wrapper backwhite">
-            <h1>Creation d'une reservation d'equipement</h1>
+            <h1>Modification d'une reservation d'equipement</h1>
             <div class="box">
                 <!-- form start -->
                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation/create_equipement">
@@ -27,11 +27,20 @@
 
                             <div class="col-sm-10">
                                 <select class="form-control" id="id_equipement" name="id_equipement">
-                                    <c:forEach items="${listEquipement}" var="equip">  
-                                        <option value="${equip.id_equipement}">
-                                            ${equip.nom_equipement}
-                                        </option>
-                                    </c:forEach>
+                                    <c:forEach items = "${listEquipement}" var="equip">
+										<c:if test="${equip.id_equipement==resa.id_equipement}">
+											<option value="${equip.id_equipement}">
+                                        		${equip.nom_equipement}
+                                        	</option>
+										</c:if>
+									</c:forEach>
+									<c:forEach items = "${listEquipement}" var="equip">
+										<c:if test="${equip.id_equipement!=resa.id_equipement}">
+											<option value="${equip.id_equipement}">
+                                        		${equip.nom_equipement}
+                                        	</option>
+										</c:if>
+									</c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -41,11 +50,20 @@
             
                             <div class="col-sm-10">
                                 <select class="form-control" id="id_user" name="id_user">
-                                    <c:forEach items="${listUser}" var="user">  
-                                        <option value="${user.id_utilisateur}">
-                                            ${user.nom_utilisateur}
-                                        </option>
-                                    </c:forEach>
+                                    <c:forEach items = "${listUser}" var="user">
+										<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
+											<option value="${user.id_utilisateur}">
+                                        		${user.nom_utilisateur}
+                                        	</option>
+										</c:if>
+									</c:forEach>
+									<c:forEach items = "${listUser}" var="user">
+										<c:if test="${user.id_utilisateur!=resa.id_utilisateur}">
+											<option value="${user.id_utilisateur}">
+                                        		${user.nom_utilisateur}
+                                        	</option>
+										</c:if>
+									</c:forEach>
                                 </select>
                             </div>
                         </div> 
@@ -53,25 +71,35 @@
                             <label for="etat" class="col-sm-2 control-label">Etat de validation</label>
                             <div class="col-sm-10">
                                 <select class="form-control" id="etat" name="etat">
-                                    <option value="0">
-                                        Non valide 
-                                    </option>
-                                    <option value="1">
-                                        Valide 
-                                    </option>
+                                    <c:if test="${resa.etat_validation==1}">
+                                        <option value="1">
+                                            Valide 
+                                        </option>
+                                        <option value="0">
+                                            Non valide 
+                                        </option>
+								    </c:if>
+                                    <c:if test="${resa.etat_validation==0}">
+                                        <option value="0">
+                                            Non valide 
+                                        </option>
+                                        <option value="1">
+                                            Valide 
+                                        </option>
+								    </c:if>   
                                 </select>
                             </div>
                         </div> 	
                         <div class="form-group">
                             <label for="debut" class="col-sm-2 control-label">Debut</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="debut" name="debut" value="${date}" required>
+                                <input type="date" class="form-control" id="debut" name="debut" value="${resa.date_debut}" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="fin" class="col-sm-2 control-label">Fin</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="fin" name="fin" value="${date}" required>
+                                <input type="date" class="form-control" id="fin" name="fin" value="${resa.date_fin}" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -79,11 +107,20 @@
             
                             <div class="col-sm-10">
                                 <select class="form-control" id="id_user_valid" name="id_user_valid">
-                                    <c:forEach items="${listUser}" var="user">  
-                                        <option value="${user.id_utilisateur}">
-                                            ${user.nom_utilisateur}
-                                        </option>
-                                    </c:forEach>
+                                    <c:forEach items = "${listUser}" var="user">
+										<c:if test="${user.id_utilisateur==resa.id_utilisateur_validation}">
+											<option value="${user.id_utilisateur}">
+                                        		${user.nom_utilisateur}
+                                        	</option>
+										</c:if>
+									</c:forEach>
+									<c:forEach items = "${listUser}" var="user">
+										<c:if test="${user.id_utilisateur!=resa.id_utilisateur_validation}">
+											<option value="${user.id_utilisateur}">
+                                        		${user.nom_utilisateur}
+                                        	</option>
+										</c:if>
+									</c:forEach>
                                 </select>
                             </div>
                         </div> 
@@ -91,7 +128,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Ajouter</button>
+                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Modifier</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

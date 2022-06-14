@@ -39,6 +39,7 @@ public class ReservationSalleCreateServlet extends HttpServlet {
         String path="/WEB-INF/views/reservation/reservation_create_salle.jsp";
         request.setAttribute("listSalle", this.salleService.findAll());
         request.setAttribute("listUser", this.utilisateurService.findAll());
+        request.setAttribute("date", LocalDate.now());
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
