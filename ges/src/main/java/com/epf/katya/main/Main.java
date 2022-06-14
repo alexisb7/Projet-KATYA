@@ -123,16 +123,9 @@ public class Main {
 
         Utilisateur utilisateur = new Utilisateur("trist", "polo@epf.fr", "password","beriot","Admin",LocalDate.now());
         //utilisateurService.create(utilisateur);
-<<<<<<< HEAD
         System.out.println(utilisateurService.controlConnection("uvk", "password"));
         //System.out.println(utilisateurService.findAll());
         //System.out.println(utilisateurService.findById("trist"));*/
-=======
-        //System.out.println(utilisateurService.controlConnection("uvk", "password"));
-        //utilisateurService.update(utilisateur);
-        System.out.println(utilisateurService.findAll());
-        //System.out.println(utilisateurService.findById("trist"));
->>>>>>> 2b3fd7e6d903773e9d5ab5bf72bfe6f7356cf357
     }
     
 }
