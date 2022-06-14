@@ -15,7 +15,11 @@ import com.epf.katya.service.SalleService;
 
 import java.io.IOException;
 
+<<<<<<< HEAD
 @WebServlet("/salle_update")
+=======
+@WebServlet("/salle/update")
+>>>>>>> main
 public class SalleUpdateServlet extends HttpServlet {
 
     @Autowired
@@ -33,7 +37,11 @@ public class SalleUpdateServlet extends HttpServlet {
 
         numero = request.getParameter("numero");
         request.setAttribute("salle", salleService.findByNumero(numero));
+<<<<<<< HEAD
         RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/salle_update.jsp");
+=======
+        RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle_update.jsp");
+>>>>>>> main
         r.forward(request, response);
 
     }
