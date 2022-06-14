@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 
     <!DOCTYPE html>
     <html>
 
+=======
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+>>>>>>> ServletKhadim
     <head>
         <%@include file="/WEB-INF/views/common/head.jsp" %>
 

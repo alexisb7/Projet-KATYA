@@ -11,13 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.epf.katya.exception.ServiceException;
+import com.epf.katya.model.Equipement;
 import com.epf.katya.service.EquipementService;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 
-@WebServlet("/equipement/equipement")
-public class EquipementServlet extends HttpServlet {
+@WebServlet("/equipement/equipementCreate")
+public class EquipementCreateServlet extends HttpServlet {
 
     @Autowired
     EquipementService equipementService;
@@ -30,19 +32,24 @@ public class EquipementServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipementCreate.jsp").forward(request, response);
+        }
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+        Equipement equipement = new Equipement(100 ,request.getParameter("Nom_equipement"), request.getParameter("Zone_stockage"), request.getParameter("etat"), Integer.parseInt(request.getParameter("disponibilite_equipement")), LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),2);
         try {
-            request.setAttribute("listEquipement", this.equipementService.findAll());
-        
-            this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement.jsp").forward(request, response);
-        
-                } catch (ServiceException e) {
-                    e.printStackTrace();
-                }
+            equipementService.create(equipement);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        doGet(request, response);
 
+    }
         //RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
 
         //r.forward(request, response);
 
-    }
+    
 }
