@@ -121,10 +121,11 @@ public class Main {
         UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
-        //Utilisateur utilisateur = new Utilisateur("trist", "polo@epf.fr", "password","beriot","Admin",LocalDate.now());
+        Utilisateur utilisateur = new Utilisateur("trist", "polo@epf.fr", "password","beriot","Admin",LocalDate.now());
         //utilisateurService.create(utilisateur);
-        System.out.println(utilisateurService.controlConnection("uvk", "password"));
-        //System.out.println(utilisateurService.findAll());
+        //System.out.println(utilisateurService.controlConnection("uvk", "password"));
+        //utilisateurService.update(utilisateur);
+        System.out.println(utilisateurService.findAll());
         //System.out.println(utilisateurService.findById("trist"));
     }
     

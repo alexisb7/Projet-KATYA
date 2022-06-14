@@ -31,7 +31,7 @@ public class SalleServlet extends HttpServlet {
             throws ServletException, IOException {
  
         request.setAttribute("listeSalle", this.salleService.findAll());
-        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/salle.jsp");
+        RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle.jsp");
 
         r.forward(request, response);
   
@@ -44,7 +44,7 @@ public class SalleServlet extends HttpServlet {
         }else {        
             request.setAttribute("listeSalle", this.salleService.findAll());
         }				
-        this.getServletContext().getRequestDispatcher("/WEB-INF/views/salle.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/salle/salle.jsp").forward(request, response);
 }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

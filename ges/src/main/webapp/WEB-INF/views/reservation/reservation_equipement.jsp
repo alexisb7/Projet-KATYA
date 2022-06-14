@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -66,7 +66,7 @@
         /*Style disabled*/
         .tablemanager th.disableSort {
 
-        }
+        } 
         #for_numrows {
             padding: 10px;
             float: left;
@@ -85,136 +85,40 @@
         <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
 
         <div class="content-wrapper backwhite">
-
-            <h1>Reservations</h1>
+            <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation">
+                <div style="display:inline-block;margin-bottom:50px;">
+                    <button name="bouton_salle" value="salle" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 50px;margin-left: 190px;" class="btn btn-primary btn-lg">Reservations de salles</button>
+                    <button name="bouton_equip" value="equipement" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 50px;margin-left: 190px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
+                </div>
+            </form>
             <table class="tablemanager">
                 <thead>
                 <tr>
-                    <th class="disableSort">Number</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Date</th>
-                    <th>Points</th>
+                    <th class="disableSort">Id</th>
+                    <th>Utilisateur</th>
+                    <th>Validation</th>
+                    <th>Equipement</th>
+                    <th>Debut</th>
+                    <th>Fin</th>
+                    <th>Etat</th>
                     <th class="disableFilterBy">Controls</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="prova">1</td>
-                    <td class="prova">Sara</td>
-                    <td class="prova">Jackson</td>
-                    <td class="prova">08-06-1989</td>
-                    <td class="prova">94</td>
-                    <td class="prova"><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>10-05-1987</td>
-                    <td>80</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Adam</td>
-                    <td>Johnson</td>
-                    <td>10-05-1987</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>11-11-1972</td>
-                    <td>50</td>
-                    <td><a href="">Edit</a></td>
-                </tr>
+                    <c:forEach items="${listResaEquipement}" var="resa">
+                        <tr>
+                            <td class="prova">${resa.id_reservation_equipement}</td>
+                            <td class="prova">${resa.id_utilisateur}</td>
+                            <td class="prova">${resa.id_utilisateur_validation}</td>
+                            <td class="prova">${resa.id_equipement}</td>
+                            <td class="prova">${resa.date_debut}</td>
+                            <td class="prova">${resa.date_fin}</td>
+                            <td class="prova">${resa.etat_validation}</td>
+                            <td class="prova"><a href="">Edit</a></td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
-
-
         </div>
 
         <%@ include file="/WEB-INF/views/common/footer.jsp" %>
