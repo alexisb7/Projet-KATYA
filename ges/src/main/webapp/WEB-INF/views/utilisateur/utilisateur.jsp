@@ -89,8 +89,7 @@
            <table class="tablemanager">
             <thead>
             <tr>
-                <th class="disableSort">Id<            Equipement equipement = equipementService.findById(Integer.parseInt(request.getParameter("id_equipement")));
-                    /th>
+                <th class="disableSort">ID</th>
                 <th>Email</th>
                 <th>Nom</th>
                 <th>Role</th>
