@@ -20,7 +20,7 @@
                 <div class="content-wrapper backwhite">
                     <section class="sec">
                         <div class="section-header">
-                            <div class="container">
+                            <div class="container" style="margin-top: 0px; margin-bottom: 0px;">
                                 <h2>Contact Us</h2>
                                 <p>
                                     EPF has found a new home at the Alembert building, which until 2020 housed the ENS
@@ -34,7 +34,7 @@
                             </div>
                         </div>
 
-                        <div class="container">
+                        <div class="container" style="margin-top:0px; margin-bottom:0px;">
                             <div class="row">
                                 <div class="contact-info">
                                     <div class="contact-info-item">
@@ -93,13 +93,13 @@
                                 </div>
                                 <div class="reseaux">
                                     <ul class="res1">
-                                        <li><a href="https://www.facebook.com/EPF.ingenieurs/"><img
+                                        <li style="margin-left:10px;"><a href="https://www.facebook.com/EPF.ingenieurs/" target="_blank"><img
                                                     src="resources/stockage/1.png"></a></li>
-                                        <li><a href="https://www.instagram.com/epfingenieurs/"><img
+                                        <li style="margin-left:10px;"><a href="https://www.instagram.com/epfingenieurs/" target="_blank"><img
                                                     src="resources/stockage/3.png"></a></li>
-                                        <li><a href="https://www.linkedin.com/in/jnicolle/?originalSubdomain=fr/"><img
+                                        <li style="margin-left:10px;"><a href="https://www.linkedin.com/in/jnicolle/?originalSubdomain=fr/" target="_blank"><img
                                                     src="resources/stockage/5.png"></a></li>
-                                        <li><a href=" https://twitter.com/epf_ingenieurs"><img
+                                        <li style="margin-left:10px;"><a href=" https://twitter.com/epf_ingenieurs" target="_blank"><img
                                                     src="resources/stockage/2.png"></a></li>
                                     </ul>
                                 </div>
