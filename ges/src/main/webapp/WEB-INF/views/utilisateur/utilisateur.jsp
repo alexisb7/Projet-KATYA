@@ -85,7 +85,7 @@
         <div class="content-wrapper backwhite">
 
            <h1>Utilisateurs</h1>
-		   <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur/create">Ajouter</a> 
+		   <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur_create">Ajouter</a> 
            <table class="tablemanager">
             <thead>
             <tr>

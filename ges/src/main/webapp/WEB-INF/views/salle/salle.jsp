@@ -21,7 +21,7 @@
 
             <form class="form-horizontal" method="post"
 				action="${pageContext.request.contextPath}/salle?id=${user.id}">
-				<a class="btn btn-info" href="${pageContext.request.contextPath}/salle/create">
+				<a class="btn btn-info" href="${pageContext.request.contextPath}/salle_create">
 					<i class="fa fa-play"></i>
                     Ajouter
 				</a> 

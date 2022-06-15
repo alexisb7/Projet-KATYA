@@ -15,7 +15,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import com.epf.katya.model.Utilisateur;
 import com.epf.katya.service.UtilisateurService;
 
-@WebServlet("/utilisateur/create")
+@WebServlet("/utilisateur_create")
 public class UtilisateurCreateServlet extends HttpServlet{
 
     @Autowired

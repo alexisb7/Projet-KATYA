@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 
-@WebServlet("/equipement/equipementCreate")
+@WebServlet("/equipement_create")
 public class EquipementCreateServlet extends HttpServlet {
 
     @Autowired
@@ -32,13 +32,23 @@ public class EquipementCreateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipementCreate.jsp").forward(request, response);
-        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement_create.jsp").forward(request, response);
+    }
+
+ 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-        Equipement equipement = new Equipement(100 ,request.getParameter("Nom_equipement"), request.getParameter("Zone_stockage"), request.getParameter("etat"), Integer.parseInt(request.getParameter("disponibilite_equipement")), LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),2);
+       
+        int idEqui = 0;
+        try {
+            idEqui = equipementService.count() + 1;
+        } catch (ServiceException e1) {
+            e1.printStackTrace();
+        }
+
+        Equipement equipement = new Equipement(idEqui ,request.getParameter("nom_equipement"), request.getParameter("zone_stockage"), request.getParameter("etat"), 1, LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),2);
         try {
             equipementService.create(equipement);
         } catch (ServiceException e) {

@@ -16,21 +16,21 @@
 
             <div class="backwhite">
                 <div class="box">
-                    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipementCreate">
+                    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement_create">
                         <div class="box-body">
                                 <div class="form-group">
-                                    <label for="Nom_equipement" class="col-sm-2 control-label">Nom de l'equipement</label>
+                                    <label for="nom_equipement" class="col-sm-2 control-label">Nom de l'equipement</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Nom_equipement" name="Nom_equipement" placeholder="Nom de l'equipement" required>
+                                        <input type="text" class="form-control" id="nom_equipement" name="nom_equipement" placeholder="Nom de l'equipement" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="Zone_stockage" class="col-sm-2 control-label">Zone de stockage</label>
+                                    <label for="zone_stockage" class="col-sm-2 control-label">Zone de stockage</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="Zone_stockage" name="Zone_stockage" placeholder="Zone de stockage" required>
+                                        <input type="text" class="form-control" id="zone_stockage" name="zone_stockage" placeholder="Zone de stockage" required>
                                     </div>
                                 </div>
 
@@ -39,14 +39,6 @@
 
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="etat" name="etat" placeholder="Etat de l'equipement" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="disponibilite_equipement" class="col-sm-2 control-label">Disponibilite de l'equipement</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control" id="disponibilite_equipement" name="disponibilite_equipement" placeholder="Disponibilite de l'equipement" required>
                                     </div>
                                 </div>
 
@@ -70,7 +62,7 @@
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-info pull-right">Ajouter le nouvel equipement</button>
-                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/equipement/equipement">Retour a la liste des equipements</a>
+                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/equipement">Retour a la liste des equipements</a>
                         </div>
 
                     </form>

@@ -110,15 +110,14 @@ public class Main {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> 5e694afcb1c8cb0889a31b0645c562effdc77796
+=======
+>>>>>>> ServletKhadim
 
         /* SalleDao salleDao = new SalleDao();
-=======
-/* 
-        SalleDao salleDao = new SalleDao();
->>>>>>> ServletKhadim
         SalleService salleService = new SalleService(salleDao);
 
         Salle salle = new Salle();
