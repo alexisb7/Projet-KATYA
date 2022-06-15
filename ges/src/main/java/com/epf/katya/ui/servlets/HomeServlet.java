@@ -36,6 +36,7 @@ public class HomeServlet extends HttpServlet {
         if(connection == 1){
             erreurId = false;
             erreurMdp = false;
+            isConnected = true;
             request.setAttribute("erreurMdp", erreurMdp);
             request.setAttribute("erreurId", erreurId);
             request.setAttribute("id", id);
@@ -49,8 +50,6 @@ public class HomeServlet extends HttpServlet {
         if(connection == 0){
             erreurId = false;
             erreurMdp = false;
-            request.setAttribute("erreurMdp", erreurMdp);
-            request.setAttribute("erreurId", erreurId);
             request.setAttribute("erreurMdp", erreurMdp);
             request.setAttribute("erreurId", erreurId);
             path = "/WEB-INF/views/home/home_not_connected.jsp";
@@ -75,15 +74,21 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(isConnected == true){
             String deconnect = request.getParameter("deconnected");
-            if(deconnect.equals("yes")){
+            if(deconnect != null){
+                isConnected = false;
                 connection = 0;
+                erreurId = false;
+                erreurMdp = false;
+                request.setAttribute("erreurMdp", erreurMdp);
+                request.setAttribute("erreurId", erreurId);
+                doGet(request, response);
             }
         }
-        if(isConnected == false) {
+        else {
             id = request.getParameter("id");
             String mdp = request.getParameter("mdp");
             connection = this.utilisateurService.controlConnection(id, mdp);
+            doGet(request, response);
         }
-        doGet(request, response);
     }
 }

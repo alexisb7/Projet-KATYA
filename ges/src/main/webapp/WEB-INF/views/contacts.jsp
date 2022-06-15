@@ -15,7 +15,19 @@
 
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
+        <c:set var="role" value="${role}"></c:set>
+        <c:set var="eleve" value="${eleve}"></c:set>
+        <c:set var="secretaire" value="${secretaire}"></c:set>
+        <c:set var="admin" value="${admin}"></c:set>
+        <c:if test="${role==eleve}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==secretaire}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==admin}">
             <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        </c:if>
 
                 <div class="content-wrapper backwhite">
                     <section class="sec">

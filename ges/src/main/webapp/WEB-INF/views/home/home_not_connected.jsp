@@ -42,7 +42,7 @@
             </div>
         </form>
 
-        <%@ include file="/WEB-INF/views/common/footer.jsp" %>
+        <%@ include file="/WEB-INF/views/common/footer_not_connected.jsp" %>
     </body>
     <%@ include file="/WEB-INF/views/common/js_imports.jsp" %>
 </html>

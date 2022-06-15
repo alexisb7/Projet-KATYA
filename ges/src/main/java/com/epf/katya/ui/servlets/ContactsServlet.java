@@ -19,11 +19,12 @@ public class ContactsServlet extends HttpServlet {
        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
    }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-                String role = request.getParameter("role");
-            request.setAttribute("role", role);
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String role = request.getParameter("role");
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/contacts.jsp");
 
         r.forward(request, response);
