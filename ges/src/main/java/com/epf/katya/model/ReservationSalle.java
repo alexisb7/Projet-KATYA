@@ -5,15 +5,17 @@ import java.time.LocalDate;
 
 public class ReservationSalle {
     private int id_reservation_salle;
-    private int numero_salle;
-    private int id_utilisateur;
+    private String numero_salle;
+    private String id_utilisateur;
     private int etat_validation;
     private LocalDate date_debut;
     private LocalDate date_fin; 
-    private int id_utilisateur_validation;
+    private String id_utilisateur_validation;
+
+    public ReservationSalle(){}
     
-    public ReservationSalle(int id_reservation_salle, int numero_salle, int id_utilisateur,
-            int etat_validation, LocalDate date_debut, LocalDate date_fin, int id_utilisateur_validation) {
+    public ReservationSalle(int id_reservation_salle, String numero_salle, String id_utilisateur,
+            int etat_validation, LocalDate date_debut, LocalDate date_fin, String id_utilisateur_validation) {
         this.id_reservation_salle = id_reservation_salle;
         this.numero_salle = numero_salle;
         this.id_utilisateur = id_utilisateur;
@@ -35,11 +37,11 @@ public class ReservationSalle {
         return id_reservation_salle;
     }
 
-    public int getNumero_salle() {
+    public String getNumero_salle() {
         return numero_salle;
     }
 
-    public int getId_utilisateur() {
+    public String getId_utilisateur() {
         return id_utilisateur;
     }
 
@@ -55,7 +57,7 @@ public class ReservationSalle {
         return date_fin;
     }
 
-    public int getId_utilisateur_validation() {
+    public String getId_utilisateur_validation() {
         return id_utilisateur_validation;
     }
 
@@ -63,11 +65,11 @@ public class ReservationSalle {
         this.id_reservation_salle = id_reservation_salle;
     }
 
-    public void setId_utnumero_sallilisateur(int numero_salle) {
+    public void setId_numero_salle(String numero_salle) {
         this.numero_salle = numero_salle;
     }
 
-    public void setId_utilisateur(int id_utilisateur) {
+    public void setId_utilisateur(String id_utilisateur) {
         this.id_utilisateur = id_utilisateur;
     }
 
@@ -83,7 +85,7 @@ public class ReservationSalle {
         this.date_fin = date_fin;
     }
 
-    public void setId_utilisateur_validation(int id_utilisateur_validation) {
+    public void setId_utilisateur_validation(String id_utilisateur_validation) {
         this.id_utilisateur_validation = id_utilisateur_validation;
     }
    

@@ -33,27 +33,25 @@ public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
-       /*  DocumentDao documentDao = new DocumentDao();
+        /*DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
-        Document document = new Document(2, "lien8");
+        Document document = new Document(2, "lien2");
         try {
-            documentService.delete(document);
+            documentService.create(document);
             System.out.println(documentService.findAll());
         } catch (ServiceException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }  
-     */
-        /* EquipementDao equipementDao = new EquipementDao();
+     
+        EquipementDao equipementDao = new EquipementDao();
         EquipementService equipementService = new EquipementService(equipementDao);
 
-        Equipement equipement = new Equipement(2, "nom2", "PROUUT", "etat2", 1, LocalDate.now(), "description2", 1);
+        Equipement equipement = new Equipement(1, "laptop asus", "PROUUT", "etat1", 0, LocalDate.now(), "description1", 2);
         try {
-            equipementService.delete(equipement);
-            System.out.println(equipementService.findAll());
+            equipementService.create(equipement);
+            System.out.println("Equipements : " + equipementService.findAll());
         } catch (ServiceException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }  */
         
@@ -61,17 +59,17 @@ public class Main {
         //ReservationEquipementService reservationEquipementService = context.getBean(ReservationEquipementService.class);
         
         
-        /* 
-        UtilisateurDao utilisateurDao = new UtilisateurDao();
+        
+        /*UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
         
         Utilisateur utilisateur = new Utilisateur();
-        utilisateur.setId_utilisateur("tristan");
-        utilisateur.setEmail("titititi@gmail.com");
+        utilisateur.setId_utilisateur("alexis");
+        utilisateur.setEmail("alexxis@gmail.com");
         utilisateur.setMdp("password");
-        utilisateur.setRole("MIN1");
-        utilisateur.setNom_utilisateur("tata");
+        utilisateur.setRole("Eleve");
+        utilisateur.setNom_utilisateur("Alexis Beriot");
         utilisateur.setDate_entree(LocalDate.now());
         
         
@@ -80,9 +78,9 @@ public class Main {
         //utilisateurService.update(utilisateur);
         System.out.println(utilisateurService.findAll()); 
         //System.out.println(utilisateurService.findById(1));   
-        System.out.println(utilisateurService.count());     
-        */
+        //System.out.println(utilisateurService.count());  */   
         
+    
 
         /* SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
@@ -103,27 +101,28 @@ public class Main {
         System.out.println(salleService.findAll());
         //System.out.println(salleService.research("A"));
         //System.out.println(salleService.findByNumero("A106"));
-        System.out.println("Success");     
+        System.out.println("Success");   */  
         
         
         
-        /* ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
+        ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
         ReservationEquipementService reservationEquipementService = new ReservationEquipementService(reservationEquipementDao);
 
-        ReservationEquipement reservationEquipement = new ReservationEquipement(1, 1, 2, 1, LocalDate.now(), LocalDate.now(), 0);
+        ReservationEquipement reservationEquipement = new ReservationEquipement(1, "tristan", "alexis", 1, LocalDate.now(), LocalDate.now(), 0);
+        
         try {
-            reservationEquipementService.delete(reservationEquipement);
+            reservationEquipementService.create(reservationEquipement);
             System.out.println(reservationEquipementService.findAll());
         } catch (ServiceException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
-        } */
+        } 
+
         /*UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);
 
         Utilisateur utilisateur = new Utilisateur("trist", "polo@epf.fr", "password","beriot","Admin",LocalDate.now());
         //utilisateurService.create(utilisateur);
-        System.out.println(utilisateurService.controlConnection("uvk", "password"));
+        //System.out.println(utilisateurService.controlConnection("uvk", "password"));
         //System.out.println(utilisateurService.findAll());
         //System.out.println(utilisateurService.findById("trist"));*/
     }

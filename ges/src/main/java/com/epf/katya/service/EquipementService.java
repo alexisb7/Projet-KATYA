@@ -56,11 +56,10 @@ public class EquipementService {
         }
         return 0;
     }
-    public List<Equipement> findAll() throws ServiceException {
+    public List<Equipement> findAll()  {
         try {
             return this.equipementDao.findAll();
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
