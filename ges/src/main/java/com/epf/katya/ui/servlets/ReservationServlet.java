@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.ReservationEquipement;
 import com.epf.katya.model.ReservationSalle;
 import com.epf.katya.service.EquipementService;
@@ -47,14 +46,14 @@ public class ReservationServlet extends HttpServlet {
         request.setAttribute("listUser", this.utilisateurService.findAll());
         if(resaSalleOrEquipement == 0){
             path = "/WEB-INF/views/reservation/reservation_salle.jsp";
-            request.setAttribute("listResaSalle", this.reservationSalleService.findAll());
+            request.setAttribute("listResaSalle", this.reservationSalleService.findAll());    
+            request.setAttribute("nombre", this.reservationSalleService.count());   
         }
         if(resaSalleOrEquipement == 1){
             path = "/WEB-INF/views/reservation/reservation_equipement.jsp";
             request.setAttribute("listResaEquipement", this.reservationEquipementService.findAll());
             request.setAttribute("listEquipement", this.equipementService.findAll());
-                
-            
+            request.setAttribute("nombre", this.reservationEquipementService.count());                
         }
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -79,8 +78,6 @@ public class ReservationServlet extends HttpServlet {
                 ReservationEquipement reservationEquipement = reservationEquipementService.findById(Integer.parseInt(id_equipement));
                 reservationEquipementService.delete(reservationEquipement);
             } catch (NumberFormatException e) {
-                e.printStackTrace();
-            } catch (ServiceException e) {
                 e.printStackTrace();
             }
         }

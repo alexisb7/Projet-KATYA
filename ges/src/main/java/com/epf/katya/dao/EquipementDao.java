@@ -33,6 +33,7 @@ public class EquipementDao {
     private static final String FIND_EQUIPEMENTS_QUERY = "SELECT * FROM Equipement;";
     private static final String DELETE_EQUIPEMENT_QUERY = "DELETE FROM Equipement WHERE id_equipement=?;";
     private static final String FIND_EQUIPEMENT_BY_ID_QUERY = "SELECT * FROM Equipement WHERE id_equipement=?;";
+    private static final String MAX_EQUIPEMENTS_QUERY = "SELECT MAX(id_equipement) FROM Equipement;";
     private static final String COUNT_EQUIPEMENTS_QUERY = "SELECT COUNT(id_equipement) FROM Equipement;";
     private static final String UPDATE_EQUIPEMENT_QUERY = "UPDATE Equipement SET nom_equipement=?, zone_stockage=?, etat=?, disponibilite_equipement=?, date_acquisition=?, description=?, lien_documentation=? WHERE id_equipement=?;";
 
@@ -140,6 +141,21 @@ public class EquipementDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int max() throws DaoException {
+        int max = 0;
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(MAX_EQUIPEMENTS_QUERY);
+            ResultSet rs = pstat.executeQuery();
+            rs.next();
+            max = rs.getInt(1);
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return max;
     }
 
     public int count() throws DaoException {

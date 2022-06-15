@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.epf.katya.dao.ReservationEquipementDao;
 import com.epf.katya.exception.DaoException;
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.ReservationEquipement;
 
 @Service
@@ -19,7 +18,7 @@ public class ReservationEquipementService {
     } 
    
 
-    public int create(ReservationEquipement reservationEquipement) throws ServiceException {
+    public int create(ReservationEquipement reservationEquipement) {
         try {
             this.reservationEquipementDao.create(reservationEquipement);
         } catch (DaoException e) {
@@ -37,7 +36,7 @@ public class ReservationEquipementService {
         return 0;
     }
 
-    public int delete(ReservationEquipement reservationEquipement) throws ServiceException {
+    public int delete(ReservationEquipement reservationEquipement) {
         try {
             this.reservationEquipementDao.delete(reservationEquipement);
         } catch (DaoException e) {
@@ -64,9 +63,18 @@ public class ReservationEquipementService {
         return null;
     }
 
-    public int count() throws ServiceException {
+    public int count() {
         try {
             return this.reservationEquipementDao.count();
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int max() {
+        try {
+            return this.reservationEquipementDao.max();
         } catch (DaoException e) {
             e.printStackTrace();
         }
