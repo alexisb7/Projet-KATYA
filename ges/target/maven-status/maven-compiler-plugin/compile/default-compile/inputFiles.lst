@@ -9,6 +9,8 @@ C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\EquipementService.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\UtilisateurServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\main\Main.java
+C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\ReservationEquipementCreateServlet.java
+C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\ReservationSalleCreateServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\model\Utilisateur.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\EquipementCreateServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\dao\EquipementDao.java
@@ -18,6 +20,7 @@ C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\HomeServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\model\Equipement.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\model\Salle.java
+C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\ReservationSalleUpdateServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\ReservationServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\ContactsServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\SalleService.java
@@ -25,11 +28,13 @@ C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\EquipementServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\exception\DaoException.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\UtilisateurService.java
+C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\ReservationUpdateEquipementServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\persistence\ConnectionManager.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\SalleUpdateServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\model\ReservationEquipement.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\ReservationEquipementService.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\model\ReservationSalle.java
+C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\EquipementUpdateServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\dao\ReservationSalleDao.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\dao\UtilisateurDao.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\DocumentService.java

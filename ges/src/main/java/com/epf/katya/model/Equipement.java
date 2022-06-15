@@ -102,5 +102,9 @@ public class Equipement {
                 + ", zone_stockage=" + zone_stockage + "]";
     }
 
+
+    public void update(Equipement equipement, Integer id) {
+    }
+
     
 }

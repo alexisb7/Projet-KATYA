@@ -33,17 +33,11 @@ public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
-<<<<<<< HEAD
         DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
         Document document = new Document(1, "lien8");
-=======
-        /*DocumentDao documentDao = new DocumentDao();
-        DocumentService documentService = new DocumentService(documentDao); 
 
-        Document document = new Document(2, "lien2");
->>>>>>> 5e694afcb1c8cb0889a31b0645c562effdc77796
         try {
             documentService.create(document);
             System.out.println(documentService.findAll());
@@ -53,32 +47,19 @@ public class Main {
      
         EquipementDao equipementDao = new EquipementDao();
         EquipementService equipementService = new EquipementService(equipementDao);
-<<<<<<< HEAD
         
         Equipement equipement = new Equipement(2, "nom2", "PROUUT", "etat2", 1, LocalDate.now(), "description2", 1);
         try {
             equipementService.create(equipement);
         } catch (ServiceException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
-        try {
-            System.out.println(equipementService.findAll());
-        } catch (ServiceException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        System.out.println(equipementService.findAll());
         
         /*try {
             equipementService.delete(equipement);
             System.out.println(equipementService.findAll());
-=======
-
-        Equipement equipement = new Equipement(1, "laptop asus", "PROUUT", "etat1", 0, LocalDate.now(), "description1", 2);
-        try {
-            equipementService.create(equipement);
-            System.out.println("Equipements : " + equipementService.findAll());
->>>>>>> 5e694afcb1c8cb0889a31b0645c562effdc77796
         } catch (ServiceException e) {
             e.printStackTrace();
         }  
@@ -108,14 +89,7 @@ public class Main {
         //System.out.println(utilisateurService.findById(1));   
         //System.out.println(utilisateurService.count());  */   
         
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     
->>>>>>> 5e694afcb1c8cb0889a31b0645c562effdc77796
-=======
->>>>>>> ServletKhadim
 
         /* SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
@@ -139,10 +113,8 @@ public class Main {
 <<<<<<< HEAD
         System.out.println("Success");     
         */
-=======
-        System.out.println("Success");   */  
+        /*System.out.println("Success"); */
         
->>>>>>> 5e694afcb1c8cb0889a31b0645c562effdc77796
         
         
         ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();

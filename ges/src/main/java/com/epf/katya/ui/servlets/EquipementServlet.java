@@ -31,14 +31,9 @@ public class EquipementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        try {
-            request.setAttribute("listEquipement", this.equipementService.findAll());
-        
-            this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement.jsp").forward(request, response);
-        
-                } catch (ServiceException e) {
-                    e.printStackTrace();
-                }
+        request.setAttribute("listEquipement", this.equipementService.findAll());
+      
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement.jsp").forward(request, response);
 
         //RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
 

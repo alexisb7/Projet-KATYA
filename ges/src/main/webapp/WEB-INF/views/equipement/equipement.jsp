@@ -113,7 +113,7 @@
                             <td class="prova">${equipement.id_document}</td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement?id=${equipement.id_equipement}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/equipement/update?id=${equipement.id_equipement}"
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/equipement_update?id=${equipement.id_equipement}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                     <i  style="color: orange" class="fa fa-edit"></i>
                                                 </a>
