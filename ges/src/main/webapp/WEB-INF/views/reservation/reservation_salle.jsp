@@ -95,11 +95,11 @@
 
         <div class="content-wrapper backwhite">
             <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation">
-                <div style="display:inline-block; width:50%; margin-left:25%;">
-                    <button name="bouton_salle" value="salle" type="submit" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" class="btn btn-primary btn-lg">Reservations de salles</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_create_salle">+</a> 
-                    <button name="bouton_equip" value="equipement" type="submit" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_equipement_create">+</a> 
+                <div style="display:inline-block;margin-bottom:50px;">
+                    <button name="bouton_salle" value="salle" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations de salles</button>
+                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_create_salle">+</a> 
+                    <button name="bouton_equip" value="equipement" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
+                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_create_equipement">+</a> 
                 </div>
             </form>
             <p class="titre">Liste des reservations de salles</p>
