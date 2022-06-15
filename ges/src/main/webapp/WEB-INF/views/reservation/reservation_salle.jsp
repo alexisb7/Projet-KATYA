@@ -126,7 +126,7 @@
                             <td class="prova">${resa.numero_salle}</td>
                             <td class="prova">
                                 <c:forEach items = "${listUser}" var="user">
-									<c:if test="${user.id_utilisateur==resa.id_utilisateur_validation}">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
 										${user.nom_utilisateur}
 									</c:if>
 								</c:forEach>
