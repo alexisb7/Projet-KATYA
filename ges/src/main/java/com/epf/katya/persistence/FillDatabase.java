@@ -45,8 +45,8 @@ public class FillDatabase {
 
             //Utilisateur
             stmt.execute("INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES('superadmin', 'superadmin@epfedu.fr', 'password', 'Admin', 'Administrateur', '2022-01-01')");
-            stmt.execute("INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES('SEC1', 'sec1@epfedu.fr', 'sec1EPF', 'Sec Sec', 'Secretaire', '2022-01-01')");
-            stmt.execute("INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES('alex', 'alex@epfedu.fr', 'alexEPF', 'Alexis Beriot', 'Eleve', '2022-01-01')");
+            stmt.execute("INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES('SEC1', 'sec1@epfedu.fr', 'secx1EPF', 'Sec Sec', 'Secretaire', '2022-01-01')");
+            stmt.execute("INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES('alex', 'alex@epfedu.fr', 'alexxEPF', 'Alexis Beriot', 'Eleve', '2022-01-01')");
             stmt.execute("INSERT INTO Utilisateur(id_utilisateur, email, mdp, nom_utilisateur, role, date_entree) VALUES('trist', 'trist@epfedu.fr', 'tristEPF', 'Tristan Bourhis', 'Eleve', '2022-01-01')");
 
 

@@ -27,6 +27,7 @@ public class ReservationSalleUpdateServlet extends HttpServlet{
     UtilisateurService utilisateurService;
 
     int id=0;
+    String role="";
 
     public void init() throws ServletException {
         super.init();
@@ -35,9 +36,15 @@ public class ReservationSalleUpdateServlet extends HttpServlet{
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="/WEB-INF/views/reservation/reservation_update_salle.jsp";
-        id = Integer.parseInt(request.getParameter("id"));
+        String params =request.getParameter("id");
+        id = Integer.parseInt(params.split("-")[0]);
+        role = params.split("-")[1].split("=")[1];
         request.setAttribute("resa", this.reservationSalleService.findById(id));
         request.setAttribute("listUser", this.utilisateurService.findAll());
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
@@ -49,6 +56,6 @@ public class ReservationSalleUpdateServlet extends HttpServlet{
         reservationSalle.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin")));
         reservationSalle.setId_utilisateur_validation(request.getParameter("id_user_valid"));
         reservationSalleService.update(reservationSalle);
-        response.sendRedirect("/ges/reservation");
+        response.sendRedirect("/ges/reservation?role="+role);
     }
 }
