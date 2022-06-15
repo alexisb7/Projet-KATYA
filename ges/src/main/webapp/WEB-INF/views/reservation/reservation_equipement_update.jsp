@@ -34,31 +34,16 @@
                                         	</option>
 										</c:if>
 									</c:forEach>
-									<c:forEach items = "${listEquipement}" var="equip">
-										<c:if test="${equip.id_equipement!=resa.id_equipement}">
-											<option value="${equip.id_equipement}">
-                                        		${equip.nom_equipement}
-                                        	</option>
-										</c:if>
-									</c:forEach>
                                 </select>
                             </div>
                         </div>
                               
                         <div class="form-group">
                             <label for="id_user" class="col-sm-2 control-label">Utilisateur</label>
-            
                             <div class="col-sm-10">
                                 <select class="form-control" id="id_user" name="id_user">
                                     <c:forEach items = "${listUser}" var="user">
 										<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
-											<option value="${user.id_utilisateur}">
-                                        		${user.nom_utilisateur}
-                                        	</option>
-										</c:if>
-									</c:forEach>
-									<c:forEach items = "${listUser}" var="user">
-										<c:if test="${user.id_utilisateur!=resa.id_utilisateur}">
 											<option value="${user.id_utilisateur}">
                                         		${user.nom_utilisateur}
                                         	</option>

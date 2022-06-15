@@ -23,7 +23,7 @@ public class DocumentDao {
     private static final String FIND_DOCUMENTS_QUERY = "SELECT * FROM Document;";
     private static final String DELETE_DOCUMENTS_QUERY = "DELETE FROM Document WHERE id_document=?;";
     private static final String FIND_DOCUMENT_BY_ID_QUERY = "SELECT * FROM Document WHERE id_document=?;";
-    private static final String COUNT_DOCUMENTS_QUERY = "SELECT COUNT(id_document) FROM Document;";
+    private static final String MAX_DOCUMENTS_QUERY = "SELECT MAX(id_document) FROM Document;";
     private static final String UPDATE_DOCUMENT_QUERY = "UPDATE Document SET lien=? WHERE id_document=?;";
 
     public int create(Document document) throws DaoException{
@@ -108,11 +108,11 @@ public class DocumentDao {
         return null;
     }
 
-    public int count() throws DaoException {
+    public int max() throws DaoException {
         int nb_document = 0;
         try {
             Connection con = ConnectionManager.getConnection();
-            PreparedStatement pstat = con.prepareStatement(COUNT_DOCUMENTS_QUERY);
+            PreparedStatement pstat = con.prepareStatement(MAX_DOCUMENTS_QUERY);
             ResultSet rs = pstat.executeQuery();
             rs.next();
             nb_document = rs.getInt(1);

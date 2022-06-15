@@ -67,9 +67,9 @@ public class DocumentService {
       return null;
     }
 
-    public int count() throws ServiceException {
+    public int max() throws ServiceException {
       try {
-        return this.documentDao.count();
+        return this.documentDao.max();
       } catch (DaoException e) {
         e.printStackTrace();
       }

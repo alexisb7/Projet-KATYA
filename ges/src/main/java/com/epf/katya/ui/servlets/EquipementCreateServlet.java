@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Equipement;
 import com.epf.katya.service.EquipementService;
 
@@ -35,22 +34,9 @@ public class EquipementCreateServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-
-       
-        int idEqui = 0;
-        try {
-            idEqui = equipementService.count() + 1;
-        } catch (ServiceException e1) {
-            e1.printStackTrace();
-        }
-
+        int idEqui = equipementService.max() + 1;        
         Equipement equipement = new Equipement(idEqui ,request.getParameter("nom_equipement"), request.getParameter("zone_stockage"), request.getParameter("etat"), 1, LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),request.getParameter("lien_documentation"));
-        try {
-            equipementService.create(equipement);
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
+        equipementService.create(equipement);
         response.sendRedirect("equipement");
-
     }
 }

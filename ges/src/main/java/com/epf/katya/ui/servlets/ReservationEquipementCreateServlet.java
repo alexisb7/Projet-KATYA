@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.ReservationEquipement;
 import com.epf.katya.service.EquipementService;
 import com.epf.katya.service.ReservationEquipementService;
@@ -46,18 +45,16 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ReservationEquipement reservationEquipement = new ReservationEquipement();
-        try {
-            reservationEquipement.setId_reservation_equipement(reservationEquipementService.count()+1);
-            reservationEquipement.setId_equipement(Integer.parseInt(request.getParameter("id_equipement")));
-            reservationEquipement.setId_utilisateur(request.getParameter("id_user"));
-            reservationEquipement.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
-            reservationEquipement.setDate_debut(LocalDate.parse(request.getParameter("debut")));
-            reservationEquipement.setDate_fin(LocalDate.parse(request.getParameter("fin")));
-            reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
-            reservationEquipementService.create(reservationEquipement);
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }
+
+        reservationEquipement.setId_reservation_equipement(reservationEquipementService.max()+1);
+        reservationEquipement.setId_equipement(Integer.parseInt(request.getParameter("id_equipement")));
+        reservationEquipement.setId_utilisateur(request.getParameter("id_user"));
+        reservationEquipement.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
+        reservationEquipement.setDate_debut(LocalDate.parse(request.getParameter("debut")));
+        reservationEquipement.setDate_fin(LocalDate.parse(request.getParameter("fin")));
+        reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
+        reservationEquipementService.create(reservationEquipement);
+        
         response.sendRedirect("/ges/reservation");
     }
 }

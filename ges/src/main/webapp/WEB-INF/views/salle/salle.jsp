@@ -87,14 +87,17 @@
             width: 7%;
             padding: 10px;
         }
+        .titre{
+            font-size: 35px;
+        }
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
         <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
 
         <div class="content-wrapper backwhite">
-
-            <h1>Listes des salles</h1>
+            <p class="titre">Listes des salles</p>
+            <p>Nombre de salles : ${nombre}</p>
             <div class="but_middle">
                 <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/salle_create">Ajouter</a> 
             </div>

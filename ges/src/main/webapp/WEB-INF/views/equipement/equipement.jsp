@@ -79,6 +79,9 @@
             width: 7%;
             padding: 10px;
         }
+        .titre{
+            font-size: 35px;
+        }
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
@@ -86,7 +89,8 @@
 
         <div class="content-wrapper backwhite">
             
-           <h1>Liste des equipements</h1>
+           <p class="titre">Liste des equipements</p>
+           <p>Nombre d'equipements : ${nombre}</p>
            <div class="but_middle">
                 <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
            </div>

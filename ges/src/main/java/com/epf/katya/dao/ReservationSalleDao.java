@@ -25,7 +25,8 @@ public class ReservationSalleDao {
     private final static String UPDATE_RESERVATION_SALLE_QUERY = "UPDATE Reservation_salle SET numero_salle=?, id_utilisateur=?, etat_validation=?, date_debut=?, date_fin=?, id_utilisateur_validation=? WHERE id_reservation_salle=?;";
     private final static String FIND_RESERVATION_SALLE_QUERY = "SELECT * FROM Reservation_salle;";
     private final static String FIND_RESERVATION_SALLE_BY_ID_QUERY = "SELECT * FROM Reservation_salle WHERE id_reservation_salle=?;";
-    private final static String COUNT_RESERVATION_SALLE_QUERY = "SELECT MAX(id_reservation_salle) FROM Reservation_salle;";
+    private final static String MAX_RESERVATION_SALLE_QUERY = "SELECT MAX(id_reservation_salle) FROM Reservation_salle;";
+    private final static String COUNT_RESERVATION_SALLE_QUERY = "SELECT COUNT(id_reservation_salle) FROM Reservation_salle;";
 
     public int create(ReservationSalle reservationSalle) throws DaoException {
         try {
@@ -138,5 +139,20 @@ public class ReservationSalleDao {
             e.printStackTrace();
         }
         return nb_reservation_salle;
+    }
+
+    public int max() throws DaoException {
+        int max = 0;
+        try {
+            Connection con = ConnectionManager.getConnection();         
+            PreparedStatement pstat = con.prepareStatement(MAX_RESERVATION_SALLE_QUERY);
+            ResultSet rs = pstat.executeQuery();
+            rs.next();
+            max = rs.getInt(1);
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return max;
     }
 }
