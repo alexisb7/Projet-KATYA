@@ -29,6 +29,8 @@ public class ReservationEquipementDao {
     private static final String FIND_RESERVATION_EQUIPEMENT_BY_ID_QUERY = "SELECT * FROM Reservation_equipement WHERE id_reservation_equipement=?;";
     private static final String MAX_RESERVATION_EQUIPEMENTS_QUERY = "SELECT MAX(id_reservation_equipement) FROM Reservation_equipement;";
     private static final String UPDATE_RESERVATION_EQUIPEMENT_QUERY = "UPDATE Reservation_equipement SET id_utilisateur=?, id_utilisateur_validation=?, id_equipement=?, date=?, heure_debut=?, heure_fin=?, etat_validation=? WHERE id_reservation_equipement=?;";
+    private static final String FIND_RESERVATION_EQUIPEMENT_BY_USER_QUERY ="SELECT * FROM Reservation_equipement WHERE id_utilisateur=? OR id_utilisateur_validation=?;";
+    private static final String FIND_RESERVATION_EQUIPEMENT_BY_EQUIPEMENT_QUERY ="SELECT * FROM Reservation_equipement WHERE id_equipement=?;";
 
     public int create(ReservationEquipement reservationEquipement) throws DaoException {
         try {
@@ -161,5 +163,42 @@ public class ReservationEquipementDao {
             e.printStackTrace();
         }
         return nombre;
+    }
+
+    public ReservationEquipement findByUser(String id_utilisateur) throws DaoException {
+        ReservationEquipement reservationEquipement = null;
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(FIND_RESERVATION_EQUIPEMENT_BY_USER_QUERY);
+            pstat.setString(1, id_utilisateur);
+            pstat.setString(2, id_utilisateur);
+            ResultSet rs = pstat.executeQuery();
+            rs.next();
+            int id_reservation_equipement = rs.getInt("id_reservation_equipement");
+            reservationEquipement = new ReservationEquipement();
+            reservationEquipement.setId_reservation_equipement(id_reservation_equipement);
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }           
+        return reservationEquipement;
+    }
+
+    public ReservationEquipement findByEquipement(int id_equipement) throws DaoException {
+        ReservationEquipement reservationEquipement = null;
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(FIND_RESERVATION_EQUIPEMENT_BY_EQUIPEMENT_QUERY);
+            pstat.setInt(1, id_equipement);
+            ResultSet rs = pstat.executeQuery();
+            rs.next();
+            int id_reservation_equipement = rs.getInt("id_reservation_equipement");
+            reservationEquipement = new ReservationEquipement();
+            reservationEquipement.setId_reservation_equipement(id_reservation_equipement);
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }           
+        return reservationEquipement;
     }
 }

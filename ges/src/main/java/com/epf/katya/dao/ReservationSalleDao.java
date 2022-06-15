@@ -29,6 +29,9 @@ public class ReservationSalleDao {
     private final static String FIND_RESERVATION_SALLE_BY_ID_QUERY = "SELECT * FROM Reservation_salle WHERE id_reservation_salle=?;";
     private final static String MAX_RESERVATION_SALLE_QUERY = "SELECT MAX(id_reservation_salle) FROM Reservation_salle;";
     private final static String COUNT_RESERVATION_SALLE_QUERY = "SELECT COUNT(id_reservation_salle) FROM Reservation_salle;";
+    private static final String FIND_RESERVATION_SALLE_BY_USER_QUERY ="SELECT * FROM Reservation_salle WHERE id_utilisateur=? OR id_utilisateur_validation=?;";
+    private static final String FIND_RESERVATION_SALLE_BY_SALLE_QUERY ="SELECT * FROM Reservation_salle WHERE numero_salle=?;";
+
 
     public int create(ReservationSalle reservationSalle) throws DaoException {
         try {
@@ -160,5 +163,42 @@ public class ReservationSalleDao {
             e.printStackTrace();
         }
         return max;
+    }
+
+    public ReservationSalle findByUser(String id_utilisateur) throws DaoException {
+        ReservationSalle reservationSalle = null;
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(FIND_RESERVATION_SALLE_BY_USER_QUERY);
+            pstat.setString(1, id_utilisateur);
+            pstat.setString(2, id_utilisateur);
+            ResultSet rs = pstat.executeQuery();
+            rs.next();
+            int id_reservation_salle = rs.getInt("id_reservation_salle");
+            reservationSalle = new ReservationSalle();
+            reservationSalle.setId_reservation_salle(id_reservation_salle);
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }           
+        return reservationSalle;
+    }
+
+    public ReservationSalle findBySalle(String numero) throws DaoException {
+        ReservationSalle reservationSalle = null;
+        try {
+            Connection con = ConnectionManager.getConnection();
+            PreparedStatement pstat = con.prepareStatement(FIND_RESERVATION_SALLE_BY_SALLE_QUERY);
+            pstat.setString(1, numero);
+            ResultSet rs = pstat.executeQuery();
+            rs.next();
+            int id_reservation_salle = rs.getInt("id_reservation_salle");
+            reservationSalle = new ReservationSalle();
+            reservationSalle.setId_reservation_salle(id_reservation_salle);
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }           
+        return reservationSalle;
     }
 }
