@@ -141,13 +141,8 @@
                                             <td class="prova">${salle.date_acquisition_salle}</td>
                                             <td class="prova controltd">
                                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
-<<<<<<< HEAD
                                                     <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle/update?numero=${salle.numero}"  title="editer"
                                                        style="background-color: transparent;border-color: transparent;margin-right: -10px">
-=======
-                                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle_update?numero=${salle.numero}"  title="editer"
-                                                    style="background-color: transparent;border-color: transparent;margin-right: -10px">
->>>>>>> d3d9d2e7d4f2f5fb35eaf40e9db84f90f1f44c1d
                                                         <i  style="color: orange" class="fa fa-edit"></i>
                                                     </a>
                                                     <button type="submit" class="btn btn-danger" href="#"title="supprimer"
