@@ -1,6 +1,5 @@
 package com.epf.katya.ui.servlets;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,7 +47,7 @@ public class EquipementCreateServlet extends HttpServlet {
             e1.printStackTrace();
         }
 
-        Equipement equipement = new Equipement(idEqui ,request.getParameter("nom_equipement"), request.getParameter("zone_stockage"), request.getParameter("etat"), 1, LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),2);
+        Equipement equipement = new Equipement(idEqui ,request.getParameter("nom_equipement"), request.getParameter("zone_stockage"), request.getParameter("etat"), 1, LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),request.getParameter("lien_documentation"));
         try {
             equipementService.create(equipement);
         } catch (ServiceException e) {

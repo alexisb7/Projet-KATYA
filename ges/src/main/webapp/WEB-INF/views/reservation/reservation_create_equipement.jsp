@@ -20,7 +20,7 @@
             <h1>Creation d'une reservation d'equipement</h1>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation/create_equipement">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation_create_equipement">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="equipement" class="col-sm-2 control-label">Equipement</label>

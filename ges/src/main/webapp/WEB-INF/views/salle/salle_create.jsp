@@ -20,7 +20,7 @@
             <h1>Salles_create</h1>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle/create">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_create">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="numero" class="col-sm-2 control-label">Numero de salle</label>

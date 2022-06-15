@@ -19,7 +19,7 @@ import com.epf.katya.service.EquipementService;
 import com.epf.katya.service.ReservationEquipementService;
 import com.epf.katya.service.UtilisateurService;
 
-@WebServlet("/reservation/create_equipement")
+@WebServlet("/reservation_create_equipement")
 public class ReservationEquipementCreateServlet extends HttpServlet {
 
     @Autowired

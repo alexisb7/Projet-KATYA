@@ -33,11 +33,22 @@ public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
+<<<<<<< HEAD
         DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
         Document document = new Document(1, "lien8");
 
+=======
+        /* DocumentDao documentDao = new DocumentDao();
+        DocumentService documentService = new DocumentService(documentDao); 
+
+        Document document = new Document(1, "lien8"); */
+        /*DocumentDao documentDao = new DocumentDao();
+        DocumentService documentService = new DocumentService(documentDao); 
+
+        Document document = new Document(2, "lien2");
+>>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
         try {
             documentService.create(document);
             System.out.println(documentService.findAll());
@@ -60,6 +71,15 @@ public class Main {
         /*try {
             equipementService.delete(equipement);
             System.out.println(equipementService.findAll());
+<<<<<<< HEAD
+=======
+
+
+        Equipement equipement = new Equipement(1, "laptop asus", "PROUUT", "etat1", 0, LocalDate.now(), "description1", 2);
+        try {
+            equipementService.create(equipement);
+            System.out.println("Equipements : " + equipementService.findAll());
+>>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
         } catch (ServiceException e) {
             e.printStackTrace();
         }  
@@ -88,8 +108,11 @@ public class Main {
         System.out.println(utilisateurService.findAll()); 
         //System.out.println(utilisateurService.findById(1));   
         //System.out.println(utilisateurService.count());  */   
+<<<<<<< HEAD
         
     
+=======
+>>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
 
         /* SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
@@ -113,8 +136,11 @@ public class Main {
 <<<<<<< HEAD
         System.out.println("Success");     
         */
+<<<<<<< HEAD
         /*System.out.println("Success"); */
         
+=======
+>>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
         
         
         ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();

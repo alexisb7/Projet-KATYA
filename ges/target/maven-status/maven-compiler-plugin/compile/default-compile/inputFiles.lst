@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\dao\SalleDao.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\ReservationSalleService.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\configuration\AppConfiguration.java
@@ -40,3 +41,46 @@ C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\service\DocumentService.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\ui\servlets\UtilisateurUpdateServlet.java
 C:\Users\nklkh\Desktop\EPF\4A\Projet semestre\Projet-KATYA\ges\src\main\java\com\epf\katya\model\Document.java
+=======
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/ReservationSalleUpdateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/UtilisateurCreateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/dao/ReservationSalleDao.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/model/Salle.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/model/Utilisateur.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/service/ReservationSalleService.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/ReservationEquipementCreateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/service/UtilisateurService.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/service/EquipementService.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/model/ReservationEquipement.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/model/Equipement.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/UtilisateurUpdateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/SalleCreateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/dao/SalleDao.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/dao/DocumentDao.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/ReservationSalleCreateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/service/DocumentService.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/HomeServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/SalleServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/model/ReservationSalle.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/configuration/WebConfiguration.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/ReservationUpdateEquipementServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/UtilisateurServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/EquipementServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/ReservationServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/ContactsServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/model/Document.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/utils/IOUtils.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/dao/EquipementDao.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/service/ReservationEquipementService.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/service/SalleService.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/persistence/FillDatabase.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/dao/UtilisateurDao.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/configuration/AppConfiguration.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/EquipementCreateServlet.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/exception/DaoException.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/exception/ServiceException.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/main/Main.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/dao/ReservationEquipementDao.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/persistence/ConnectionManager.java
+/Users/alexbrt/Documents/EPF/4A/S2/Projet de semestre/Projet-KATYA/ges/src/main/java/com/epf/katya/ui/servlets/SalleUpdateServlet.java
+>>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
