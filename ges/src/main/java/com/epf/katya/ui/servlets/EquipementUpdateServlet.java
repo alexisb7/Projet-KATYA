@@ -55,7 +55,11 @@ public class EquipementUpdateServlet extends HttpServlet{
         equipement.setDisponibilite_equipement(Integer.parseInt(request.getParameter("disponibilite_equipement_up")));
         equipement.setDate_acquisition(LocalDate.parse(request.getParameter("date_acquisition_up")));
         equipement.setDescription(request.getParameter("description_up"));
-        equipement.update(equipement, id);
+        try {
+            equipementService.update(equipement);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
         response.sendRedirect("/ges/equipement");
     }
     

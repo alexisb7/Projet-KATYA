@@ -61,7 +61,7 @@
                                     <label for="lien_documentation" class="col-sm-2 control-label">Lien documentation</label>
 
                                     <div class="col-sm-10">
-                                        <input type="url" class="form-control" id="lien_documentation" name="lien_documentation" pattern="https://.*" placeholder="http://example.com" required>
+                                        <input type="url" value="https://www.epf.fr/" class="form-control" id="lien_documentation" name="lien_documentation" pattern="https://.*" placeholder="http://example.com" required>
                                     </div>
                                 </div>
                         </div>

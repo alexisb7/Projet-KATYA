@@ -30,16 +30,9 @@ import com.epf.katya.model.Utilisateur;
 import com.epf.katya.service.UtilisateurService;
 
 public class Main {
-    public static void main(String[]args){
+    public static void main(String[]args) throws ServiceException{
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
-<<<<<<< HEAD
-        DocumentDao documentDao = new DocumentDao();
-        DocumentService documentService = new DocumentService(documentDao); 
-
-        Document document = new Document(1, "lien8");
-
-=======
         /* DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
@@ -48,7 +41,6 @@ public class Main {
         DocumentService documentService = new DocumentService(documentDao); 
 
         Document document = new Document(2, "lien2");
->>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
         try {
             documentService.create(document);
             System.out.println(documentService.findAll());
@@ -71,15 +63,6 @@ public class Main {
         /*try {
             equipementService.delete(equipement);
             System.out.println(equipementService.findAll());
-<<<<<<< HEAD
-=======
-
-
-        Equipement equipement = new Equipement(1, "laptop asus", "PROUUT", "etat1", 0, LocalDate.now(), "description1", 2);
-        try {
-            equipementService.create(equipement);
-            System.out.println("Equipements : " + equipementService.findAll());
->>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
         } catch (ServiceException e) {
             e.printStackTrace();
         }  
@@ -108,11 +91,8 @@ public class Main {
         System.out.println(utilisateurService.findAll()); 
         //System.out.println(utilisateurService.findById(1));   
         //System.out.println(utilisateurService.count());  */   
-<<<<<<< HEAD
         
     
-=======
->>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
 
         /* SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
@@ -133,17 +113,12 @@ public class Main {
         System.out.println(salleService.findAll());
         //System.out.println(salleService.research("A"));
         //System.out.println(salleService.findByNumero("A106"));
-<<<<<<< HEAD
+
         System.out.println("Success");     
         */
-<<<<<<< HEAD
-        /*System.out.println("Success"); */
-        
-=======
->>>>>>> 4299ba9f3d94728da48b8eed5ad08da2085291ca
         
         
-        ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
+        /*ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
         ReservationEquipementService reservationEquipementService = new ReservationEquipementService(reservationEquipementDao);
 
         ReservationEquipement reservationEquipement = new ReservationEquipement(1, "tristan", "alexis", 1, LocalDate.now(), LocalDate.now(), 0);
@@ -163,6 +138,15 @@ public class Main {
         //System.out.println(utilisateurService.controlConnection("uvk", "password"));
         //System.out.println(utilisateurService.findAll());
         //System.out.println(utilisateurService.findById("trist"));*/
+
+        /*EquipementDao equipement = new EquipementDao();
+        EquipementService equipement1 = new EquipementService(equipement);
+        Equipement nequipement = new Equipement(2, "a", "a", "a",1, LocalDate.now(), "a", "");
+        equipement1.delete(nequipement);
+
+        System.out.println(equipement1.findAll());*/
     }
+
+
     
 }

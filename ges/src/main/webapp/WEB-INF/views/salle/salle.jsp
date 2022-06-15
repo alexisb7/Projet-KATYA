@@ -17,7 +17,7 @@
 
         <div class="content-wrapper backwhite">
 
-            <h1>Salles</h1>
+            <h1>Liste des salles</h1>
 
             <form class="form-horizontal" method="post"
 				action="${pageContext.request.contextPath}/salle?id=${user.id}">
