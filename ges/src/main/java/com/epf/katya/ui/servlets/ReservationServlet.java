@@ -43,6 +43,8 @@ public class ReservationServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="";
+        
+        request.setAttribute("listUser", this.utilisateurService.findAll());
         if(resaSalleOrEquipement == 0){
             path = "/WEB-INF/views/reservation/reservation_salle.jsp";
             request.setAttribute("listResaSalle", this.reservationSalleService.findAll());
@@ -50,7 +52,6 @@ public class ReservationServlet extends HttpServlet {
         if(resaSalleOrEquipement == 1){
             path = "/WEB-INF/views/reservation/reservation_equipement.jsp";
             request.setAttribute("listResaEquipement", this.reservationEquipementService.findAll());
-            request.setAttribute("listUser", this.utilisateurService.findAll());
             request.setAttribute("listEquipement", this.equipementService.findAll());
                 
             
@@ -78,10 +79,8 @@ public class ReservationServlet extends HttpServlet {
                 ReservationEquipement reservationEquipement = reservationEquipementService.findById(Integer.parseInt(id_equipement));
                 reservationEquipementService.delete(reservationEquipement);
             } catch (NumberFormatException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             } catch (ServiceException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

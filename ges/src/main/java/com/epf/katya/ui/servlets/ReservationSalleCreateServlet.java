@@ -2,7 +2,6 @@ package com.epf.katya.ui.servlets;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,9 +48,8 @@ public class ReservationSalleCreateServlet extends HttpServlet {
         reservationSalle.setId_numero_salle(request.getParameter("numero_salle"));
         reservationSalle.setId_utilisateur(request.getParameter("id_user"));
         reservationSalle.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        reservationSalle.setDate_debut(LocalDate.parse(request.getParameter("debut"), formatter));
-        reservationSalle.setDate_fin(LocalDate.parse(request.getParameter("fin"), formatter));
+        reservationSalle.setDate_debut(LocalDate.parse(request.getParameter("debut")));
+        reservationSalle.setDate_fin(LocalDate.parse(request.getParameter("fin")));
         reservationSalle.setId_utilisateur_validation(request.getParameter("id_user_valid"));
         reservationSalleService.create(reservationSalle);
         response.sendRedirect("/ges/reservation");

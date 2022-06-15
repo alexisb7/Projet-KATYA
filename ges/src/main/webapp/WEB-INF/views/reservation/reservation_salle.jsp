@@ -111,11 +111,30 @@
                         <tr>
                             <td class="prova">${resa.id_reservation_salle}</td>
                             <td class="prova">${resa.numero_salle}</td>
-                            <td class="prova">${resa.id_utilisateur}</td>
-                            <td class="prova">${resa.etat_validation}</td>
+                            <td class="prova">
+                                <c:forEach items = "${listUser}" var="user">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
+										${user.nom_utilisateur}
+									</c:if>
+								</c:forEach>
+                            </td>
+                            <td class="prova">
+                                <c:if test="${resa.etat_validation==1}">
+									Valide
+								</c:if>
+                                <c:if test="${resa.etat_validation==0}">
+									Non Valide
+								</c:if>
+                            </td>
                             <td class="prova">${resa.date_debut}</td>
                             <td class="prova">${resa.date_fin}</td>
-                            <td class="prova">${resa.id_utilisateur_validation}</td>
+                            <td class="prova">
+                                <c:forEach items = "${listUser}" var="user">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur_validation}">
+										${user.nom_utilisateur}
+									</c:if>
+								</c:forEach>
+                            </td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation/update_salle?id=${resa.id_reservation_salle}"
