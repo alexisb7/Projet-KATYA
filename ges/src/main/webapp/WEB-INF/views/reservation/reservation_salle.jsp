@@ -37,7 +37,8 @@
             background-color: #f2f2f2;
         }
         th {
-            background-color: #ddd;
+            background-color: rgb(181, 57, 103);
+            color: white;
         }
         th,td {
             padding: 5px;
@@ -63,10 +64,7 @@
             content: " \f0de";
             font-family: "FontAwesome";
         }
-        /*Style disabled*/
-        .tablemanager th.disableSort {
 
-        } 
         #for_numrows {
             padding: 10px;
             float: left;
@@ -79,6 +77,14 @@
             display: block;
             text-align: center;
         }
+        .controltd{
+            width: 10%;
+        }
+        .stylecontrol{
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: -10px
+        }
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
@@ -87,10 +93,10 @@
         <div class="content-wrapper backwhite">
             <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation">
                 <div style="display:inline-block;margin-bottom:50px;">
-                    <button name="bouton_salle" value="salle" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations de salles</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_salle">+</a> 
-                    <button name="bouton_equip" value="equipement" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_equipement">+</a> 
+                    <button name="bouton_salle" value="salle" type="submit" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations de salles</button>
+                    <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_salle">+</a> 
+                    <button name="bouton_equip" value="equipement" type="submit" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
+                    <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_equipement">+</a> 
                 </div>
             </form>
             <table class="tablemanager">
@@ -111,11 +117,30 @@
                         <tr>
                             <td class="prova">${resa.id_reservation_salle}</td>
                             <td class="prova">${resa.numero_salle}</td>
-                            <td class="prova">${resa.id_utilisateur}</td>
-                            <td class="prova">${resa.etat_validation}</td>
+                            <td class="prova">
+                                <c:forEach items = "${listUser}" var="user">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
+										${user.nom_utilisateur}
+									</c:if>
+								</c:forEach>
+                            </td>
+                            <td class="prova">
+                                <c:if test="${resa.etat_validation==1}">
+									Valide
+								</c:if>
+                                <c:if test="${resa.etat_validation==0}">
+									Non Valide
+								</c:if>
+                            </td>
                             <td class="prova">${resa.date_debut}</td>
                             <td class="prova">${resa.date_fin}</td>
-                            <td class="prova">${resa.id_utilisateur_validation}</td>
+                            <td class="prova">
+                                <c:forEach items = "${listUser}" var="user">
+									<c:if test="${user.id_utilisateur==resa.id_utilisateur_validation}">
+										${user.nom_utilisateur}
+									</c:if>
+								</c:forEach>
+                            </td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}"

@@ -84,7 +84,7 @@
 
         <div class="content-wrapper backwhite">
 
-           <h1>Equipements</h1>
+           <h1>Liste des equipements</h1>
 		   <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
            <table class="tablemanager">
             <thead>
@@ -103,7 +103,7 @@
             <tbody>
                 <c:forEach items="${listEquipement}" var="equipement">
                         <tr>
-                            <td class="prova">${equipement.id_equipement}</td>
+                            <td class="prova" id="id_equipement">${equipement.id_equipement}</td>
                             <td class="prova">${equipement.nom_equipement}</td>
                             <td class="prova">${equipement.zone_stockage}</td>
                             <td class="prova">${equipement.etat}</td>

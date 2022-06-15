@@ -84,12 +84,13 @@
 
         <div class="content-wrapper backwhite">
 
-           <h1>Utilisateurs</h1>
-		   <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur_create">Ajouter</a> 
+           <h1>Liste des utilisateurs</h1>
+		   <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur_create">Ajouter</a> 
            <table class="tablemanager">
             <thead>
             <tr>
-                <th class="disableSort">Id</th>
+                <th class="disableSort">Id<            Equipement equipement = equipementService.findById(Integer.parseInt(request.getParameter("id_equipement")));
+                    /th>
                 <th>Email</th>
                 <th>Nom</th>
                 <th>Role</th>
