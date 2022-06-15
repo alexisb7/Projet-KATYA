@@ -22,7 +22,7 @@ public class ReservationSalleDao {
 
     public ReservationSalleDao() {}
 
-    private final static String CREATE_RESERVATION_SALLE_QUERY = "INSERT INTO Reservation_Salle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date, heure_debut, heure_fin, id_utilisateur_validation) VALUES (?, ?, ?, ?, ?, ?, ?);";
+    private final static String CREATE_RESERVATION_SALLE_QUERY = "INSERT INTO Reservation_Salle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date, heure_debut, heure_fin, id_utilisateur_validation) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
     private final static String DELETE_RESERVATION_SALLE_QUERY = "DELETE FROM Reservation_salle WHERE id_reservation_salle=?;";
     private final static String UPDATE_RESERVATION_SALLE_QUERY = "UPDATE Reservation_salle SET numero_salle=?, id_utilisateur=?, etat_validation=?, date=?, heure_debut=?, heure_fin=?, id_utilisateur_validation=? WHERE id_reservation_salle=?;";
     private final static String FIND_RESERVATION_SALLE_QUERY = "SELECT * FROM Reservation_salle;";
