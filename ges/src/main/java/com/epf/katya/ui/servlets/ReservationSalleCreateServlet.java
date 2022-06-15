@@ -50,9 +50,8 @@ public class ReservationSalleCreateServlet extends HttpServlet {
         reservationSalle.setNumero_salle(request.getParameter("numero_salle"));
         reservationSalle.setId_utilisateur(request.getParameter("id_user"));
         reservationSalle.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter formatter_clock = DateTimeFormatter.ofPattern("hh:MM:ss");
-        reservationSalle.setDate(LocalDate.parse(request.getParameter("date"), formatter));
+        reservationSalle.setDate(LocalDate.parse(request.getParameter("date")));
         reservationSalle.setHeure_debut(LocalTime.parse(request.getParameter("heure_debut"), formatter_clock));
         reservationSalle.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin"), formatter_clock));
         reservationSalle.setId_utilisateur_validation(request.getParameter("id_user_valid"));

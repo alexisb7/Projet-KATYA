@@ -45,9 +45,8 @@ public class ReservationSalleUpdateServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ReservationSalle reservationSalle = reservationSalleService.findById(id);
         reservationSalle.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter formatter_clock = DateTimeFormatter.ofPattern("hh:MM:ss");
-        reservationSalle.setDate(LocalDate.parse(request.getParameter("date"), formatter));
+        reservationSalle.setDate(LocalDate.parse(request.getParameter("date")));
         reservationSalle.setHeure_debut(LocalTime.parse(request.getParameter("heure_debut"), formatter_clock));
         reservationSalle.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin"), formatter_clock));
         reservationSalle.setId_utilisateur_validation(request.getParameter("id_user_valid"));
