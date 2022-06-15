@@ -29,12 +29,12 @@ public class EquipementDao {
         return instance;
     } */
 
-    private static final String CREATE_EQUIPEMENT_QUERY = "INSERT INTO Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description, id_document) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String CREATE_EQUIPEMENT_QUERY = "INSERT INTO Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description, lien_documentation) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
     private static final String FIND_EQUIPEMENTS_QUERY = "SELECT * FROM Equipement;";
     private static final String DELETE_EQUIPEMENT_QUERY = "DELETE FROM Equipement WHERE id_equipement=?;";
     private static final String FIND_EQUIPEMENT_BY_ID_QUERY = "SELECT * FROM Equipement WHERE id_equipement=?;";
     private static final String COUNT_EQUIPEMENTS_QUERY = "SELECT COUNT(id_equipement) FROM Equipement;";
-    private static final String UPDATE_EQUIPEMENT_QUERY = "UPDATE Equipement SET nom_equipement=?, zone_stockage=?, etat=?, disponibilite_equipement=?, date_acquisition=?, description=?, id_document=? WHERE id_equipement=?;";
+    private static final String UPDATE_EQUIPEMENT_QUERY = "UPDATE Equipement SET nom_equipement=?, zone_stockage=?, etat=?, disponibilite_equipement=?, date_acquisition=?, description=?, lien_documentation=? WHERE id_equipement=?;";
 
     public int create(Equipement equipement) throws DaoException {
         try {
@@ -47,7 +47,7 @@ public class EquipementDao {
             pstat.setInt(5, equipement.getDisponibilite_equipement());
             pstat.setDate(6, Date.valueOf(equipement.getDate_acquisition()));
             pstat.setString(7, equipement.getDescription());
-            pstat.setInt(8, equipement.getId_document());
+            pstat.setString(8, equipement.getLien_documentationt());
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -67,7 +67,7 @@ public class EquipementDao {
             pstat.setInt(4, equipement.getDisponibilite_equipement());
             pstat.setDate(5, Date.valueOf(equipement.getDate_acquisition()));
             pstat.setString(6, equipement.getDescription());
-            pstat.setInt(7, equipement.getId_document());
+            pstat.setString(7, equipement.getLien_documentationt());
             pstat.setInt(8, equipement.getId_equipement());
             pstat.executeUpdate();
             con.close();
@@ -108,8 +108,8 @@ public class EquipementDao {
                 int disponibilite_equipement = rs.getInt("disponibilite_equipement");
                 LocalDate date_acquisition = rs.getDate("date_acquisition").toLocalDate();
                 String description = rs.getString("description");
-                int id_document = rs.getInt("id_document");
-                Equipement equipement = new Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description, id_document);
+                String lien_documentation = rs.getString("lien_documentation");
+                Equipement equipement = new Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description, lien_documentation);
                 liste_equipement.add(equipement);
             }
             while(rs.next());
@@ -135,8 +135,8 @@ public class EquipementDao {
             int disponibilite_equipement = rs.getInt("disponibilite_equipement");
             LocalDate date_acquisition = rs.getDate("date_acquisition").toLocalDate();
             String description = rs.getString("description");
-            int id_document = rs.getInt("id_document");
-            Equipement equipement = new Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description, id_document);
+            String lien_documentation = rs.getString("lien_documentation");
+            Equipement equipement = new Equipement(id_equipement, nom_equipement, zone_stockage, etat, disponibilite_equipement, date_acquisition, description, lien_documentation);
             con.close();
             return equipement;
         } catch (SQLException e) {
