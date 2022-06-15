@@ -83,12 +83,6 @@
 }
 
 .section-header {
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.section-header {
-    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -96,12 +90,10 @@
     color: #000;
     font-weight: bold;
     font-size: 3em;
-    margin-bottom: 20px;
 }
 
 .section-header p {
     color: #000;
-    ;
 }
 
 .row {
