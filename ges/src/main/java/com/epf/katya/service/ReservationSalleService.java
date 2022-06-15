@@ -79,4 +79,22 @@ public class ReservationSalleService {
         }
         return 0;
     }
+
+    public ReservationSalle findByUser(String id_utilisateur) {
+        try {
+            return this.reservationSalleDao.findByUser(id_utilisateur);
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ReservationSalle findBySalle(String numero) {
+        try {
+            return this.reservationSalleDao.findBySalle(numero);
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

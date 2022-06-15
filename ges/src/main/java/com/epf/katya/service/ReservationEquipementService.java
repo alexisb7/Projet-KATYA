@@ -80,4 +80,22 @@ public class ReservationEquipementService {
         }
         return 0;
     }
+
+    public ReservationEquipement findByUser(String id_utilisateur) {
+        try {
+            return this.reservationEquipementDao.findByUser(id_utilisateur);
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ReservationEquipement findByEquipement(int id_equipement) {
+        try {
+            return this.reservationEquipementDao.findByEquipement(id_equipement);
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
