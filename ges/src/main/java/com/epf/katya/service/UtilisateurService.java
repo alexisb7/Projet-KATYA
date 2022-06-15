@@ -21,7 +21,6 @@ public class UtilisateurService {
         try {
             return this.utilisateurDao.controlConnection(id_utilisateur, mdp_utilisateur);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -31,7 +30,6 @@ public class UtilisateurService {
         try {
            return this.utilisateurDao.create(utilisateur);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } 
         return 0;
