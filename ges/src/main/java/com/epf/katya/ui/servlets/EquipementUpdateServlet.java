@@ -14,7 +14,6 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Equipement;
-import com.epf.katya.model.Utilisateur;
 import com.epf.katya.service.EquipementService;
 
 @WebServlet("/equipement_update")
