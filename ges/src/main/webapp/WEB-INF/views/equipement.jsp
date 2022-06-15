@@ -4,6 +4,7 @@
 <html>
     <head>
         <%@include file="/WEB-INF/views/common/head.jsp" %>
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
@@ -12,7 +13,6 @@
         <!-- Style -->
 
     </head>
-
     <style type="text/css">
         body {
             font-family: "Roboto Condensed", Helvetica, sans-serif;
@@ -89,67 +89,85 @@
             margin-right: -10px
         }
     </style>
+
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
         <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
 
         <div class="content-wrapper backwhite">
-            <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation">
-                <div style="display:inline-block;margin-bottom:50px;">
-                    <button name="bouton_salle" value="salle" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations de salles</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_salle">+</a> 
-                    <button name="bouton_equip" value="equipement" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_equipement">+</a> 
-                </div>
+
+            <h1>Equipements</h1>
+            <form style="float:right" class="form-horizontal" method="post" action="/rentmanager/vehicles/search">
+                <input   type="text"  id="search" name="search" placeholder=" Rechercher un vehicule" >
+                <button type="submit" class="btn btn-primary">Chercher</button>
             </form>
-            <table class="tablemanager">
-                <thead>
-                <tr>
-                    <th class="disableSort">Id</th>
-                    <th>Numero</th>
-                    <th>Utilisateur</th>
-                    <th>Etat</th>
-                    <th>Debut</th>
-                    <th>Fin</th>
-                    <th>Validation</th>
-                    <th class="disableFilterBy">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${listResaSalle}" var="resa">
-                        <tr>
-                            <td class="prova">${resa.id_reservation_salle}</td>
-                            <td class="prova">${resa.numero_salle}</td>
-                            <td class="prova">${resa.id_utilisateur}</td>
-                            <td class="prova">${resa.etat_validation}</td>
-                            <td class="prova">${resa.date_debut}</td>
-                            <td class="prova">${resa.date_fin}</td>
-                            <td class="prova">${resa.id_utilisateur_validation}</td>
-                            <td class="prova controltd">
-                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}"
-                                                style="background-color: transparent;border-color: transparent;margin-right: -10px">
-                                                    <i  style="color: orange" class="fa fa-edit"></i>
-                                                </a>
-                                    <button type="submit" class="btn btn-primary" title="Supprimer"
-                                        style="background-color: transparent;border-color: transparent;margin-right: -10px">
-                                        <i  style="color: red" class="fa fa-trash"></i>
-                                        </button>
-                                </form>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+            <!--               Etat-->
+                <div class="col-md-12">
+                    <hr/>
+                </div>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                                <table class="tablemanager">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 100px">#</th>
+                                        <th>Nom</th>
+                                        <th>Zone</th>
+                                        <th>Etat</th>
+                                        <th>Disponibilite</th>
+                                        <th>Date</th>
+                                        <th class="disableFilterBy">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${listeSalle}" var="salle">
+                                        <tr>
+                                            <td class="prova">-</td>
+                                            <td class="prova">-</td>
+                                            <td class="prova">-</td>
+                                            <td class="prova">-</td>
+                                            <td class="prova">-</td>
+                                            <td class="prova">-</td>
+                                            <td class="prova controltd">
+                                                <form class="form-horizontal" method="post" action="#">
+                                                    <a class="btn btn-primary"  href="#" title="view"
+                                                       style="background-color: transparent; border-color: transparent; margin-right: -10px">
+                                                        <i  style="color: green;" class="fa fa-eye"></i>
+                                                    </a>
+                                                    <a class="btn btn-primary" href="#"  title="editer"
+                                                       style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                                        <i  style="color: orange" class="fa fa-edit"></i>
+                                                    </a>
+                                                    <button type="submit" class="btn btn-danger" href="#"title="supprimer"
+                                                            style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                                        <i  style="color: red" class="fa fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </section>
+
+            
+
         </div>
 
         <%@ include file="/WEB-INF/views/common/footer.jsp" %>
     </body>
-<script>
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
-</script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
     <!-- External jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="./js/jquery-1.12.3.min.js"></script> -->
@@ -201,5 +219,7 @@
         })();
 
     </script>
+
+
     <%@ include file="/WEB-INF/views/common/js_imports.jsp" %>
 </html>

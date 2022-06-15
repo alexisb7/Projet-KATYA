@@ -23,7 +23,6 @@ import com.epf.katya.service.ReservationEquipementService;
 import com.epf.katya.service.SalleService;
 import com.epf.katya.dao.UtilisateurDao;
 import com.epf.katya.exception.DaoException;
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Utilisateur;
 // import com.epf.katya.service.ReservationEquipementService;
 
@@ -33,6 +32,11 @@ public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
+        DocumentDao documentDao = new DocumentDao();
+        DocumentService documentService = new DocumentService(documentDao); 
+
+        Document document = new Document(1, "lien8");
+
         /* DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
@@ -50,21 +54,15 @@ public class Main {
      
         EquipementDao equipementDao = new EquipementDao();
         EquipementService equipementService = new EquipementService(equipementDao);
-<<<<<<< HEAD
         
         Equipement equipement = new Equipement(2, "nom2", "PROUUT", "etat2", 1, LocalDate.now(), "description2", 1);
         try {
             equipementService.create(equipement);
         } catch (ServiceException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
-        try {
-            System.out.println(equipementService.findAll());
-        } catch (ServiceException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        System.out.println(equipementService.findAll());
         
         /*try {
             equipementService.delete(equipement);
@@ -123,10 +121,9 @@ public class Main {
         System.out.println(salleService.findAll());
         //System.out.println(salleService.research("A"));
         //System.out.println(salleService.findByNumero("A106"));
-<<<<<<< HEAD
         System.out.println("Success");     
         */
-        
+        /*System.out.println("Success"); */      
         
         ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
         ReservationEquipementService reservationEquipementService = new ReservationEquipementService(reservationEquipementDao);
