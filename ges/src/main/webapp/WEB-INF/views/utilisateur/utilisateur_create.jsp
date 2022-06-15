@@ -22,7 +22,7 @@
             <h1>Creation d'utilisateurs</h1>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur/create">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur_create">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="id" class="col-sm-2 control-label">Identifiant</label>
@@ -53,7 +53,7 @@
                             </div>
                         </div>       
                         <div class="form-group">
-                            <label for="nom" class="col-sm-2 control-label">Role</label>
+                            <label for="role" class="col-sm-2 control-label">Role</label>
             
                             <div class="col-sm-10">
                                 <select class="form-control" id="role" name="role">

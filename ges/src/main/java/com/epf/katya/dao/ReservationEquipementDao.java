@@ -33,8 +33,8 @@ public class ReservationEquipementDao {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(CREATE_RESERVATION_EQUIPEMENT_QUERY);
             pstat.setInt(1, reservationEquipement.getId_reservation_equipement());
-            pstat.setInt(2, reservationEquipement.getId_utilisateur());
-            pstat.setInt(3, reservationEquipement.getId_utilisateur_validation());
+            pstat.setString(2, reservationEquipement.getId_utilisateur());
+            pstat.setString(3, reservationEquipement.getId_utilisateur_validation());
             pstat.setInt(4, reservationEquipement.getId_equipement());
             pstat.setDate(5, Date.valueOf(reservationEquipement.getDate_debut()));
             pstat.setDate(6, Date.valueOf(reservationEquipement.getDate_fin()));
@@ -51,8 +51,8 @@ public class ReservationEquipementDao {
         try {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(UPDATE_RESERVATION_EQUIPEMENT_QUERY);
-            pstat.setInt(1, reservationEquipement.getId_utilisateur());
-            pstat.setInt(2, reservationEquipement.getId_utilisateur_validation());
+            pstat.setString(1, reservationEquipement.getId_utilisateur());
+            pstat.setString(2, reservationEquipement.getId_utilisateur_validation());
             pstat.setInt(3, reservationEquipement.getId_equipement());
             pstat.setDate(4, Date.valueOf(reservationEquipement.getDate_debut()));
             pstat.setDate(5, Date.valueOf(reservationEquipement.getDate_fin()));
@@ -87,8 +87,8 @@ public class ReservationEquipementDao {
             rs.next();
             do {
                 int id_reservation_equipement = rs.getInt("id_reservation_equipement");
-                int id_utilisateur = rs.getInt("id_utilisateur");
-                int id_utilisateur_validation = rs.getInt("id_utilisateur_validation");
+                String id_utilisateur = rs.getString("id_utilisateur");
+                String id_utilisateur_validation = rs.getString("id_utilisateur_validation");
                 int id_equipement = rs.getInt("id_equipement");
                 LocalDate date_debut = rs.getDate("date_debut").toLocalDate();
                 LocalDate date_fin = rs.getDate("date_fin").toLocalDate();
@@ -111,8 +111,8 @@ public class ReservationEquipementDao {
             pstat.setInt(1, id_reservation_equipement);
             ResultSet rs = pstat.executeQuery();
             rs.next();
-            int id_utilisateur = rs.getInt("id_utilisateur");
-            int id_utilisateur_validation = rs.getInt("id_utilisateur_validation");
+            String id_utilisateur = rs.getString("id_utilisateur");
+            String id_utilisateur_validation = rs.getString("id_utilisateur_validation");
             int id_equipement = rs.getInt("id_equipement");
             LocalDate date_debut = rs.getDate("date_debut").toLocalDate();
             LocalDate date_fin = rs.getDate("date_fin").toLocalDate();

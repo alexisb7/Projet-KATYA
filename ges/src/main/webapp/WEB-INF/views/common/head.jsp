@@ -26,7 +26,6 @@
          folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/skins/_all-skins.min.css">
 
-<<<<<<< HEAD
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style_andy.css">
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/stylecss.css">
@@ -34,11 +33,6 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-=======
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style_andy.css">
-
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/stylecss.css">
->>>>>>> 7f3ca01df1fec5076cf9cb584ffaead170949dea
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

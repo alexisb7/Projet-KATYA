@@ -15,7 +15,7 @@ import com.epf.katya.service.SalleService;
 
 import java.io.IOException;
 
-@WebServlet("/salle/update")
+@WebServlet("/salle_update")
 public class SalleUpdateServlet extends HttpServlet {
 
     @Autowired
