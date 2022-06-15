@@ -28,13 +28,10 @@ public class EquipementCreateServlet extends HttpServlet {
        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
    }
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement_create.jsp").forward(request, response);
     }
-
- 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -53,12 +50,7 @@ public class EquipementCreateServlet extends HttpServlet {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        doGet(request, response);
+        response.sendRedirect("equipement");
 
     }
-        //RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
-
-        //r.forward(request, response);
-
-    
 }

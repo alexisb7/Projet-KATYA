@@ -68,8 +68,7 @@
                         
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-info pull-right">Ajouter le nouvel equipement</button>
-                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/equipement">Retour a la liste des equipements</a>
+                            <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Ajouter</button>
                         </div>
 
                     </form>

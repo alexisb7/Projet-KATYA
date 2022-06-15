@@ -16,17 +16,9 @@ import com.epf.katya.persistence.ConnectionManager;
 @Repository
 public class DocumentDao {
     
-    //private static DocumentDao instance = null;
-    
     public DocumentDao() {}
 
-    /* public static DocumentDao getInstance() {
-        if(instance == null) {
-            instance = new DocumentDao();
-        }
-        return instance;
-    }
- */
+    
     private static final String CREATE_DOCUMENT_QUERY = "INSERT INTO Document(id_document, lien) VALUES (?, ?);";
     private static final String FIND_DOCUMENTS_QUERY = "SELECT * FROM Document;";
     private static final String DELETE_DOCUMENTS_QUERY = "DELETE FROM Document WHERE id_document=?;";
@@ -43,7 +35,6 @@ public class DocumentDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -58,7 +49,6 @@ public class DocumentDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -73,7 +63,6 @@ public class DocumentDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -95,7 +84,6 @@ public class DocumentDao {
             while(rs.next());
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -114,7 +102,6 @@ public class DocumentDao {
             con.close();
             return document;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -131,7 +118,6 @@ public class DocumentDao {
             nb_document = rs.getInt(1);
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         

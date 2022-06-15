@@ -18,20 +18,10 @@ public class EquipementService {
         this.equipementDao = equipementDao;
     } 
 
-    /* public static EquipementService instance;
-
-    public static EquipementService getInstance() {
-        if (instance == null) {
-            instance = new EquipementService();
-        }
-        return instance;
-    } */
-
     public int create(Equipement equipement) throws ServiceException {
         try {
             this.equipementDao.create(equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -41,7 +31,6 @@ public class EquipementService {
         try {
             this.equipementDao.update(equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -68,7 +57,6 @@ public class EquipementService {
         try {
             return this.equipementDao.findById(id_equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
@@ -78,7 +66,6 @@ public class EquipementService {
         try {
             return this.equipementDao.count();
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0; 

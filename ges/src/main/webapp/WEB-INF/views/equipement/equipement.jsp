@@ -35,7 +35,8 @@
             background-color: #f2f2f2;
         }
         th {
-            background-color: #ddd;
+            background-color: rgb(181, 57, 103);
+            color: white;
         }
         th,td {
             padding: 5px;
@@ -61,10 +62,6 @@
             content: " \f0de";
             font-family: "FontAwesome";
         }
-        /*Style disabled*/
-        .tablemanager th.disableSort {
-
-        } 
         #for_numrows {
             padding: 10px;
             float: left;
@@ -83,31 +80,36 @@
         <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
 
         <div class="content-wrapper backwhite">
-
+            
            <h1>Liste des equipements</h1>
 		   <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
            <table class="tablemanager">
-            <thead>
-            <tr>
-                <th class="disableSort">ID</th>
-                <th>Nom</th>
-                <th>Zone de stockage</th>
-                <th>Etat</th>
-                <th>Disponibilite</th>
-                <th>Date d'acquisition</th>
-                <th>Description</th>
-                <th>Lien documentation</th>
-                <th class="disableFilterBy">Action</th>
-            </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${listEquipement}" var="equipement">
+                <thead>
+                    <tr>
+                        <th class="disableSort">ID</th>
+                        <th>Nom</th>
+                        <th>Zone de stockage</th>
+                        <th>Etat</th>
+                        <th>Disponibilite</th>
+                        <th>Date d'acquisition</th>
+                        <th>Description</th>
+                        <th>Lien documentation</th>
+                        <th class="disableFilterBy">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${listEquipement}" var="equipement">
                         <tr>
                             <td class="prova" id="id_equipement">${equipement.id_equipement}</td>
                             <td class="prova">${equipement.nom_equipement}</td>
                             <td class="prova">${equipement.zone_stockage}</td>
                             <td class="prova">${equipement.etat}</td>
-                            <td class="prova">${equipement.disponibilite_equipement}</td>
+                            <c:if test="${equipement.disponibilite_equipement==1}">
+                                <td class="prova">Oui</td>
+                            </c:if>
+                            <c:if test="${equipement.disponibilite_equipement==0}">
+                                <td class="prova">Non</td>
+                            </c:if>
                             <td class="prova">${equipement.date_acquisition}</td>
                             <td class="prova">${equipement.description}</td>
                             <td class="prova">${equipement.lien_documentation}</td>
