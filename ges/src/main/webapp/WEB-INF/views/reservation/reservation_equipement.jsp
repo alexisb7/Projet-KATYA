@@ -102,11 +102,11 @@
                 <thead>
                 <tr>
                     <th class="disableSort">Id</th>
-                    <th>Utilisateur</th>
-                    <th>Validation</th>
                     <th>Equipement</th>
+                    <th>Utilisateur</th>
                     <th>Debut</th>
-                    <th>Fin</th>
+                    <th>Fin</th>                   
+                    <th>Validation par</th>
                     <th>Etat</th>
                     <th class="disableFilterBy">Action</th>
                 </tr>
@@ -116,12 +116,21 @@
                         <tr>
                             <td class="prova">${resa.id_reservation_equipement}</td>
                             <td class ="prova">
+                                <c:forEach items = "${listEquipement}" var="equipement">
+									<c:if test="${equipement.id_equipement==resa.id_equipement}">
+										${equipement.nom_equipement}
+									</c:if>
+								</c:forEach>
+                            </td>
+                            <td class ="prova">
                                 <c:forEach items = "${listUser}" var="user">
 									<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
 										${user.nom_utilisateur}
 									</c:if>
 								</c:forEach>
                             </td>
+                            <td class="prova">${resa.date_debut}</td>
+                            <td class="prova">${resa.date_fin}</td>
                             <td class ="prova">
                                 <c:forEach items = "${listUser}" var="user">
 									<c:if test="${user.id_utilisateur==resa.id_utilisateur_validation}">
@@ -129,15 +138,6 @@
 									</c:if>
 								</c:forEach>
                             </td>
-                            <td class ="prova">
-                                <c:forEach items = "${listEquipement}" var="equipement">
-									<c:if test="${equipement.id_equipement==resa.id_equipement}">
-										${equipement.nom_equipement}
-									</c:if>
-								</c:forEach>
-                            </td>
-                            <td class="prova">${resa.date_debut}</td>
-                            <td class="prova">${resa.date_fin}</td>
                             <td class="prova">
                                 <c:if test="${resa.etat_validation==1}">
 									Valide

@@ -74,6 +74,11 @@
             display: block;
             text-align: center;
         }
+        .but_middle{
+            margin: auto;
+            width: 7%;
+            padding: 10px;
+        }
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
@@ -82,7 +87,9 @@
         <div class="content-wrapper backwhite">
             
            <h1>Liste des equipements</h1>
-		   <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
+           <div class="but_middle">
+                <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
+           </div>
            <table class="tablemanager">
                 <thead>
                     <tr>

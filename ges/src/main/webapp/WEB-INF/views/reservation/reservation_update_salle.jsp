@@ -55,12 +55,22 @@
                             <label for="etat" class="col-sm-2 control-label">Etat de validation</label>
                             <div class="col-sm-10">
                                 <select class="form-control" id="etat" name="etat">
-                                    <option value="0">
-                                        Non valide 
-                                    </option>
-                                    <option value="1">
-                                        Valide 
-                                    </option>
+                                    <c:if test="${resa.etat_validation==1}">
+                                        <option value="1">
+                                            Valide 
+                                        </option>
+                                        <option value="0">
+                                            Non valide 
+                                        </option>
+								    </c:if>
+                                    <c:if test="${resa.etat_validation==0}">
+                                        <option value="0">
+                                            Non valide 
+                                        </option>
+                                        <option value="1">
+                                            Valide 
+                                        </option>
+								    </c:if>   
                                 </select>
                             </div>
                         </div> 	

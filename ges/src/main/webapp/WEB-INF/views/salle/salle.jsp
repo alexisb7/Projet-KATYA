@@ -82,6 +82,11 @@
             border-color: transparent;
             margin-right: -10px
         }
+        .but_middle{
+            margin: auto;
+            width: 7%;
+            padding: 10px;
+        }
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
@@ -89,12 +94,14 @@
 
         <div class="content-wrapper backwhite">
 
-            <h1>Salles</h1>
-            <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/salle_create">Ajouter</a> 
+            <h1>Listes des salles</h1>
+            <div class="but_middle">
+                <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/salle_create">Ajouter</a> 
+            </div>
             <table class="tablemanager">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th class="disableSort"></th>
                         <th>Numero</th>
                         <th>Etage</th>
                         <th>Capacite</th>
@@ -107,7 +114,7 @@
                 <tbody>
                     <c:forEach items="${listeSalle}" var="salle">
                         <tr>
-                            <th></th>
+                            <td></td>
                             <td class="prova">${salle.numero}</td>
                             <td class="prova">${salle.etage}</td>
                             <td class="prova">${salle.capacite}</td>
@@ -121,7 +128,7 @@
                             <td class="prova">${salle.date_acquisition_salle}</td>
                             <td class="prova controltd">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
-                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle/update?numero=${salle.numero}"  title="editer"
+                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle_update?numero=${salle.numero}"  title="editer"
                                         style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                         <i  style="color: orange" class="fa fa-edit"></i>
                                     </a>

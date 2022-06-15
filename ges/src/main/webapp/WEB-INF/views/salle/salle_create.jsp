@@ -17,7 +17,7 @@
 
         <div class="content-wrapper backwhite">
 
-            <h1>Salles_create</h1>
+            <h1>Ajout d'une nouvelle salle</h1>
             <div class="box">
                 <!-- form start -->
                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_create">
@@ -53,7 +53,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-info pull-right">Ajouter</button>
+                        <button type="submit" class="btn btn-info">Ajouter</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

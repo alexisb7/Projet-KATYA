@@ -17,8 +17,8 @@
         <!-- Style -->
         <div class="content-wrapper backwhite">
 
-            <h1>Salles_update</h1>
-            <h2>Salle ${salle.numero}</h2>
+            <h1>Modification d'une salle</h1>
+            <h2>Salle : ${salle.numero}</h2>
             <div class="box">
                 <!-- form start -->
                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_update">
