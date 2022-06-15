@@ -91,64 +91,51 @@
 
             <h1>Salles</h1>
             <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/salle_create">Ajouter</a> 
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                                <table class="tablemanager">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Numero</th>
-                                        <th>Etage</th>
-                                        <th>Capacite</th>
-                                        <th>Utilite</th>
-                                        <th>Disponible</th>
-                                        <th>Date de creation</th>
-                                        <th class="disableFilterBy">Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach items="${listeSalle}" var="salle">
-                                        <tr>
-                                            <th></th>
-                                            <td class="prova">${salle.numero}</td>
-                                            <td class="prova">${salle.etage}</td>
-                                            <td class="prova">${salle.capacite}</td>
-                                            <td class="prova">${salle.utilite}</td>
-                                            <c:if test="${salle.disponibilite_salle==1}">
-                                                <td class="prova">Oui</td>
-                                            </c:if>
-                                            <c:if test="${salle.disponibilite_salle==0}">
-                                                <td class="prova">Non</td>
-                                            </c:if>
-                                            <td class="prova">${salle.date_acquisition_salle}</td>
-                                            <td class="prova controltd">
-                                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
-                                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle/update?numero=${salle.numero}"  title="editer"
-                                                       style="background-color: transparent;border-color: transparent;margin-right: -10px">
-                                                        <i  style="color: orange" class="fa fa-edit"></i>
-                                                    </a>
-                                                    <button type="submit" class="btn btn-danger" href="#"title="supprimer"
-                                                            style="background-color: transparent;border-color: transparent;margin-right: -10px">
-                                                        <i  style="color: red" class="fa fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-
-
-
-                        <!-- /.box -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </section>
+            <table class="tablemanager">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Numero</th>
+                        <th>Etage</th>
+                        <th>Capacite</th>
+                        <th>Utilite</th>
+                        <th>Disponible</th>
+                        <th>Date de creation</th>
+                        <th class="disableFilterBy">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${listeSalle}" var="salle">
+                        <tr>
+                            <th></th>
+                            <td class="prova">${salle.numero}</td>
+                            <td class="prova">${salle.etage}</td>
+                            <td class="prova">${salle.capacite}</td>
+                            <td class="prova">${salle.utilite}</td>
+                            <c:if test="${salle.disponibilite_salle==1}">
+                                <td class="prova">Oui</td>
+                            </c:if>
+                            <c:if test="${salle.disponibilite_salle==0}">
+                                <td class="prova">Non</td>
+                            </c:if>
+                            <td class="prova">${salle.date_acquisition_salle}</td>
+                            <td class="prova controltd">
+                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
+                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle/update?numero=${salle.numero}"  title="editer"
+                                        style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                        <i  style="color: orange" class="fa fa-edit"></i>
+                                    </a>
+                                    <button type="submit" class="btn btn-danger" href="#"title="supprimer"
+                                        style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                        <i  style="color: red" class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
      
-            
-
         </div>
 
         <%@ include file="/WEB-INF/views/common/footer.jsp" %>

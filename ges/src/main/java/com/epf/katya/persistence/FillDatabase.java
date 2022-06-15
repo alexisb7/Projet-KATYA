@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.h2.tools.DeleteDbFiles;
-
-//import com.epf.katya.persistence.ConnectionManager;
-
 public class FillDatabase {
 
 
