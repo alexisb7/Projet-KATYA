@@ -64,7 +64,7 @@
                                             <td>${salle.date_acquisition_salle}</td>
                                             <td>
                                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=${salle.numero}">
-                                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle/update?numero=${salle.numero}"  title="editer"
+                                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/salle_update?numero=${salle.numero}"  title="editer"
                                                     style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                         <i  style="color: orange" class="fa fa-edit"></i>
                                                     </a>

@@ -107,7 +107,7 @@
                             <td class="prova">${user.date_entree}</td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur?id=${user.id_utilisateur}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/utilisateur/update?id=${user.id_utilisateur}"
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/utilisateur_update?id=${user.id_utilisateur}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                     <i  style="color: orange" class="fa fa-edit"></i>
                                                 </a>

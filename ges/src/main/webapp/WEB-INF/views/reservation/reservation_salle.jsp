@@ -118,7 +118,7 @@
                             <td class="prova">${resa.id_utilisateur_validation}</td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation/update_salle?id=${resa.id_reservation_salle}"
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                     <i  style="color: orange" class="fa fa-edit"></i>
                                                 </a>

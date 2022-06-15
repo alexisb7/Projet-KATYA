@@ -20,7 +20,7 @@
             <h1>Creation d'une reservation de salle</h1>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation/create_salle">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation_create_salle">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="numero_salle" class="col-sm-2 control-label">Numero de salle</label>

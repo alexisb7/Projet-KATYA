@@ -21,7 +21,7 @@
             <h2>Salle ${salle.numero}</h2>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle/update">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_update">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="etage" class="col-sm-2 control-label">Numero</label>
