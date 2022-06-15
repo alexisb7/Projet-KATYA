@@ -21,6 +21,8 @@ public class ContactsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                String role = request.getParameter("role");
+            request.setAttribute("role", role);
 
         RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/contacts.jsp");
 
