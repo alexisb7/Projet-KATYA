@@ -1,6 +1,7 @@
 package com.epf.katya.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 
 public class ReservationSalle {
@@ -8,29 +9,31 @@ public class ReservationSalle {
     private String numero_salle;
     private String id_utilisateur;
     private int etat_validation;
-    private LocalDate date_debut;
-    private LocalDate date_fin; 
+    private LocalDate date;
+    private LocalTime heure_debut;
+    private LocalTime heure_fin; 
     private String id_utilisateur_validation;
 
     public ReservationSalle(){}
     
     public ReservationSalle(int id_reservation_salle, String numero_salle, String id_utilisateur,
-            int etat_validation, LocalDate date_debut, LocalDate date_fin, String id_utilisateur_validation) {
+            int etat_validation, LocalDate date, LocalTime heure_debut, LocalTime heure_fin, String id_utilisateur_validation) {
         this.id_reservation_salle = id_reservation_salle;
         this.numero_salle = numero_salle;
         this.id_utilisateur = id_utilisateur;
         this.etat_validation = etat_validation;
-        this.date_debut = date_debut;
-        this.date_fin = date_fin;
+        this.date = date;
+        this.heure_debut = heure_debut;
+        this.heure_fin = heure_fin;
         this.id_utilisateur_validation = id_utilisateur_validation;
     }
 
     @Override
     public String toString() {
-        return "ReservationSalle [date_debut=" + date_debut + ", date_fin=" + date_fin + ", etat_validation="
+        return "ReservationSalle [date=" + date + ", heure_fin=" + heure_fin + ", heure_debut=" + heure_debut + ", etat_validation="
                 + etat_validation + ", id_reservation_salle=" + id_reservation_salle + ", id_utilisateur="
                 + id_utilisateur + ", id_utilisateur_validation=" + id_utilisateur_validation
-                + ", id_utnumero_sallilisateur=" + numero_salle + "]";
+                + ", numero_salle=" + numero_salle + "]";
     }
 
     public int getId_reservation_salle() {
@@ -49,13 +52,6 @@ public class ReservationSalle {
         return etat_validation;
     }
 
-    public LocalDate getDate_debut() {
-        return date_debut;
-    }
-
-    public LocalDate getDate_fin() {
-        return date_fin;
-    }
 
     public String getId_utilisateur_validation() {
         return id_utilisateur_validation;
@@ -63,10 +59,6 @@ public class ReservationSalle {
 
     public void setId_reservation_salle(int id_reservation_salle) {
         this.id_reservation_salle = id_reservation_salle;
-    }
-
-    public void setId_numero_salle(String numero_salle) {
-        this.numero_salle = numero_salle;
     }
 
     public void setId_utilisateur(String id_utilisateur) {
@@ -77,12 +69,34 @@ public class ReservationSalle {
         this.etat_validation = etat_validation;
     }
 
-    public void setDate_debut(LocalDate date_debut) {
-        this.date_debut = date_debut;
+    
+
+    public void setNumero_salle(String numero_salle) {
+        this.numero_salle = numero_salle;
     }
 
-    public void setDate_fin(LocalDate date_fin) {
-        this.date_fin = date_fin;
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public LocalTime getHeure_debut() {
+        return heure_debut;
+    }
+
+    public void setHeure_debut(LocalTime heure_debut) {
+        this.heure_debut = heure_debut;
+    }
+
+    public LocalTime getHeure_fin() {
+        return heure_fin;
+    }
+
+    public void setHeure_fin(LocalTime heure_fin) {
+        this.heure_fin = heure_fin;
     }
 
     public void setId_utilisateur_validation(String id_utilisateur_validation) {

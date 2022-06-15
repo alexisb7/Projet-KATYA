@@ -107,10 +107,16 @@
                 <tr>
                     <th class="disableSort">Id</th>
                     <th>Equipement</th>
+<<<<<<< HEAD
                     <th>Utilisateur</th>
                     <th>Debut</th>
                     <th>Fin</th>                   
                     <th>Validation par</th>
+=======
+                    <th>Date</th>
+                    <th>Heure de debut</th>
+                    <th>Heure de fin</th>
+>>>>>>> DAO
                     <th>Etat</th>
                     <th class="disableFilterBy">Action</th>
                 </tr>
@@ -142,6 +148,7 @@
 									</c:if>
 								</c:forEach>
                             </td>
+<<<<<<< HEAD
                             <td class="prova">
                                 <c:if test="${resa.etat_validation==1}">
 									Valide
@@ -151,6 +158,20 @@
 								</c:if>
                             </td>
                             <td class="prova">
+=======
+                            <td class ="prova">
+                                <c:forEach items = "${listEquipement}" var="equipement">
+									<c:if test="${equipement.id_equipement==resa.id_equipement}">
+										${equipement.nom_equipement}
+									</c:if>
+								</c:forEach>
+                            </td>
+                            <td class="prova">${resa.date}</td>
+                            <td class="prova">${resa.heure_debut}</td>
+                            <td class="prova">${resa.heure_fin}</td>
+                            <td class="prova">${resa.etat_validation}</td>
+                            <td class="prova controltd">
+>>>>>>> DAO
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_equip=${resa.id_reservation_equipement}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_equipement_update?id=${resa.id_reservation_equipement}"
                                         style="background-color: transparent;border-color: transparent;margin-right: -10px">

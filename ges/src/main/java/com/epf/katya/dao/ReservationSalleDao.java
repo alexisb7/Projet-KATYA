@@ -5,7 +5,9 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +38,10 @@ public class ReservationSalleDao {
             pstat.setString(2, reservationSalle.getNumero_salle());
             pstat.setString(3, reservationSalle.getId_utilisateur());
             pstat.setInt(4, reservationSalle.getEtat_validation());
-            pstat.setDate(5, Date.valueOf(reservationSalle.getDate_debut()));
-            pstat.setDate(6, Date.valueOf(reservationSalle.getDate_fin()));
-            pstat.setString(7, reservationSalle.getId_utilisateur_validation());
+            pstat.setDate(5, Date.valueOf(reservationSalle.getDate()));
+            pstat.setTime(6, Time.valueOf(reservationSalle.getHeure_debut()));
+            pstat.setTime(7, Time.valueOf(reservationSalle.getHeure_fin()));
+            pstat.setString(8, reservationSalle.getId_utilisateur_validation());
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -51,13 +54,14 @@ public class ReservationSalleDao {
         try {
             Connection con = ConnectionManager.getConnection();
             PreparedStatement pstat = con.prepareStatement(UPDATE_RESERVATION_SALLE_QUERY);
-            pstat.setInt(7, reservationSalle.getId_reservation_salle());
+            pstat.setInt(8, reservationSalle.getId_reservation_salle());
             pstat.setString(1, reservationSalle.getNumero_salle());
             pstat.setString(2, reservationSalle.getId_utilisateur());
             pstat.setInt(3, reservationSalle.getEtat_validation());
-            pstat.setDate(4, Date.valueOf(reservationSalle.getDate_debut()));
-            pstat.setDate(5, Date.valueOf(reservationSalle.getDate_fin()));
-            pstat.setString(6, reservationSalle.getId_utilisateur_validation());
+            pstat.setDate(4, Date.valueOf(reservationSalle.getDate()));
+            pstat.setTime(5, Time.valueOf(reservationSalle.getHeure_debut()));
+            pstat.setTime(6, Time.valueOf(reservationSalle.getHeure_fin()));
+            pstat.setString(7, reservationSalle.getId_utilisateur_validation());
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -91,10 +95,11 @@ public class ReservationSalleDao {
                 String numero_salle = rs.getString("numero_salle");
                 String id_utilisateur = rs.getString("id_utilisateur");
                 int etat_validation = rs.getInt("etat_validation");
-                LocalDate date_debut = rs.getDate("date_debut").toLocalDate();
-                LocalDate date_fin = rs.getDate("date_fin").toLocalDate();
+                LocalDate date = rs.getDate("date").toLocalDate();
+                LocalTime heure_debut = rs.getTime("heure_debut").toLocalTime();
+                LocalTime heure_fin = rs.getTime("heure_fin").toLocalTime();
                 String id_utilisateur_validation = rs.getString("id_utilisateur_validation");
-                ReservationSalle reservationSalle = new ReservationSalle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date_debut, date_fin, id_utilisateur_validation);
+                ReservationSalle reservationSalle = new ReservationSalle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date, heure_debut, heure_fin, id_utilisateur_validation);
                 liste_reservation_salle.add(reservationSalle);
             }while(rs.next());
             con.close();
@@ -114,10 +119,11 @@ public class ReservationSalleDao {
             String numero_salle = rs.getString("numero_salle");
             String id_utilisateur = rs.getString("id_utilisateur");
             int etat_validation = rs.getInt("etat_validation");
-            LocalDate date_debut = rs.getDate("date_debut").toLocalDate();
-            LocalDate date_fin = rs.getDate("date_fin").toLocalDate();
+            LocalDate date = rs.getDate("date").toLocalDate();
+            LocalTime heure_debut = rs.getTime("heure_debut").toLocalTime();
+            LocalTime heure_fin = rs.getTime("heure_fin").toLocalTime();
             String id_utilisateur_validation = rs.getString("id_utilisateur_validation");
-            ReservationSalle reservationSalle = new ReservationSalle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date_debut, date_fin, id_utilisateur_validation);
+            ReservationSalle reservationSalle = new ReservationSalle(id_reservation_salle, numero_salle, id_utilisateur, etat_validation, date, heure_debut, heure_fin, id_utilisateur_validation);
             con.close();
             return reservationSalle;
         } catch (SQLException e) {
