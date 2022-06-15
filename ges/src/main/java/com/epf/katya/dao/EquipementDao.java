@@ -36,6 +36,7 @@ public class EquipementDao {
     private static final String COUNT_EQUIPEMENTS_QUERY = "SELECT COUNT(id_equipement) FROM Equipement;";
     private static final String UPDATE_EQUIPEMENT_QUERY = "UPDATE Equipement SET nom_equipement=?, zone_stockage=?, etat=?, disponibilite_equipement=?, date_acquisition=?, description=?, lien_documentation=? WHERE id_equipement=?;";
 
+
     public int create(Equipement equipement) throws DaoException {
         try {
             Connection con = ConnectionManager.getConnection();
@@ -51,7 +52,6 @@ public class EquipementDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -72,7 +72,6 @@ public class EquipementDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -87,7 +86,6 @@ public class EquipementDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -115,7 +113,6 @@ public class EquipementDao {
             while(rs.next());
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -140,7 +137,6 @@ public class EquipementDao {
             con.close();
             return equipement;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
@@ -156,7 +152,6 @@ public class EquipementDao {
             nb_equipement = rs.getInt(1);
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return nb_equipement;

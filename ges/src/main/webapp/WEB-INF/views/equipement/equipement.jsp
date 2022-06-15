@@ -84,30 +84,36 @@
 
         <div class="content-wrapper backwhite">
 
-           <h1>Utilisateurs</h1>
-		   <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur_create">Ajouter</a> 
+           <h1>Equipements</h1>
+		   <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
            <table class="tablemanager">
             <thead>
             <tr>
-                <th class="disableSort">Id</th>
-                <th>Email</th>
+                <th class="disableSort">ID</th>
                 <th>Nom</th>
-                <th>Role</th>
-                <th>Date</th>
+                <th>Zone de stockage</th>
+                <th>Etat</th>
+                <th>Disponibilite</th>
+                <th>Date d'acquisition</th>
+                <th>Description</th>
+                <th>ID document lie</th>
                 <th class="disableFilterBy">Action</th>
             </tr>
             </thead>
             <tbody>
-                <c:forEach items="${listUtilisateur}" var="user">
+                <c:forEach items="${listEquipement}" var="equipement">
                         <tr>
-                            <td class="prova">${user.id_utilisateur}</td>
-                            <td class="prova">${user.email}</td>
-                            <td class="prova">${user.nom_utilisateur}</td>
-                            <td class="prova">${user.role}</td>
-                            <td class="prova">${user.date_entree}</td>
+                            <td class="prova">${equipement.id_equipement}</td>
+                            <td class="prova">${equipement.nom_equipement}</td>
+                            <td class="prova">${equipement.zone_stockage}</td>
+                            <td class="prova">${equipement.etat}</td>
+                            <td class="prova">${equipement.disponibilite_equipement}</td>
+                            <td class="prova">${equipement.date_acquisition}</td>
+                            <td class="prova">${equipement.description}</td>
+                            <td class="prova">${equipement.id_document}</td>
                             <td class="prova">
-                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur?id=${user.id_utilisateur}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/utilisateur/update?id=${user.id_utilisateur}"
+                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement?id=${equipement.id_equipement}">
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/equipement/update?id=${equipement.id_equipement}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                     <i  style="color: orange" class="fa fa-edit"></i>
                                                 </a>
@@ -185,3 +191,7 @@
         </script>
     <%@ include file="/WEB-INF/views/common/js_imports.jsp" %>
 </html>
+
+
+
+

@@ -33,6 +33,10 @@ public class Main {
     public static void main(String[]args){
         //ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         
+        /* DocumentDao documentDao = new DocumentDao();
+        DocumentService documentService = new DocumentService(documentDao); 
+
+        Document document = new Document(1, "lien8"); */
         /*DocumentDao documentDao = new DocumentDao();
         DocumentService documentService = new DocumentService(documentDao); 
 
@@ -46,6 +50,26 @@ public class Main {
      
         EquipementDao equipementDao = new EquipementDao();
         EquipementService equipementService = new EquipementService(equipementDao);
+<<<<<<< HEAD
+        
+        Equipement equipement = new Equipement(2, "nom2", "PROUUT", "etat2", 1, LocalDate.now(), "description2", 1);
+        try {
+            equipementService.create(equipement);
+        } catch (ServiceException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try {
+            System.out.println(equipementService.findAll());
+        } catch (ServiceException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        /*try {
+            equipementService.delete(equipement);
+            System.out.println(equipementService.findAll());
+
 
         Equipement equipement = new Equipement(1, "laptop asus", "PROUUT", "etat1", 0, LocalDate.now(), "description1", 2);
         try {
@@ -53,7 +77,7 @@ public class Main {
             System.out.println("Equipements : " + equipementService.findAll());
         } catch (ServiceException e) {
             e.printStackTrace();
-        }  */
+        }  
         
         //UtilisateurService utilisateurService = context.getBean(UtilisateurService.class);
         //ReservationEquipementService reservationEquipementService = context.getBean(ReservationEquipementService.class);
@@ -79,8 +103,6 @@ public class Main {
         System.out.println(utilisateurService.findAll()); 
         //System.out.println(utilisateurService.findById(1));   
         //System.out.println(utilisateurService.count());  */   
-        
-    
 
         /* SalleDao salleDao = new SalleDao();
         SalleService salleService = new SalleService(salleDao);
@@ -101,8 +123,9 @@ public class Main {
         System.out.println(salleService.findAll());
         //System.out.println(salleService.research("A"));
         //System.out.println(salleService.findByNumero("A106"));
-        System.out.println("Success");   */  
-        
+<<<<<<< HEAD
+        System.out.println("Success");     
+        */
         
         
         ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();

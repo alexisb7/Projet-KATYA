@@ -19,8 +19,16 @@
     background: linear-gradient(to bottom, purple, red);
 }
 
+.backpurple {
+    background: linear-gradient(to bottom, purple, rgb(65, 1, 51));
+}
+
 .backwhite {
     background-color: white;
+}
+
+.backblack{
+    background-color: black;
 }
 
 

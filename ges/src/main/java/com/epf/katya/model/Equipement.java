@@ -11,9 +11,9 @@ public class Equipement {
     private int disponibilite_equipement;
     private LocalDate date_acquisition;
     private String description;
-    private int id_document;
+    private String lien_documentation;
 
-    public Equipement(int id_equipement, String nom_equipement, String zone_stockage, String etat, int disponibilite_equipement, LocalDate date_acquisition, String description, int id_document) {
+    public Equipement(int id_equipement, String nom_equipement, String zone_stockage, String etat, int disponibilite_equipement, LocalDate date_acquisition, String description, String lien_documentation) {
         this.id_equipement = id_equipement;
         this.nom_equipement = nom_equipement;
         this.zone_stockage = zone_stockage;
@@ -21,7 +21,11 @@ public class Equipement {
         this.disponibilite_equipement = disponibilite_equipement;
         this.date_acquisition = date_acquisition;
         this.description = description;
-        this.id_document = id_document;
+        this.lien_documentation = lien_documentation;
+    }
+
+    public Equipement(int idEquipement, String parameter, String string, String parameter2, int parseInt2, LocalDate parse,
+            String parameter3) {
     }
 
     public int getId_equipement() {
@@ -80,19 +84,19 @@ public class Equipement {
         this.description = description;
     }
 
-    public int getId_document() {
-        return id_document;
+    public String getLien_documentationt() {
+        return lien_documentation;
     }
 
-    public void setId_document(int id_document) {
-        this.id_document = id_document;
+    public void setLien_documentationt(String lien_documentation) {
+        this.lien_documentation = lien_documentation;
     }
 
     @Override
     public String toString() {
         return "Equipement [date_acquisition=" + date_acquisition + ", description=" + description
-                + ", disponibilite_equipement=" + disponibilite_equipement + ", etat=" + etat + ", id_document="
-                + id_document + ", id_equipement=" + id_equipement + ", nom_equipement=" + nom_equipement
+                + ", disponibilite_equipement=" + disponibilite_equipement + ", etat=" + etat + ", lien_documentation="
+                + lien_documentation + ", id_equipement=" + id_equipement + ", nom_equipement=" + nom_equipement
                 + ", zone_stockage=" + zone_stockage + "]";
     }
 

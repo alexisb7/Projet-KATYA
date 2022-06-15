@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import com.epf.katya.exception.ServiceException;
 import com.epf.katya.service.EquipementService;
 
 import java.io.IOException;
@@ -30,9 +31,13 @@ public class EquipementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
+        request.setAttribute("listEquipement", this.equipementService.findAll());
+      
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement.jsp").forward(request, response);
 
-        r.forward(request, response);
+        //RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
+
+        //r.forward(request, response);
 
     }
 }
