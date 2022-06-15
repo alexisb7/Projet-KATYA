@@ -2,6 +2,7 @@ package com.epf.katya.ui.servlets;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
@@ -53,8 +54,10 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
             reservationEquipement.setId_utilisateur(request.getParameter("id_user"));
             reservationEquipement.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            reservationEquipement.setDate_debut(LocalDate.parse(request.getParameter("debut"), formatter));
-            reservationEquipement.setDate_fin(LocalDate.parse(request.getParameter("fin"), formatter));
+            DateTimeFormatter formatter_clock = DateTimeFormatter.ofPattern("hh:MM:ss");
+            reservationEquipement.setDate(LocalDate.parse(request.getParameter("date"), formatter));
+            reservationEquipement.setHeure_debut(LocalTime.parse(request.getParameter("heure_debut"), formatter_clock));
+            reservationEquipement.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin"), formatter_clock));
             reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
             reservationEquipementService.create(reservationEquipement);
         } catch (ServiceException e) {

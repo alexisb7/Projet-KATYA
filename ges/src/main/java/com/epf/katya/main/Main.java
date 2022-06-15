@@ -1,5 +1,6 @@
 package com.epf.katya.main;
 
+import java.sql.Time;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -125,17 +126,18 @@ public class Main {
         */
         /*System.out.println("Success"); */      
         
-        ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
+        /* ReservationEquipementDao reservationEquipementDao = new ReservationEquipementDao();
         ReservationEquipementService reservationEquipementService = new ReservationEquipementService(reservationEquipementDao);
+        Time time = new Time(200);
 
-        ReservationEquipement reservationEquipement = new ReservationEquipement(1, "tristan", "alexis", 1, LocalDate.now(), LocalDate.now(), 0);
+        ReservationEquipement reservationEquipement = new ReservationEquipement(1, "trist", "alex", 1, LocalDate.now(), time,time, 0);
         
         try {
             reservationEquipementService.create(reservationEquipement);
             System.out.println(reservationEquipementService.findAll());
         } catch (ServiceException e) {
             e.printStackTrace();
-        } 
+        }  */ 
 
         /*UtilisateurDao utilisateurDao = new UtilisateurDao();
         UtilisateurService utilisateurService = new UtilisateurService(utilisateurDao);

@@ -109,7 +109,9 @@
                     <th>Numero</th>
                     <th>Utilisateur</th>
                     <th>Etat</th>
-                    <th>Debut</th>
+                    <th>Date</th>
+                    <th>Heure de debut</th>
+                    <th>Heure de fin</th>
                     <th>Fin</th>
                     <th>Validation</th>
                     <th class="disableFilterBy">Action</th>
@@ -122,8 +124,9 @@
                             <td class="prova">${resa.numero_salle}</td>
                             <td class="prova">${resa.id_utilisateur}</td>
                             <td class="prova">${resa.etat_validation}</td>
-                            <td class="prova">${resa.date_debut}</td>
-                            <td class="prova">${resa.date_fin}</td>
+                            <td class="prova">${resa.date}</td>
+                            <td class="prova">${resa.heure_debut}</td>
+                            <td class="prova">${resa.heure_fin}</td>
                             <td class="prova">${resa.id_utilisateur_validation}</td>
                             <td class="prova controltd">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">

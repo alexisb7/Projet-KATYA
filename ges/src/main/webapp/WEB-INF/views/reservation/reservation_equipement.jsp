@@ -109,8 +109,9 @@
                     <th>Utilisateur</th>
                     <th>Validation</th>
                     <th>Equipement</th>
-                    <th>Debut</th>
-                    <th>Fin</th>
+                    <th>Date</th>
+                    <th>Heure de debut</th>
+                    <th>Heure de fin</th>
                     <th>Etat</th>
                     <th class="disableFilterBy">Action</th>
                 </tr>
@@ -140,22 +141,11 @@
 									</c:if>
 								</c:forEach>
                             </td>
-                            <td class="prova">${resa.date_debut}</td>
-                            <td class="prova">${resa.date_fin}</td>
-<<<<<<< HEAD
+                            <td class="prova">${resa.date}</td>
+                            <td class="prova">${resa.heure_debut}</td>
+                            <td class="prova">${resa.heure_fin}</td>
                             <td class="prova">${resa.etat_validation}</td>
                             <td class="prova controltd">
-=======
-                            <td class="prova">
-                                <c:if test="${resa.etat_validation==1}">
-									Valide
-								</c:if>
-                                <c:if test="${resa.etat_validation==0}">
-									Non Valide
-								</c:if>
-                            </td>
-                            <td class="prova">
->>>>>>> d3d9d2e7d4f2f5fb35eaf40e9db84f90f1f44c1d
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_equip=${resa.id_reservation_equipement}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_equipement_update?id=${resa.id_reservation_equipement}"
                                         style="background-color: transparent;border-color: transparent;margin-right: -10px">

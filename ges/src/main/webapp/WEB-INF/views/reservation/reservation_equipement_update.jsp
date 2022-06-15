@@ -91,15 +91,21 @@
                             </div>
                         </div> 	
                         <div class="form-group">
-                            <label for="debut" class="col-sm-2 control-label">Debut</label>
+                            <label for="date" class="col-sm-2 control-label">Date</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="debut" name="debut" value="${resa.date_debut}" required>
+                                <input type="date" class="form-control" id="date" name="date" value="${resa.date}" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="fin" class="col-sm-2 control-label">Fin</label>
+                            <label for="heure_debut" class="col-sm-2 control-label">Heure de debut</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="fin" name="fin" value="${resa.date_fin}" required>
+                                <input type="text" class="form-control" id="heure_debut" name="heure_debut" value="${resa.heure_debut}" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="heure_fin" class="col-sm-2 control-label">Heure de fin</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="heure_fin" name="heure_fin" value="${resa.heure_fin}" required>
                             </div>
                         </div>
                         <div class="form-group">
