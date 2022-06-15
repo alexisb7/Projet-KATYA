@@ -21,12 +21,12 @@ public class ReservationEquipementDao {
     public ReservationEquipementDao() {}
 
 
-    private final static String CREATE_RESERVATION_EQUIPEMENT_QUERY = "INSERT INTO Reservation_equipement(id_reservation_equipement, id_utilisateur, id_utilisateur_validation, id_equipement, date_debut, date_fin, etat_validation) VALUES (?, ?, ?, ?, ?, ?, ?);";
+    private final static String CREATE_RESERVATION_EQUIPEMENT_QUERY = "INSERT INTO Reservation_equipement(id_reservation_equipement, id_utilisateur, id_utilisateur_validation, id_equipement, date, heure_debut, heure_fin, etat_validation) VALUES (?, ?, ?, ?, ?, ?, ?);";
     private final static String FIND_RESERVATIONS_EQUIPEMENT_QUERY = "SELECT * FROM Reservation_equipement;";
     private static final String DELETE_RESERVATION_EQUIPEMENT_QUERY = "DELETE FROM Reservation_equipement WHERE id_reservation_equipement=?;";
     private static final String FIND_RESERVATION_EQUIPEMENT_BY_ID_QUERY = "SELECT * FROM Reservation_equipement WHERE id_reservation_equipement=?;";
     private static final String MAX_RESERVATION_EQUIPEMENTS_QUERY = "SELECT MAX(id_reservation_equipement) FROM Reservation_equipement;";
-    private static final String UPDATE_RESERVATION_EQUIPEMENT_QUERY = "UPDATE Reservation_equipement SET id_utilisateur=?, id_utilisateur_validation=?, id_equipement=?, date_debut=?, date_fin=?, etat_validation=? WHERE id_reservation_equipement=?;";
+    private static final String UPDATE_RESERVATION_EQUIPEMENT_QUERY = "UPDATE Reservation_equipement SET id_utilisateur=?, id_utilisateur_validation=?, id_equipement=?, date=?, heure_debut=?, heure_fin=?, etat_validation=? WHERE id_reservation_equipement=?;";
 
     public int create(ReservationEquipement reservationEquipement) throws DaoException {
         try {
