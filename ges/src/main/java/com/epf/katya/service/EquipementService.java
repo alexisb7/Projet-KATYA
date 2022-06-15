@@ -51,7 +51,6 @@ public class EquipementService {
         try {
             this.equipementDao.delete(equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;

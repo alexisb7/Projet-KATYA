@@ -101,8 +101,5 @@ public class Equipement {
     }
 
 
-    public void update(Equipement equipement, Integer id) {
-    }
-
     
 }

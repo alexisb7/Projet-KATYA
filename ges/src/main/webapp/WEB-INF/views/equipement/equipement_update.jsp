@@ -38,10 +38,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="etat_equipement_up" class="col-sm-2 control-label">Etat de l'equipement</label>
+                            <label for="etat_up" class="col-sm-2 control-label">Etat de l'equipement</label>
 
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="etat_equipement_up" name="etat_equipement_up" value="${equipement.etat}">
+                                <input type="text" class="form-control" id="etat_up" name="etat_up" value="${equipement.etat}">
                             </div>
                         </div>
                         <div class="form-group">
