@@ -16,6 +16,7 @@ import com.epf.katya.service.UtilisateurService;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @WebServlet("/reservation_equipement_update")
 public class ReservationUpdateEquipementServlet extends HttpServlet {
@@ -51,8 +52,9 @@ public class ReservationUpdateEquipementServlet extends HttpServlet {
         reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
         reservationEquipement.setId_equipement(Integer.parseInt(request.getParameter("id_equipement")));
         reservationEquipement.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
-        reservationEquipement.setDate_debut(LocalDate.parse(request.getParameter("debut")));
-        reservationEquipement.setDate_fin(LocalDate.parse(request.getParameter("fin")));
+        reservationEquipement.setDate(LocalDate.parse(request.getParameter("date")));
+        reservationEquipement.setHeure_debut(LocalTime.parse(request.getParameter("heure_debut")));
+        reservationEquipement.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin")));
         reservationEquipementService.update(reservationEquipement);
         response.sendRedirect("/ges/reservation");
     }

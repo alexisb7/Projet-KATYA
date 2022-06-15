@@ -2,6 +2,8 @@ package com.epf.katya.ui.servlets;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,16 +47,17 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ReservationEquipement reservationEquipement = new ReservationEquipement();
-
-        reservationEquipement.setId_reservation_equipement(reservationEquipementService.max()+1);
+        reservationEquipement.setId_reservation_equipement(reservationEquipementService.count()+1);
         reservationEquipement.setId_equipement(Integer.parseInt(request.getParameter("id_equipement")));
         reservationEquipement.setId_utilisateur(request.getParameter("id_user"));
         reservationEquipement.setEtat_validation(Integer.parseInt(request.getParameter("etat")));
-        reservationEquipement.setDate_debut(LocalDate.parse(request.getParameter("debut")));
-        reservationEquipement.setDate_fin(LocalDate.parse(request.getParameter("fin")));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatter_clock = DateTimeFormatter.ofPattern("hh:MM:ss");
+        reservationEquipement.setDate(LocalDate.parse(request.getParameter("date"), formatter));
+        reservationEquipement.setHeure_debut(LocalTime.parse(request.getParameter("heure_debut"), formatter_clock));
+        reservationEquipement.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin"), formatter_clock));
         reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
         reservationEquipementService.create(reservationEquipement);
-        
         response.sendRedirect("/ges/reservation");
     }
 }

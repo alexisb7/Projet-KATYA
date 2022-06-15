@@ -110,7 +110,14 @@
                     <th class="disableSort">Id</th>
                     <th>Numero de salle</th>
                     <th>Utilisateur</th>
+<<<<<<< HEAD
                     <th>Debut</th>
+=======
+                    <th>Etat</th>
+                    <th>Date</th>
+                    <th>Heure de debut</th>
+                    <th>Heure de fin</th>
+>>>>>>> DAO
                     <th>Fin</th>
                     <th>Validation par</th>
                     <th>Etat</th>
@@ -122,6 +129,7 @@
                         <tr>
                             <td class="prova">${resa.id_reservation_salle}</td>
                             <td class="prova">${resa.numero_salle}</td>
+<<<<<<< HEAD
                             <td class="prova">
                                 <c:forEach items = "${listUser}" var="user">
 									<c:if test="${user.id_utilisateur==resa.id_utilisateur}">
@@ -147,6 +155,15 @@
 								</c:if>
                             </td>
                             <td class="prova">
+=======
+                            <td class="prova">${resa.id_utilisateur}</td>
+                            <td class="prova">${resa.etat_validation}</td>
+                            <td class="prova">${resa.date}</td>
+                            <td class="prova">${resa.heure_debut}</td>
+                            <td class="prova">${resa.heure_fin}</td>
+                            <td class="prova">${resa.id_utilisateur_validation}</td>
+                            <td class="prova controltd">
+>>>>>>> DAO
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
