@@ -96,13 +96,8 @@ public class Main {
         System.out.println(utilisateurService.count());     
         */
         
-<<<<<<< HEAD
 
         /* SalleDao salleDao = new SalleDao();
-=======
-/* 
-        SalleDao salleDao = new SalleDao();
->>>>>>> ServletKhadim
         SalleService salleService = new SalleService(salleDao);
 
         Salle salle = new Salle();

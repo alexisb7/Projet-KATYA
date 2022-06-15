@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/equipement/equipement">
+                <a href="${pageContext.request.contextPath}/equipement">
                     <i class="fa fa-laptop white"></i> <span style="color:white">Equipements</span>
                 </a>
             </li>

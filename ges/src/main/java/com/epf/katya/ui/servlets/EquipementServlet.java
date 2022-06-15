@@ -16,7 +16,7 @@ import com.epf.katya.service.EquipementService;
 import java.io.IOException;
 
 
-@WebServlet("/equipement/equipement")
+@WebServlet("/equipement")
 public class EquipementServlet extends HttpServlet {
 
     @Autowired
