@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.epf.katya.model.Salle;
+import com.epf.katya.service.ReservationSalleService;
 import com.epf.katya.service.SalleService;
 
 import java.io.IOException;
@@ -21,6 +22,9 @@ public class SalleServlet extends HttpServlet {
 
     @Autowired
     SalleService salleService;
+
+    @Autowired 
+    ReservationSalleService reservationSalleService;
 
     public void init() throws ServletException {
        super.init();
@@ -39,7 +43,6 @@ public class SalleServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response, String research) throws ServletException, IOException{
-        System.out.println(research);
         if(research != null) {
             request.setAttribute("listeSalle", this.salleService.research(research));
         }else {        
@@ -51,7 +54,10 @@ public class SalleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
         String numero = request.getParameter("numero");
-        if(numero!=null) {    
+        if(numero!=null) {   
+            while(this.reservationSalleService.findBySalle(numero)!=null) {
+                this.reservationSalleService.delete(this.reservationSalleService.findBySalle(numero));
+            } 
             Salle salle = new Salle();
             salle.setNumero(numero);
             salleService.delete(salle);
