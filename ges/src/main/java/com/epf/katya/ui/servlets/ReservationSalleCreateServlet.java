@@ -30,6 +30,8 @@ public class ReservationSalleCreateServlet extends HttpServlet {
     @Autowired 
     UtilisateurService utilisateurService;
 
+    String role="";
+
     public void init() throws ServletException {
         super.init();
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
@@ -40,6 +42,11 @@ public class ReservationSalleCreateServlet extends HttpServlet {
         request.setAttribute("listSalle", this.salleService.findAll());
         request.setAttribute("listUser", this.utilisateurService.findAll());
         request.setAttribute("date", LocalDate.now());
+        role = request.getParameter("role");
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
@@ -54,6 +61,6 @@ public class ReservationSalleCreateServlet extends HttpServlet {
         reservationSalle.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin")));
         reservationSalle.setId_utilisateur_validation(request.getParameter("id_user_valid"));
         reservationSalleService.create(reservationSalle);
-        response.sendRedirect("/ges/reservation");
+        response.sendRedirect("/ges/reservation?role="+role);
     }
 }

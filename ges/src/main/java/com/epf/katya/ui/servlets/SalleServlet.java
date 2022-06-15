@@ -33,7 +33,8 @@ public class SalleServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
- 
+                String role = request.getParameter("role");
+                request.setAttribute("role", role);
         request.setAttribute("listeSalle", this.salleService.findAll());
         request.setAttribute("nombre", this.salleService.count());
         RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle.jsp");

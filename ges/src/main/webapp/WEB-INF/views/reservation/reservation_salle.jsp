@@ -91,17 +91,29 @@
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
-        <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        <c:set var="role" value="${role}"></c:set>
+        <c:set var="eleve" value="${eleve}"></c:set>
+        <c:set var="secretaire" value="${secretaire}"></c:set>
+        <c:set var="admin" value="${admin}"></c:set>
+        <c:if test="${role==eleve}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==secretaire}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==admin}">
+            <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        </c:if>
 
         <div class="content-wrapper backwhite">
             <p class="titre">Liste des reservations de salles</p>
             <p>Nombre de reservations : ${nombre}</p>
-            <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation">
+            <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?role=${role}">
                 <div style="display:inline-block;margin-bottom:50px;">
                     <button name="bouton_salle" value="salle" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations de salles</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_create_salle">+</a> 
+                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_create_salle?role=${role}">+</a> 
                     <button name="bouton_equip" value="equipement" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_equipement_create">+</a> 
+                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_equipement_create?role=${role}">+</a> 
                 </div>
             </form>
             
@@ -150,8 +162,23 @@
 								</c:if>
                             </td>
                             <td class="prova controltd">
-                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}"
+                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_salle=${resa.id_reservation_salle}-role=${role}">
+                                    <c:set var="role" value="${role}"></c:set>
+                                    <c:set var="eleve" value="${eleve}"></c:set>
+                                    <c:set var="secretaire" value="${secretaire}"></c:set>
+                                    <c:set var="admin" value="${admin}"></c:set>
+                                    <c:if test="${role==eleve}">
+                                        <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation?role=${role}"
+                                                style="background-color: transparent;border-color: transparent;margin-right: -10px" d>
+                                                    <i  style="color: orange" class="fa fa-edit"></i>
+                                                </a>
+                                    <button type="submit" class="btn btn-primary" title="Supprimer"
+                                        style="background-color: transparent;border-color: transparent;margin-right: -10px" disabled>
+                                        <i  style="color: red" class="fa fa-trash"></i>
+                                        </button>
+                                    </c:if>
+                                    <c:if test="${role==secretaire}">
+                                        <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}-role=${role}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                     <i  style="color: orange" class="fa fa-edit"></i>
                                                 </a>
@@ -159,6 +186,17 @@
                                         style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                         <i  style="color: red" class="fa fa-trash"></i>
                                         </button>
+                                    </c:if>
+                                    <c:if test="${role==admin}">
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_update_salle?id=${resa.id_reservation_salle}-role=${role}"
+                                                style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                                    <i  style="color: orange" class="fa fa-edit"></i>
+                                                </a>
+                                    <button type="submit" class="btn btn-primary" title="Supprimer"
+                                        style="background-color: transparent;border-color: transparent;margin-right: -10px">
+                                        <i  style="color: red" class="fa fa-trash"></i>
+                                        </button>
+                                    </c:if>
                                 </form>
                             </td>
                         </tr>

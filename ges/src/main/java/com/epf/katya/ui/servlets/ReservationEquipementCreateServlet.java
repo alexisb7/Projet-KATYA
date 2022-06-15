@@ -29,6 +29,8 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
 
     @Autowired
     EquipementService equipementService;
+
+    String role="";
     
     public void init() throws ServletException {
         super.init();
@@ -39,7 +41,11 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
         request.setAttribute("listUser", this.utilisateurService.findAll());
         request.setAttribute("listEquipement", this.equipementService.findAll());
         request.setAttribute("date", LocalDate.now());
-
+        role = request.getParameter("role");
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         String path="/WEB-INF/views/reservation/reservation_create_equipement.jsp";
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -55,6 +61,6 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
         reservationEquipement.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin")));
         reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
         reservationEquipementService.create(reservationEquipement);
-        response.sendRedirect("/ges/reservation");
+        response.sendRedirect("/ges/reservation?role="+role);
     }
 }

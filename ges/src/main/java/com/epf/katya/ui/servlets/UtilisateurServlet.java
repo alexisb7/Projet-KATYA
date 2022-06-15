@@ -34,6 +34,8 @@ public class UtilisateurServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="/WEB-INF/views/utilisateur/utilisateur.jsp";
+        String role = request.getParameter("role");
+        request.setAttribute("role", role);
         request.setAttribute("listUtilisateur", this.utilisateurService.findAll());
         request.setAttribute("nombre", this.utilisateurService.count());
         this.getServletContext().getRequestDispatcher(path).forward(request,response);

@@ -19,7 +19,7 @@
                 <div style="position:absolute;top:100px">
                     <h1 style="text-align:center;">Bienvenue sur la plateforme de gestion des salles de projet et des equipements de l'EPF</h1>
                 <p style="text-align:center;font-size:25px;margin-top:50px;">Veuillez vous identifier ci-dessous :</p>
-                    <p style="margin-left:24px;text-align:center;font-size:25px;margin-top:50px;">Identifiant : 
+                    <p style="margin-left:38px;text-align:center;font-size:25px;margin-top:50px;">Identifiant : 
                         <input style="margin-left:20px;" type="text" id="id" name="id" placeholder="Identifiant" required>
                     </p>
                     <p style="text-align:center;margin-top:30px;font-size:25px;">Mot de passe : 

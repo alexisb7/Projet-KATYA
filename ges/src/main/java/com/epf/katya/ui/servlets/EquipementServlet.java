@@ -33,7 +33,8 @@ public class EquipementServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+                String role = request.getParameter("role");
+                request.setAttribute("role", role);
         request.setAttribute("listEquipement", this.equipementService.findAll());
         request.setAttribute("nombre", this.equipementService.count());
       

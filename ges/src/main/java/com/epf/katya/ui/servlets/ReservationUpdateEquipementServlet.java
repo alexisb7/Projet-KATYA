@@ -22,6 +22,7 @@ import java.time.LocalTime;
 public class ReservationUpdateEquipementServlet extends HttpServlet {
     
     int id;
+    String role="";
 
     @Autowired
     ReservationEquipementService reservationEquipementService;
@@ -38,10 +39,16 @@ public class ReservationUpdateEquipementServlet extends HttpServlet {
    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        id = Integer.parseInt(request.getParameter("id"));
         request.setAttribute("resa", reservationEquipementService.findById(id));
         request.setAttribute("listEquipement", equipementService.findAll());
         request.setAttribute("listUser", utilisateurService.findAll());
+        String params = request.getParameter("id");
+        id = Integer.parseInt(params.split("-")[0]);
+        role = params.split("-")[1].split("=")[1];
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         String path="/WEB-INF/views/reservation/reservation_equipement_update.jsp";
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -56,6 +63,6 @@ public class ReservationUpdateEquipementServlet extends HttpServlet {
         reservationEquipement.setHeure_debut(LocalTime.parse(request.getParameter("heure_debut")));
         reservationEquipement.setHeure_fin(LocalTime.parse(request.getParameter("heure_fin")));
         reservationEquipementService.update(reservationEquipement);
-        response.sendRedirect("/ges/reservation");
+        response.sendRedirect("/ges/reservation?role="+role);
     }
 }

@@ -24,6 +24,7 @@ public class HomeServlet extends HttpServlet {
     boolean erreurMdp = false;
     int connection = 0;
     String id="";
+    String role="";
 
    public void init() throws ServletException {
        super.init();
@@ -38,6 +39,11 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("erreurMdp", erreurMdp);
             request.setAttribute("erreurId", erreurId);
             request.setAttribute("id", id);
+            role = utilisateurService.findById(id).getRole();
+            request.setAttribute("role", utilisateurService.findById(id).getRole());
+            request.setAttribute("eleve", "Eleve");
+            request.setAttribute("secretaire", "Secretaire");
+            request.setAttribute("admin", "Administrateur");
             path= "/WEB-INF/views/home/home_connected.jsp";
         }
         if(connection == 0){

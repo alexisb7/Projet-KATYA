@@ -14,13 +14,24 @@
     </head>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
-        <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
-
+        <c:set var="role" value="${role}"></c:set>
+        <c:set var="eleve" value="${eleve}"></c:set>
+        <c:set var="secretaire" value="${secretaire}"></c:set>
+        <c:set var="admin" value="${admin}"></c:set>
+        <c:if test="${role==eleve}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==secretaire}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==admin}">
+            <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        </c:if>
         <div class="content-wrapper backwhite">
             <h1>Modification d'une reservation d'equipement</h1>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation_equipement_update">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation_equipement_update?role=${role}">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="equipement" class="col-sm-2 control-label">Equipement</label>
@@ -84,13 +95,13 @@
                         <div class="form-group">
                             <label for="heure_debut" class="col-sm-2 control-label">Heure de debut</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="heure_debut" name="heure_debut" value="${resa.heure_debut}" required>
+                                <input type="time" class="form-control" id="heure_debut" name="heure_debut" value="${resa.heure_debut}" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="heure_fin" class="col-sm-2 control-label">Heure de fin</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="heure_fin" name="heure_fin" value="${resa.heure_fin}" required>
+                                <input type="time" class="form-control" id="heure_fin" name="heure_fin" value="${resa.heure_fin}" required>
                             </div>
                         </div>
                         <div class="form-group">
