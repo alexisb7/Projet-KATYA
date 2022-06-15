@@ -38,10 +38,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="etat_equipement_up" class="col-sm-2 control-label">Etat de l'equipement</label>
+                            <label for="etat_up" class="col-sm-2 control-label">Etat de l'equipement</label>
 
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="etat_equipement_up" name="etat_equipement_up" value="${equipement.etat}">
+                                <input type="text" class="form-control" id="etat_up" name="etat_up" value="${equipement.etat}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -68,7 +68,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-info pull-right">Modifier</button>
+                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Modifier</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

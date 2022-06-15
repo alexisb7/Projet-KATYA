@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Style -->
     </head>
-
     <style type="text/css">
         body {
             font-family: "Roboto Condensed", Helvetica, sans-serif;
@@ -63,10 +62,6 @@
             content: " \f0de";
             font-family: "FontAwesome";
         }
-        /*Style disabled*/
-        .tablemanager th.disableSort {
-
-        }
         #for_numrows {
             padding: 10px;
             float: left;
@@ -79,13 +74,13 @@
             display: block;
             text-align: center;
         }
-        .controltd{
-            width: 10%;
+        .but_middle{
+            margin: auto;
+            width: 7%;
+            padding: 10px;
         }
-        .stylecontrol{
-            background-color: transparent;
-            border-color: transparent;
-            margin-right: -10px
+        .titre{
+            font-size: 35px;
         }
     </style>
     <body>
@@ -94,12 +89,16 @@
 
         <div class="content-wrapper backwhite">
 
-           <h1>Utilisateurs</h1>
-		   <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur_create">Ajouter</a> 
+           <p class="titre">Liste des utilisateurs</p>
+           <p>Nombre d'utilisateurs : ${nombre}</p>
+           <div class="but_middle">
+                <a class="btn btn-primary btn-lg" style="font-size:16px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/utilisateur_create">Ajouter</a> 
+           </div>
            <table class="tablemanager">
             <thead>
             <tr>
-                <th class="disableSort">Id</th>
+                <th class="disableSort"></th>
+                <th>ID</th>
                 <th>Email</th>
                 <th>Nom</th>
                 <th>Role</th>
@@ -110,12 +109,13 @@
             <tbody>
                 <c:forEach items="${listUtilisateur}" var="user">
                         <tr>
+                            <td></td>
                             <td class="prova">${user.id_utilisateur}</td>
                             <td class="prova">${user.email}</td>
                             <td class="prova">${user.nom_utilisateur}</td>
                             <td class="prova">${user.role}</td>
                             <td class="prova">${user.date_entree}</td>
-                            <td class="prova controltd">
+                            <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur?id=${user.id_utilisateur}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/utilisateur_update?id=${user.id_utilisateur}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">

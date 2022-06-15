@@ -17,8 +17,8 @@
         <!-- Style -->
         <div class="content-wrapper backwhite">
 
-            <h1>Salles_update</h1>
-            <h2>Salle ${salle.numero}</h2>
+            <h1>Modification d'une salle</h1>
+            <h2>Salle : ${salle.numero}</h2>
             <div class="box">
                 <!-- form start -->
                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_update">
@@ -54,7 +54,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-info pull-right">Modifier</button>
+                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Modifier</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

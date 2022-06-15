@@ -21,18 +21,11 @@ public class DocumentService {
    
     public static DocumentService instance;
 
-    /* public static DocumentService getInstance() {
-		if (instance == null) {
-			instance = new DocumentService();
-		}
-		return instance;
-    } */
 
     public int create(Document document) throws ServiceException {
       try {
         this.documentDao.create(document);
       } catch (DaoException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
       return 0;
@@ -42,7 +35,6 @@ public class DocumentService {
       try {
         this.documentDao.delete(document);
       } catch (DaoException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
       return 0;
@@ -52,7 +44,6 @@ public class DocumentService {
       try {
         return this.documentDao.findAll();
       } catch (DaoException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
       return null;
@@ -62,7 +53,6 @@ public class DocumentService {
       try {
         this.documentDao.update(document);
       } catch (DaoException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
       return 0;
@@ -72,17 +62,15 @@ public class DocumentService {
       try {
         return this.documentDao.findById(id_document);
       } catch (DaoException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
       return null;
     }
 
-    public int count() throws ServiceException {
+    public int max() throws ServiceException {
       try {
-        return this.documentDao.count();
+        return this.documentDao.max();
       } catch (DaoException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
       return 0;

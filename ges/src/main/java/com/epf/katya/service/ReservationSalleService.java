@@ -70,4 +70,13 @@ public class ReservationSalleService {
         }
         return 0;
     }
+
+    public int max() {
+        try {
+            return this.reservationSalleDao.max();
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

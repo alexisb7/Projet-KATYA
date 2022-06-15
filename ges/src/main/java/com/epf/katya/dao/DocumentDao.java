@@ -16,22 +16,14 @@ import com.epf.katya.persistence.ConnectionManager;
 @Repository
 public class DocumentDao {
     
-    //private static DocumentDao instance = null;
-    
     public DocumentDao() {}
 
-    /* public static DocumentDao getInstance() {
-        if(instance == null) {
-            instance = new DocumentDao();
-        }
-        return instance;
-    }
- */
+    
     private static final String CREATE_DOCUMENT_QUERY = "INSERT INTO Document(id_document, lien) VALUES (?, ?);";
     private static final String FIND_DOCUMENTS_QUERY = "SELECT * FROM Document;";
     private static final String DELETE_DOCUMENTS_QUERY = "DELETE FROM Document WHERE id_document=?;";
     private static final String FIND_DOCUMENT_BY_ID_QUERY = "SELECT * FROM Document WHERE id_document=?;";
-    private static final String COUNT_DOCUMENTS_QUERY = "SELECT COUNT(id_document) FROM Document;";
+    private static final String MAX_DOCUMENTS_QUERY = "SELECT MAX(id_document) FROM Document;";
     private static final String UPDATE_DOCUMENT_QUERY = "UPDATE Document SET lien=? WHERE id_document=?;";
 
     public int create(Document document) throws DaoException{
@@ -43,7 +35,6 @@ public class DocumentDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -58,7 +49,6 @@ public class DocumentDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -73,7 +63,6 @@ public class DocumentDao {
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -95,7 +84,6 @@ public class DocumentDao {
             while(rs.next());
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -114,24 +102,22 @@ public class DocumentDao {
             con.close();
             return document;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
         return null;
     }
 
-    public int count() throws DaoException {
+    public int max() throws DaoException {
         int nb_document = 0;
         try {
             Connection con = ConnectionManager.getConnection();
-            PreparedStatement pstat = con.prepareStatement(COUNT_DOCUMENTS_QUERY);
+            PreparedStatement pstat = con.prepareStatement(MAX_DOCUMENTS_QUERY);
             ResultSet rs = pstat.executeQuery();
             rs.next();
             nb_document = rs.getInt(1);
             con.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         

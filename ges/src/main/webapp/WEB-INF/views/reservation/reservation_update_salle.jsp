@@ -55,12 +55,22 @@
                             <label for="etat" class="col-sm-2 control-label">Etat de validation</label>
                             <div class="col-sm-10">
                                 <select class="form-control" id="etat" name="etat">
-                                    <option value="0">
-                                        Non valide 
-                                    </option>
-                                    <option value="1">
-                                        Valide 
-                                    </option>
+                                    <c:if test="${resa.etat_validation==1}">
+                                        <option value="1">
+                                            Valide 
+                                        </option>
+                                        <option value="0">
+                                            Non valide 
+                                        </option>
+								    </c:if>
+                                    <c:if test="${resa.etat_validation==0}">
+                                        <option value="0">
+                                            Non valide 
+                                        </option>
+                                        <option value="1">
+                                            Valide 
+                                        </option>
+								    </c:if>   
                                 </select>
                             </div>
                         </div> 	
@@ -93,7 +103,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Ajouter</button>
+                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Modifier</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

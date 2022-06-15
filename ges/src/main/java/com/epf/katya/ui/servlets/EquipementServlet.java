@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import com.epf.katya.model.Equipement;
 import com.epf.katya.service.EquipementService;
 
 import java.io.IOException;
@@ -30,12 +31,18 @@ public class EquipementServlet extends HttpServlet {
             throws ServletException, IOException {
 
         request.setAttribute("listEquipement", this.equipementService.findAll());
+        request.setAttribute("nombre", this.equipementService.count());
       
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement.jsp").forward(request, response);
 
-        //RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
+    }
 
-        //r.forward(request, response);
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        if(id != null){
+            Equipement equipement = equipementService.findById(Integer.parseInt(id));
+            this.equipementService.delete(equipement);    
+        }
+        doGet(request, response);
     }
 }

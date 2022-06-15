@@ -31,6 +31,7 @@ public class SalleServlet extends HttpServlet {
             throws ServletException, IOException {
  
         request.setAttribute("listeSalle", this.salleService.findAll());
+        request.setAttribute("nombre", this.salleService.count());
         RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle.jsp");
 
         r.forward(request, response);

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.epf.katya.dao.EquipementDao;
 import com.epf.katya.exception.DaoException;
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Equipement;
 
 @Service
@@ -18,40 +17,28 @@ public class EquipementService {
         this.equipementDao = equipementDao;
     } 
 
-    /* public static EquipementService instance;
-
-    public static EquipementService getInstance() {
-        if (instance == null) {
-            instance = new EquipementService();
-        }
-        return instance;
-    } */
-
-    public int create(Equipement equipement) throws ServiceException {
+    public int create(Equipement equipement) {
         try {
             this.equipementDao.create(equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
     }
 
-    public int update(Equipement equipement) throws ServiceException {
+    public int update(Equipement equipement) {
         try {
             this.equipementDao.update(equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
     }
 
-    public int delete(Equipement equipement) throws ServiceException {
+    public int delete(Equipement equipement) {
         try {
             this.equipementDao.delete(equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;
@@ -65,21 +52,28 @@ public class EquipementService {
         return null;
     }
 
-    public Equipement findById(int id_equipement) throws ServiceException {
+    public Equipement findById(int id_equipement) {
         try {
             return this.equipementDao.findById(id_equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
     }
 
-    public int count() throws ServiceException {
+    public int max()  {
+        try {
+            return this.equipementDao.max();
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return 0; 
+    }
+
+    public int count() {
         try {
             return this.equipementDao.count();
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0; 

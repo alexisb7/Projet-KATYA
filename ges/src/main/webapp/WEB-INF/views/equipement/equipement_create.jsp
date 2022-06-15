@@ -61,15 +61,14 @@
                                     <label for="lien_documentation" class="col-sm-2 control-label">Lien documentation</label>
 
                                     <div class="col-sm-10">
-                                        <input type="url" class="form-control" id="lien_documentation" name="lien_documentation" pattern="https://.*" placeholder="http://example.com" required>
+                                        <input type="url" value="https://www.epf.fr/" class="form-control" id="lien_documentation" name="lien_documentation" pattern="https://.*" placeholder="http://example.com" required>
                                     </div>
                                 </div>
                         </div>
                         
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-info pull-right">Ajouter le nouvel equipement</button>
-                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/equipement">Retour a la liste des equipements</a>
+                            <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Ajouter</button>
                         </div>
 
                     </form>
