@@ -28,7 +28,7 @@ public class ReservationEquipementService {
         return 0;
     }
 
-    public int update(ReservationEquipement reservationEquipement) throws ServiceException {
+    public int update(ReservationEquipement reservationEquipement) {
         try {
             this.reservationEquipementDao.update(reservationEquipement);
         } catch (DaoException e) {
@@ -46,7 +46,7 @@ public class ReservationEquipementService {
         return 0;
     }
 
-    public List<ReservationEquipement> findAll() throws ServiceException {
+    public List<ReservationEquipement> findAll() {
         try {
             return this.reservationEquipementDao.findAll();
         } catch (DaoException e) {
@@ -55,11 +55,10 @@ public class ReservationEquipementService {
         return null;
     }
 
-    public ReservationEquipement findById(int id_reservation_equipement) throws ServiceException {
+    public ReservationEquipement findById(int id_reservation_equipement) {
         try {
             return this.reservationEquipementDao.findById(id_reservation_equipement);
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;
@@ -69,7 +68,6 @@ public class ReservationEquipementService {
         try {
             return this.reservationEquipementDao.count();
         } catch (DaoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return 0;

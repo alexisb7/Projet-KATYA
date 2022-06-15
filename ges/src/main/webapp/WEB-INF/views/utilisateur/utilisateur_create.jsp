@@ -53,7 +53,7 @@
                             </div>
                         </div>       
                         <div class="form-group">
-                            <label for="nom" class="col-sm-2 control-label">Role</label>
+                            <label for="role" class="col-sm-2 control-label">Role</label>
             
                             <div class="col-sm-10">
                                 <select class="form-control" id="role" name="role">
