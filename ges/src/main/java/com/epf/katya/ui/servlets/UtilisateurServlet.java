@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import com.epf.katya.service.ReservationEquipementService;
+import com.epf.katya.service.ReservationSalleService;
 import com.epf.katya.service.UtilisateurService;
 
 import java.io.IOException;
@@ -18,6 +20,12 @@ public class UtilisateurServlet extends HttpServlet {
 
     @Autowired
     UtilisateurService utilisateurService;
+
+    @Autowired
+    ReservationEquipementService reservationEquipementService;
+
+    @Autowired
+    ReservationSalleService reservationSalleService;
     
    public void init() throws ServletException {
        super.init();
@@ -36,6 +44,12 @@ public class UtilisateurServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         if(id != null){
+            while(this.reservationEquipementService.findByUser(id)!=null){
+                this.reservationEquipementService.delete(this.reservationEquipementService.findByUser(id));
+            }
+            while(this.reservationSalleService.findByUser(id)!=null){
+                this.reservationSalleService.delete(this.reservationSalleService.findByUser(id));               
+            }
             this.utilisateurService.delete(id);
         }
         doGet(request, response);
