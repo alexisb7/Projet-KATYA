@@ -48,7 +48,7 @@ public class EquipementDao {
             pstat.setInt(5, equipement.getDisponibilite_equipement());
             pstat.setDate(6, Date.valueOf(equipement.getDate_acquisition()));
             pstat.setString(7, equipement.getDescription());
-            pstat.setString(8, equipement.getLien_documentationt());
+            pstat.setString(8, equipement.getLien_documentation());
             pstat.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -67,7 +67,7 @@ public class EquipementDao {
             pstat.setInt(4, equipement.getDisponibilite_equipement());
             pstat.setDate(5, Date.valueOf(equipement.getDate_acquisition()));
             pstat.setString(6, equipement.getDescription());
-            pstat.setString(7, equipement.getLien_documentationt());
+            pstat.setString(7, equipement.getLien_documentation());
             pstat.setInt(8, equipement.getId_equipement());
             pstat.executeUpdate();
             con.close();
