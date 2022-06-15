@@ -23,7 +23,6 @@ import com.epf.katya.service.ReservationEquipementService;
 import com.epf.katya.service.SalleService;
 import com.epf.katya.dao.UtilisateurDao;
 import com.epf.katya.exception.DaoException;
-import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.Utilisateur;
 // import com.epf.katya.service.ReservationEquipementService;
 

@@ -37,7 +37,8 @@
             background-color: #f2f2f2;
         }
         th {
-            background-color: #ddd;
+            background-color: rgb(181, 57, 103);
+            color: white;
         }
         th,td {
             padding: 5px;
@@ -78,6 +79,14 @@
         #pagesControllers {
             display: block;
             text-align: center;
+        }
+        .controltd{
+            width: 10%;
+        }
+        .stylecontrol{
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: -10px
         }
     </style>
     <body>
