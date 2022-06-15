@@ -103,7 +103,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Ajouter</button>
+                        <button style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" class="btn btn-primary btn-lg" type="submit">Modifier</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
