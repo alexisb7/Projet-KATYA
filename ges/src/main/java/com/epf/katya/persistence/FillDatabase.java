@@ -1,4 +1,4 @@
-cd package com.epf.katya.persistence;
+package com.epf.katya.persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
