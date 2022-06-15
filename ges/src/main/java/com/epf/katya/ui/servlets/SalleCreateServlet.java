@@ -16,7 +16,7 @@ import com.epf.katya.service.SalleService;
 import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet("/salle/create")
+@WebServlet("/salle_create")
 public class SalleCreateServlet extends HttpServlet {
 
     @Autowired

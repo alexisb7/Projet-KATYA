@@ -12,8 +12,10 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import com.epf.katya.exception.ServiceException;
 import com.epf.katya.model.ReservationEquipement;
 import com.epf.katya.model.ReservationSalle;
+import com.epf.katya.service.EquipementService;
 import com.epf.katya.service.ReservationEquipementService;
 import com.epf.katya.service.ReservationSalleService;
+import com.epf.katya.service.UtilisateurService;
 
 import java.io.IOException;
 
@@ -25,6 +27,12 @@ public class ReservationServlet extends HttpServlet {
 
     @Autowired
     ReservationEquipementService reservationEquipementService;
+
+    @Autowired
+    UtilisateurService utilisateurService;
+
+    @Autowired
+    EquipementService equipementService;
 
     int resaSalleOrEquipement = 0;
 
@@ -41,12 +49,11 @@ public class ReservationServlet extends HttpServlet {
         }
         if(resaSalleOrEquipement == 1){
             path = "/WEB-INF/views/reservation/reservation_equipement.jsp";
-            try {
-                request.setAttribute("listResaEquipement", this.reservationEquipementService.findAll());
-            } catch (ServiceException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            request.setAttribute("listResaEquipement", this.reservationEquipementService.findAll());
+            request.setAttribute("listUser", this.utilisateurService.findAll());
+            request.setAttribute("listEquipement", this.equipementService.findAll());
+                
+            
         }
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }

@@ -20,7 +20,7 @@
            <h1>Mise a jour d'utilisateurs</h1>
            <div class="box">
             <!-- form start -->
-            <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur/update">
+            <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/utilisateur_update">
                  <div class="box-body">
                     <div class="form-group">
                         <label for="id" class="col-sm-2 control-label">Identifiant</label>

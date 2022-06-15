@@ -19,7 +19,7 @@ import com.epf.katya.service.EquipementService;
 import com.epf.katya.service.ReservationEquipementService;
 import com.epf.katya.service.UtilisateurService;
 
-@WebServlet("/reservation/create_equipement")
+@WebServlet("/reservation_create_equipement")
 public class ReservationEquipementCreateServlet extends HttpServlet {
 
     @Autowired
@@ -38,12 +38,9 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("listUser", this.utilisateurService.findAll());
-        try {
-            request.setAttribute("listEquipement", this.equipementService.findAll());
-        } catch (ServiceException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        request.setAttribute("listEquipement", this.equipementService.findAll());
+        request.setAttribute("date", LocalDate.now());
+
         String path="/WEB-INF/views/reservation/reservation_create_equipement.jsp";
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -61,7 +58,6 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
             reservationEquipement.setId_utilisateur_validation(request.getParameter("id_user_valid"));
             reservationEquipementService.create(reservationEquipement);
         } catch (ServiceException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         response.sendRedirect("/ges/reservation");

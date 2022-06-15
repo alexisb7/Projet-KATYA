@@ -17,7 +17,7 @@ import com.epf.katya.model.ReservationSalle;
 import com.epf.katya.service.ReservationSalleService;
 import com.epf.katya.service.UtilisateurService;
 
-@WebServlet("/reservation/update_salle")
+@WebServlet("/reservation_update_salle")
 public class ReservationSalleUpdateServlet extends HttpServlet{
 
     @Autowired

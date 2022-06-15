@@ -18,7 +18,7 @@ import com.epf.katya.service.ReservationSalleService;
 import com.epf.katya.service.SalleService;
 import com.epf.katya.service.UtilisateurService;
 
-@WebServlet("/reservation/create_salle")
+@WebServlet("/reservation_create_salle")
 public class ReservationSalleCreateServlet extends HttpServlet {
 
     @Autowired
@@ -39,6 +39,7 @@ public class ReservationSalleCreateServlet extends HttpServlet {
         String path="/WEB-INF/views/reservation/reservation_create_salle.jsp";
         request.setAttribute("listSalle", this.salleService.findAll());
         request.setAttribute("listUser", this.utilisateurService.findAll());
+        request.setAttribute("date", LocalDate.now());
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 

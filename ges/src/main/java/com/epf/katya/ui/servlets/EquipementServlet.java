@@ -1,6 +1,5 @@
 package com.epf.katya.ui.servlets;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,9 +29,13 @@ public class EquipementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
+        request.setAttribute("listEquipement", this.equipementService.findAll());
+      
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement.jsp").forward(request, response);
 
-        r.forward(request, response);
+        //RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/equipement.jsp");
+
+        //r.forward(request, response);
 
     }
 }

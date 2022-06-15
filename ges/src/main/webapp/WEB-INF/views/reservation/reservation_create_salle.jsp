@@ -20,7 +20,7 @@
             <h1>Creation d'une reservation de salle</h1>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation/create_salle">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation_create_salle">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="numero_salle" class="col-sm-2 control-label">Numero de salle</label>
@@ -65,13 +65,13 @@
                         <div class="form-group">
                             <label for="debut" class="col-sm-2 control-label">Debut</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="debut" name="debut" placeholder="dd/MM/yyyy" required>
+                                <input type="date" class="form-control" id="debut" name="debut" value="${date}" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="fin" class="col-sm-2 control-label">Fin</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fin" name="fin" placeholder="dd/MM/yyyy" required>
+                                <input type="date" class="form-control" id="fin" name="fin" value="${date}" required>
                             </div>
                         </div>
                         <div class="form-group">
