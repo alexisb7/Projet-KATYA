@@ -99,7 +99,7 @@
                     <button name="bouton_salle" value="salle" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations de salles</button>
                     <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_salle">+</a> 
                     <button name="bouton_equip" value="equipement" type="submit" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;margin-left: 160px;" class="btn btn-primary btn-lg">Reservations d'equipements</button>
-                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation/create_equipement">+</a> 
+                    <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);margin-top: 30px;" href="${pageContext.request.contextPath}/reservation_equipement_create">+</a> 
                 </div>
             </form>
             <table class="tablemanager">
@@ -142,10 +142,6 @@
                             </td>
                             <td class="prova">${resa.date_debut}</td>
                             <td class="prova">${resa.date_fin}</td>
-<<<<<<< HEAD
-                            <td class="prova">${resa.etat_validation}</td>
-                            <td class="prova controltd">
-=======
                             <td class="prova">
                                 <c:if test="${resa.etat_validation==1}">
 									Valide
@@ -155,7 +151,6 @@
 								</c:if>
                             </td>
                             <td class="prova">
->>>>>>> d3d9d2e7d4f2f5fb35eaf40e9db84f90f1f44c1d
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation?id_equip=${resa.id_reservation_equipement}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/reservation_equipement_update?id=${resa.id_reservation_equipement}"
                                         style="background-color: transparent;border-color: transparent;margin-right: -10px">

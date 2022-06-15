@@ -62,10 +62,6 @@
             content: " \f0de";
             font-family: "FontAwesome";
         }
-        /*Style disabled*/
-        .tablemanager th.disableSort {
-
-        }
         #for_numrows {
             padding: 10px;
             float: left;
@@ -94,28 +90,14 @@
         <div class="content-wrapper backwhite">
 
             <h1>Salles</h1>
-
-            <form class="form-horizontal" method="post"
-				action="${pageContext.request.contextPath}/salle?id=${user.id}">
-				<a class="btn btn-info" href="${pageContext.request.contextPath}/salle_create">
-					<i class="fa fa-play"></i>
-                    Ajouter
-				</a> 
-			</form>
-
-            <div class="form-group">
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle?numero=0">
-                   <label for="first_name" >Rechercher par Numero</label>
-                   <input type="text" id="research" name="research" placeholder="Numero de salle">
-                   <button type="submit" href="#" class="btn btn-info">Rechercher</button>
-               </form>
-            </div>
+            <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103)" href="${pageContext.request.contextPath}/salle_create">Ajouter</a> 
             <section class="content">
                 <div class="row">
                     <div class="col-md-12">
                                 <table class="tablemanager">
                                     <thead>
                                     <tr>
+                                        <th></th>
                                         <th>Numero</th>
                                         <th>Etage</th>
                                         <th>Capacite</th>
@@ -128,6 +110,7 @@
                                     <tbody>
                                     <c:forEach items="${listeSalle}" var="salle">
                                         <tr>
+                                            <th></th>
                                             <td class="prova">${salle.numero}</td>
                                             <td class="prova">${salle.etage}</td>
                                             <td class="prova">${salle.capacite}</td>
