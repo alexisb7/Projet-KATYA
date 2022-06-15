@@ -25,7 +25,7 @@ public class Equipement {
     }
 
     public Equipement(int idEquipement, String parameter, String string, String parameter2, int parseInt2, LocalDate parse,
-            String parameter3) {
+            String lien_documentation) {
     }
 
     public int getId_equipement() {
@@ -84,11 +84,11 @@ public class Equipement {
         this.description = description;
     }
 
-    public String getLien_documentationt() {
+    public String getLien_documentation() {
         return lien_documentation;
     }
 
-    public void setLien_documentationt(String lien_documentation) {
+    public void setLien_documentation(String lien_documentation) {
         this.lien_documentation = lien_documentation;
     }
 

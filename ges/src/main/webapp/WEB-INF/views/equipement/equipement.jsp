@@ -96,7 +96,7 @@
                 <th>Disponibilite</th>
                 <th>Date d'acquisition</th>
                 <th>Description</th>
-                <th>ID document lie</th>
+                <th>Lien documentation</th>
                 <th class="disableFilterBy">Action</th>
             </tr>
             </thead>
@@ -110,7 +110,7 @@
                             <td class="prova">${equipement.disponibilite_equipement}</td>
                             <td class="prova">${equipement.date_acquisition}</td>
                             <td class="prova">${equipement.description}</td>
-                            <td class="prova">${equipement.id_document}</td>
+                            <td class="prova">${equipement.lien_documentation}</td>
                             <td class="prova">
                                 <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement?id=${equipement.id_equipement}">
                                     <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/equipement/update?id=${equipement.id_equipement}"

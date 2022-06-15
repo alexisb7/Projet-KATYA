@@ -57,6 +57,13 @@
                                         <input type="text" class="form-control" id="description" name="description" placeholder="Description" required>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="lien_documentation" class="col-sm-2 control-label">Lien documentation</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="url" class="form-control" id="lien_documentation" name="lien_documentation" pattern="https://.*" placeholder="http://example.com" required>
+                                    </div>
+                                </div>
                         </div>
                         
 
