@@ -70,7 +70,7 @@ public class ReservationServlet extends HttpServlet {
             request.setAttribute("role", role);
             request.setAttribute("eleve", "Eleve");
             request.setAttribute("secretaire", "Secretaire");
-            request.setAttribute("admin", "Administrateur");
+            request.setAttribute("admin", "Responsable");
             request.setAttribute("listUser", this.utilisateurService.findAll());
         }
         if(resaSalleOrEquipement == 1){
@@ -81,7 +81,7 @@ public class ReservationServlet extends HttpServlet {
             request.setAttribute("role", role);
             request.setAttribute("eleve", "Eleve");
             request.setAttribute("secretaire", "Secretaire");
-            request.setAttribute("admin", "Administrateur");
+            request.setAttribute("admin", "Responsable");
             request.setAttribute("listUser", this.utilisateurService.findAll());            
         }
         this.getServletContext().getRequestDispatcher(path).forward(request,response);

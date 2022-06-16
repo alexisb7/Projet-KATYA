@@ -38,7 +38,7 @@ public class SalleUpdateServlet extends HttpServlet {
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         request.setAttribute("salle", salleService.findByNumero(numero));
         RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle_update.jsp");
         r.forward(request, response);

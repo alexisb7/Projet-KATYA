@@ -24,7 +24,7 @@ public class ContactsServlet extends HttpServlet {
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         RequestDispatcher r = request.getRequestDispatcher("WEB-INF/views/contacts.jsp");
 
         r.forward(request, response);

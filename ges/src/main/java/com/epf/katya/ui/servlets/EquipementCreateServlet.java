@@ -35,7 +35,7 @@ public class EquipementCreateServlet extends HttpServlet {
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement_create.jsp").forward(request, response);
     }
 

@@ -45,7 +45,7 @@ public class ReservationEquipementCreateServlet extends HttpServlet {
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         String path="/WEB-INF/views/reservation/reservation_create_equipement.jsp";
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }

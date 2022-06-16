@@ -48,7 +48,7 @@ public class SalleServlet extends HttpServlet {
 
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         request.setAttribute("listeSalle", this.salleService.findAll());
         request.setAttribute("nombre", this.salleService.count());
         RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle.jsp");
@@ -72,7 +72,7 @@ public class SalleServlet extends HttpServlet {
         request.setAttribute("nombre", this.salleService.count());
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         if(research != null) {
             request.setAttribute("listeSalle", this.salleService.research(research));
         }else {        

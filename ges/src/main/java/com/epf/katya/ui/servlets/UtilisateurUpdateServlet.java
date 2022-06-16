@@ -36,7 +36,7 @@ public class UtilisateurUpdateServlet extends HttpServlet{
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         request.setAttribute("user", this.utilisateurService.findById(id));
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -47,7 +47,7 @@ public class UtilisateurUpdateServlet extends HttpServlet{
         utilisateur.setEmail(request.getParameter("email"));
         utilisateur.setMdp(request.getParameter("mdp"));
         utilisateur.setNom_utilisateur(request.getParameter("nom"));
-        utilisateur.setRole(request.getParameter("role"));
+        utilisateur.setRole(request.getParameter("statut"));
         utilisateurService.update(utilisateur, id);
         response.sendRedirect("/ges/utilisateur?role="+role);
     }

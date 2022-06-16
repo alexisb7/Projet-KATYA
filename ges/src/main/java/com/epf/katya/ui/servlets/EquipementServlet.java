@@ -48,7 +48,7 @@ public class EquipementServlet extends HttpServlet {
 
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         request.setAttribute("listEquipement", this.equipementService.findAll());
         request.setAttribute("nombre", this.equipementService.count());
       

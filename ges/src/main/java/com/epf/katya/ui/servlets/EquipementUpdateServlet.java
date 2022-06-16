@@ -37,7 +37,7 @@ public class EquipementUpdateServlet extends HttpServlet{
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         request.setAttribute("equipement", this.equipementService.findById(id));
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }

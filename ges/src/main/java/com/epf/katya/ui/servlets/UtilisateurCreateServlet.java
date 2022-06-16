@@ -34,7 +34,7 @@ public class UtilisateurCreateServlet extends HttpServlet{
         request.setAttribute("role", role);
         request.setAttribute("eleve", "Eleve");
         request.setAttribute("secretaire", "Secretaire");
-        request.setAttribute("admin", "Administrateur");
+        request.setAttribute("admin", "Responsable");
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
@@ -44,7 +44,7 @@ public class UtilisateurCreateServlet extends HttpServlet{
         utilisateur.setEmail(request.getParameter("email"));
         utilisateur.setMdp(request.getParameter("mdp"));
         utilisateur.setNom_utilisateur(request.getParameter("nom"));
-        utilisateur.setRole(request.getParameter("role"));
+        utilisateur.setRole(request.getParameter("statut"));
         utilisateur.setDate_entree(LocalDate.now());
         this.utilisateurService.create(utilisateur);
         response.sendRedirect("/ges/utilisateur?role="+role);

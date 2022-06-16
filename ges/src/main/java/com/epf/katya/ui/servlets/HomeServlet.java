@@ -44,7 +44,7 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("role", utilisateurService.findById(id).getRole());
             request.setAttribute("eleve", "Eleve");
             request.setAttribute("secretaire", "Secretaire");
-            request.setAttribute("admin", "Administrateur");
+            request.setAttribute("admin", "Responsable");
             path= "/WEB-INF/views/home/home_connected.jsp";
         }
         if(connection == 0){

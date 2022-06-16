@@ -65,12 +65,12 @@
                         <label for="nom" class="col-sm-2 control-label">Role</label>
         
                         <div class="col-sm-10">
-                            <select class="form-control" id="role" name="role">
+                            <select class="form-control" id="role" name="statut">
                                 <option value="Eleve">
                                     Eleve
                                 </option>
-                                <option value="Enseignant-responsable">
-                                    Enseignant-responsable
+                                <option value="Responsable">
+                                    Responsable
                                 </option>
                                 <option value="Secretaire">
                                     Secretaire
