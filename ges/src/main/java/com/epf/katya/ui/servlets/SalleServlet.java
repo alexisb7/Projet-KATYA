@@ -33,8 +33,22 @@ public class SalleServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-                String role = request.getParameter("role");
-                request.setAttribute("role", role);
+                
+        String role = request.getParameter("role");
+        String params = request.getParameter("numero");
+        if(params != null){
+            if(params.contains("-")){
+                role = params.split("-")[1].split("=")[1];
+            }
+            else {
+                role = params;
+            }
+        }
+        request.setAttribute("role", role);
+
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         request.setAttribute("listeSalle", this.salleService.findAll());
         request.setAttribute("nombre", this.salleService.count());
         RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle.jsp");
@@ -44,6 +58,21 @@ public class SalleServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response, String research) throws ServletException, IOException{
+        String role = request.getParameter("role");
+        String params = request.getParameter("numero");
+        if(params != null){
+            if(params.contains("-")){
+                role = params.split("-")[1].split("=")[1];
+            }
+            else {
+                role = params;
+            }
+        }
+        request.setAttribute("role", role);
+        request.setAttribute("nombre", this.salleService.count());
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         if(research != null) {
             request.setAttribute("listeSalle", this.salleService.research(research));
         }else {        
@@ -54,8 +83,9 @@ public class SalleServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-        String numero = request.getParameter("numero");
-        if(numero!=null) {   
+        String params = request.getParameter("numero");
+        if(params!=null) {   
+            String numero = params.split("-")[0];
             while(this.reservationSalleService.findBySalle(numero)!=null) {
                 this.reservationSalleService.delete(this.reservationSalleService.findBySalle(numero));
             } 

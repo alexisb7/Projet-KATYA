@@ -1,6 +1,5 @@
 package com.epf.katya.ui.servlets;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +20,8 @@ public class SalleCreateServlet extends HttpServlet {
 
     @Autowired
     SalleService salleService;
+
+    String role="";
     
    public void init() throws ServletException {
        super.init();
@@ -29,11 +30,13 @@ public class SalleCreateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-
-
-        RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle_create.jsp");
-        r.forward(request, response);
-
+                role = request.getParameter("role");
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
+        String path="/WEB-INF/views/salle/salle_create.jsp";
+        this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,6 +50,6 @@ public class SalleCreateServlet extends HttpServlet {
         salle.setDate_acquisition_salle(LocalDate.now()); 
         salleService.create(salle);
 
-        response.sendRedirect("/ges/salle");
+        response.sendRedirect("/ges/salle?role="+role);
     }
 }

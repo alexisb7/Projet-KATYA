@@ -22,6 +22,8 @@ public class EquipementCreateServlet extends HttpServlet {
     @Autowired
     EquipementService equipementService;
 
+    String role="";
+
    public void init() throws ServletException {
        super.init();
        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
@@ -29,6 +31,11 @@ public class EquipementCreateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        role = request.getParameter("role");
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/equipement/equipement_create.jsp").forward(request, response);
     }
 
@@ -37,6 +44,6 @@ public class EquipementCreateServlet extends HttpServlet {
         int idEqui = equipementService.max() + 1;        
         Equipement equipement = new Equipement(idEqui ,request.getParameter("nom_equipement"), request.getParameter("zone_stockage"), request.getParameter("etat"), 1, LocalDate.parse(request.getParameter("date_acquisition")), request.getParameter("description"),request.getParameter("lien_documentation"));
         equipementService.create(equipement);
-        response.sendRedirect("equipement");
+        response.sendRedirect("/ges/equipement?role="+role);
     }
 }

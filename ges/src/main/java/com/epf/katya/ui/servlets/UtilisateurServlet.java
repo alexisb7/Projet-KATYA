@@ -26,6 +26,8 @@ public class UtilisateurServlet extends HttpServlet {
 
     @Autowired
     ReservationSalleService reservationSalleService;
+
+    String role="";
     
    public void init() throws ServletException {
        super.init();
@@ -34,16 +36,29 @@ public class UtilisateurServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="/WEB-INF/views/utilisateur/utilisateur.jsp";
-        String role = request.getParameter("role");
+        role = request.getParameter("role");
+        String params = request.getParameter("id");
+        if(params != null){
+            if(params.contains("-")){
+                role = params.split("-")[1].split("=")[1];
+            }
+            else {
+                role = params;
+            }
+        }
         request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         request.setAttribute("listUtilisateur", this.utilisateurService.findAll());
         request.setAttribute("nombre", this.utilisateurService.count());
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        if(id != null){
+        String params = request.getParameter("id");
+        if(params != null){
+            String id = params.split("-")[0];
             while(this.reservationEquipementService.findByUser(id)!=null){
                 this.reservationEquipementService.delete(this.reservationEquipementService.findByUser(id));
             }

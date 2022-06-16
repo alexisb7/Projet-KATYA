@@ -21,7 +21,8 @@ public class EquipementUpdateServlet extends HttpServlet{
     @Autowired
     EquipementService equipementService;
 
-    Integer id=0;
+    int id=0;
+    String role="";
     
    public void init() throws ServletException {
        super.init();
@@ -30,7 +31,13 @@ public class EquipementUpdateServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="/WEB-INF/views/equipement/equipement_update.jsp";
-        id = Integer.parseInt(request.getParameter("id"));
+        String params = request.getParameter("id");
+        id = Integer.parseInt(params.split("-")[0]);
+        role = params.split("-")[1].split("=")[1];
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         request.setAttribute("equipement", this.equipementService.findById(id));
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -45,7 +52,7 @@ public class EquipementUpdateServlet extends HttpServlet{
         equipement.setDate_acquisition(LocalDate.parse(request.getParameter("date_acquisition_up")));
         equipement.setDescription(request.getParameter("description_up"));
         equipementService.update(equipement);
-        response.sendRedirect("/ges/equipement");
+        response.sendRedirect("/ges/equipement?role="+role);
     }
     
 }

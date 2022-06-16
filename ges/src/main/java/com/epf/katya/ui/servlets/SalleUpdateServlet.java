@@ -22,6 +22,7 @@ public class SalleUpdateServlet extends HttpServlet {
     SalleService salleService;
 
     String numero;
+    String role;
     
    public void init() throws ServletException {
        super.init();
@@ -31,7 +32,13 @@ public class SalleUpdateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
 
-        numero = request.getParameter("numero");
+        String params = request.getParameter("numero");
+        numero = params.split("-")[0];
+        role = params.split("-")[1].split("=")[1];
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         request.setAttribute("salle", salleService.findByNumero(numero));
         RequestDispatcher r = request.getRequestDispatcher("/WEB-INF/views/salle/salle_update.jsp");
         r.forward(request, response);
@@ -47,6 +54,6 @@ public class SalleUpdateServlet extends HttpServlet {
         salle.setUtilite(request.getParameter("utilite"));
         salleService.update(salle, numero);
 
-        response.sendRedirect("/ges/salle");
+        response.sendRedirect("/ges/salle?role="+role);
     }
 }

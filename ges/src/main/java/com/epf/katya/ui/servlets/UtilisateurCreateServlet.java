@@ -21,6 +21,8 @@ public class UtilisateurCreateServlet extends HttpServlet{
     @Autowired
     UtilisateurService utilisateurService;
     
+    String role="";
+    
     public void init() throws ServletException {
         super.init();
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
@@ -28,6 +30,11 @@ public class UtilisateurCreateServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="/WEB-INF/views/utilisateur/utilisateur_create.jsp";
+        role = request.getParameter("role");
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
 
@@ -40,6 +47,6 @@ public class UtilisateurCreateServlet extends HttpServlet{
         utilisateur.setRole(request.getParameter("role"));
         utilisateur.setDate_entree(LocalDate.now());
         this.utilisateurService.create(utilisateur);
-        response.sendRedirect("/ges/utilisateur");
+        response.sendRedirect("/ges/utilisateur?role="+role);
     }
 }

@@ -85,14 +85,25 @@
     </style>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
-        <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
-
+        <c:set var="role" value="${role}"></c:set>
+        <c:set var="eleve" value="${eleve}"></c:set>
+        <c:set var="secretaire" value="${secretaire}"></c:set>
+        <c:set var="admin" value="${admin}"></c:set>
+        <c:if test="${role==eleve}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==secretaire}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==admin}">
+            <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        </c:if>
         <div class="content-wrapper backwhite">
             
            <p class="titre">Liste des equipements</p>
            <p>Nombre d'equipements : ${nombre}</p>
            <div class="but_middle">
-                <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);" href="${pageContext.request.contextPath}/equipement_create">Ajouter</a> 
+                <a class="btn btn-primary btn-lg" style="font-size:25px;text-align:center;border-color:rgb(181, 57, 103);background-color:rgb(181, 57, 103);" href="${pageContext.request.contextPath}/equipement_create?role=${role}">Ajouter</a> 
            </div>
            <table class="tablemanager">
                 <thead>
@@ -125,8 +136,8 @@
                             <td class="prova">${equipement.description}</td>
                             <td class="prova">${equipement.lien_documentation}</td>
                             <td class="prova">
-                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement?id=${equipement.id_equipement}">
-                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/equipement_update?id=${equipement.id_equipement}"
+                                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement?id=${equipement.id_equipement}-role=${role}">
+                                    <a class="btn btn-primary" title="Modifier" href="${pageContext.request.contextPath}/equipement_update?id=${equipement.id_equipement}-role=${role}"
                                                 style="background-color: transparent;border-color: transparent;margin-right: -10px">
                                                     <i  style="color: orange" class="fa fa-edit"></i>
                                                 </a>

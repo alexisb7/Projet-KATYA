@@ -4,19 +4,35 @@
 <html>
     <head>
         <%@include file="/WEB-INF/views/common/head.jsp" %>
-
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <!-- Include Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Style -->
     </head>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
-        <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
-
+        <c:set var="role" value="${role}"></c:set>
+        <c:set var="eleve" value="${eleve}"></c:set>
+        <c:set var="secretaire" value="${secretaire}"></c:set>
+        <c:set var="admin" value="${admin}"></c:set>
+        <c:if test="${role==eleve}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==secretaire}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==admin}">
+            <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        </c:if>
         <div class="content-wrapper backwhite">
 
             <h1>Ajout d'un nouvel equipement</h1>
 
             <div class="backwhite">
                 <div class="box">
-                    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement_create">
+                    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/equipement_create?role=${role}">
                         <div class="box-body">
                                 <div class="form-group">
                                     <label for="nom_equipement" class="col-sm-2 control-label">Nom de l'equipement</label>

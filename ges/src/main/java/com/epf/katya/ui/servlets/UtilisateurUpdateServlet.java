@@ -21,6 +21,7 @@ public class UtilisateurUpdateServlet extends HttpServlet{
     UtilisateurService utilisateurService;
 
     String id="";
+    String role;
     
    public void init() throws ServletException {
        super.init();
@@ -29,7 +30,13 @@ public class UtilisateurUpdateServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path="/WEB-INF/views/utilisateur/utilisateur_update.jsp";
-        id = request.getParameter("id");
+        String params = request.getParameter("id");
+        id = params.split("-")[0];
+        role = params.split("-")[1].split("=")[1];
+        request.setAttribute("role", role);
+        request.setAttribute("eleve", "Eleve");
+        request.setAttribute("secretaire", "Secretaire");
+        request.setAttribute("admin", "Administrateur");
         request.setAttribute("user", this.utilisateurService.findById(id));
         this.getServletContext().getRequestDispatcher(path).forward(request,response);
     }
@@ -42,7 +49,7 @@ public class UtilisateurUpdateServlet extends HttpServlet{
         utilisateur.setNom_utilisateur(request.getParameter("nom"));
         utilisateur.setRole(request.getParameter("role"));
         utilisateurService.update(utilisateur, id);
-        response.sendRedirect("/ges/utilisateur");
+        response.sendRedirect("/ges/utilisateur?role="+role);
     }
     
 }

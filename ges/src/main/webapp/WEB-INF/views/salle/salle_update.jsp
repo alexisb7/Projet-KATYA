@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,8 +8,19 @@
     </head>
     <body>
         <%@include file="/WEB-INF/views/common/header.jsp" %>
-        <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <c:set var="role" value="${role}"></c:set>
+        <c:set var="eleve" value="${eleve}"></c:set>
+        <c:set var="secretaire" value="${secretaire}"></c:set>
+        <c:set var="admin" value="${admin}"></c:set>
+        <c:if test="${role==eleve}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==secretaire}">
+            <%@ include file="/WEB-INF/views/common/sidebar_restraint.jsp" %>
+        </c:if>
+        <c:if test="${role==admin}">
+            <%@ include file="/WEB-INF/views/common/sidebar.jsp" %>
+        </c:if>        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
         <!-- Include Font Awesome -->
@@ -21,7 +32,7 @@
             <h2>Salle : ${salle.numero}</h2>
             <div class="box">
                 <!-- form start -->
-                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_update">
+                <form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/salle_update?role=${role}">
                      <div class="box-body">
                         <div class="form-group">
                             <label for="etage" class="col-sm-2 control-label">Numero</label>
